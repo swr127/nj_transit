@@ -74,6 +74,7 @@ Sample JSON from GET `/api/tickets`
   ```
   [
     {
+      "id: 1, 
       "type": "One Way",
       "start-location": "New York Penn",
       "end-destination": "Trenton",
@@ -82,6 +83,7 @@ Sample JSON from GET `/api/tickets`
       "tax": 1.75,
       "donation": Y
     },
+      "id": 2,
       "type": "Weekly",
       "start-location": "Newark Penn",
       "end-destination": "Hamilton",
