@@ -8,7 +8,7 @@ This **NJ Transit** web application is a redesigned version of the real NJ Trans
 
 The Team:
 - Samantha Russell, Git Csar
-- Trevor Holbourn, SCRUM Leader
+- Trevor Smith-Holbourn, SCRUM Leader
 - Tara Solbrig, CSS Extraordinaire
 
 ## Wireframes
