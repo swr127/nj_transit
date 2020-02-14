@@ -1,4 +1,4 @@
-# Project 3 Overview
+# NJ Transit Overview
 
 ## Project Description
 
@@ -6,26 +6,21 @@ Describe your project, and what it is being created for, here in non-technical t
 
 ## Wireframes
 
-Display the mockups for your project as designed by your UX team
+Zeplin: https://app.zeplin.io/project/5e42d44088671e0c4bdb325f/dashboard
+InVision:https://winnie.invisionapp.com/console/NJ-Transit-ck5bnof3d198601blb1c5b4mj/ck5bnofkv198801bl49en6yir/play#project_console
 
 ## MVP
 
-Carefully decide what to place into your MVP as the client will expect this functionality upon project completion 
-
-#### MVP EXAMPLE:
-- User can be create a profile and post information
-- User profiles are indexed and searchable
-- User profile information can be updated and deleted
+- The app will have full CRUD functionalty (back end & front end) for the NJ Transit Bus Line
+	- User can plan a trip (buy tickets) for the Bus
+	- User can view schedule for the Bus
+	- User can view the service status for the Bus
+-  The app will use CSS that matches the UX wireframes
 
 ## Post-MVP
 
-Brainstorm additional functionality and cool ideas that you would like to include in your app once MVP has been reached
-
-#### POST-MVP EXAMPLE:
-
-- User can create a profilec account w/ user auth
-- User can "like" other User profiles
-- Account passwords can be reset by email
+- The app will replicate the MVP functionality for the Rail and LightRail 
+- Thw app will have a user profile page with user authenticaiton 
 
 ## ERD Diagram
 
