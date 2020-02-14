@@ -125,7 +125,7 @@ Estimate the amount of time your team expects to spend on each area of your app
 
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
-| Set Up App File Structure | 1.5hrs |  |
+| Set Up App File Structure | 2hrs |  |
 | Write Fake JSON Data for Testing | 3hrs |  |
 | Set Up Sequelize Models | 2hrs |  |
 | Set Up Sequelize Migrations | 2hrs |  |
