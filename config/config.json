@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "nj_transit_dev",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "nj_transit_test",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
+  }
+}
