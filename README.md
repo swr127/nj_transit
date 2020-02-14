@@ -1,17 +1,24 @@
+<a href="https://imgur.com/EabkOcK"><img src="https://i.imgur.com/EabkOcK.png" title="source: imgur.com" /></a>
+
 # NJ Transit Overview
 
 ## Project Description
 
-Describe your project, and what it is being created for, here in non-technical terms. Include the names of everyone on your team and any designated roles.
+This **NJ Transit** web application is a redesigned version of the real NJ Transit mobile application. We are creating this for the purpose of presenting a better user experience.
+
+The Team:
+- Samantha Russell, Git Csar
+- Trevor Holbourn, SCRUM Leader
+- Tara Solbrig, CSS Extraordinaire
 
 ## Wireframes
 
-Zeplin: https://app.zeplin.io/project/5e42d44088671e0c4bdb325f/dashboard
-InVision:https://winnie.invisionapp.com/console/NJ-Transit-ck5bnof3d198601blb1c5b4mj/ck5bnofkv198801bl49en6yir/play#project_console
+- Zeplin: https://app.zeplin.io/project/5e42d44088671e0c4bdb325f/dashboard
+- InVision: https://winnie.invisionapp.com/console/NJ-Transit-ck5bnof3d198601blb1c5b4mj/ck5bnofkv198801bl49en6yir/play#project_console
 
 ## MVP
 
-- The app will have full CRUD functionalty (back end & front end) for the NJ Transit Bus Line
+- The app will have full CRUD functionality (back end & front end) for the NJ Transit Bus Line
 	- User can plan a trip (buy tickets) for the Bus
 	- User can view schedule for the Bus
 	- User can view the service status for the Bus
@@ -20,46 +27,63 @@ InVision:https://winnie.invisionapp.com/console/NJ-Transit-ck5bnof3d198601blb1c5
 ## Post-MVP
 
 - The app will replicate the MVP functionality for the Rail and LightRail 
-- Thw app will have a user profile page with user authenticaiton 
+- The app will have a user profile page with user authenticaiton 
 
 ## ERD Diagram
 
-Render a diagram of your database showing how your tables relate to each other, what their specific attributes will be, as well as their expected datatypes
+<a href="https://imgur.com/iCoOo6S"><img src="https://i.imgur.com/iCoOo6S.png" title="source: imgur.com" /></a>
 
 ## Endpoints
 
-List the backend routes you expect to utilize with a description of their functionality, and include at least one example of sample JSON to be returned
+- GET `/api/tickets`
+	- Show all tickets
+- GET `/api/tickets/:id`
+	- Show a ticket requested by ID
+- POST `/api/tickets/:id`
+	- Create a new ticket and add to list of tickets
+- PUT `/api/tickets/:id`
+	- Update a ticket by ID 
+- DELETE `/api/tickets/:id`
+	- Delete a ticket by ID
+- GET `/api/routes`
+	- Show all routes
+- POST `/api/routes/:id`
+	- Create a new route to add to list of routes
+- PUT `/api/routes/:id`
+	- Update a route by ID 
+- DELETE `/api/routes/:id`
+	- Delete a route by ID
+- GET `/api/buses
+	- Show all buses
+- POST `/api/buses/:id`
+	- Create a new bus to add to list of buses
+- PUT `/api/buses/:id`
+	- Update a bus by ID 
+- DELETE `/api/buses/:id`
+	- Delete a bus by ID
+- GET `/api/stops
+	- Show all stops
 
-#### ENDPOINTS EXAMPLE:
-
-- GET `/api/users`
-	- Index route returning an array of all Users and nested 'Likes'
-- GET `/api/users/:id`
-	- Show route for a user requested by ID
-- POST `/api/users`
-	- Create route for a new user
-
-Sample JSON from GET `/api/users`
+Sample JSON from GET `/api/tickets`
 
   ```
   [
     {
-      "name": "Erinn",
-      "email": "erinn@erinn.erinn",
-      "likes": [
-        {
-          "name": "Frank"
-        }
-      ]
+      "type": "One Way",
+      "start-location": "New York Penn",
+      "end-destination": "Trenton",
+      "travel-time": "100 minutes",
+      "price": 16.75,
+      "tax": 1.75,
+      "donation": Y
     },
-    {
-      "name": "Frank",
-      "email": "frank@erinn.erinn",
-      "likes": [
-        {
-          "name": "Erinn"
-        }
-      ]
+      "type": "Weekly",
+      "start-location": "Newark Penn",
+      "end-destination": "Hamilton",
+      "travel-time": "80 minutes",
+      "price": 14.75,
+      "tax": 1.25,
+      "donation": N
     }
   ]
   ```
