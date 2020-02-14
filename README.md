@@ -123,20 +123,20 @@ Sample JSON from GET `/api/tickets`
 
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
-| Set Up App File Structure | 2hrs |  |
-| Write Fake JSON Data for Testing | 3hrs |  |
-| Set Up Sequelize Models | 2hrs |  |
-| Set Up Sequelize Migrations | 2hrs |  |
-| Seed Database | 2hrs |  |
-| Create Back-End Controllers | 6hrs |  |
-| Create Back-End Express Router | 4hrs |  |
-| Test Back-End CRUD Functionality | 4hrs |  |
-| Create Front-End React Router | 2hrs |  |
-| Create Front-End Shared Components | 2hrs |  |
-| Create Front-End Routes Components | 5hrs |  |
-| Test Front-End CRUD Functionality | 4hrs |  |
-| CSS Styling | 12hrs |  |
-| Total | 50hrs |  |
+| Set Up App File Structure | 4hrs |  |
+| Write Fake JSON Data for Testing | 6hrs |  |
+| Set Up Sequelize Models | 4hrs |  |
+| Set Up Sequelize Migrations | 4hrs |  |
+| Seed Database | 5hrs |  |
+| Create Back-End Controllers | 14hrs |  |
+| Create Back-End Express Router | 8hrs |  |
+| Test Back-End CRUD Functionality | 8hrs |  |
+| Create Front-End React Router | 4hrs |  |
+| Create Front-End Shared Components | 4hrs |  |
+| Create Front-End Routes Components | 8hrs |  |
+| Test Front-End CRUD Functionality | 8hrs |  |
+| CSS Styling | 25hrs |  |
+| Total | 102hrs |  |
 
 ## Additional Libraries
 `react-router-dom`, `axios`, `nodemon`, `morgan`, `sequelize`, `pg`, `cors`, `express`
