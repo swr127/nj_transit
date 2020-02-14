@@ -117,11 +117,9 @@ Sample JSON from GET `/api/tickets`
 
 ## Priority Matrix
 
-Render your project priority matrix here
+<a href="https://imgur.com/AxkQ9Za"><img src="https://i.imgur.com/AxkQ9Za.png" title="source: imgur.com" /></a>
 
 ## Timeframes
-
-Estimate the amount of time your team expects to spend on each area of your app
 
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
@@ -141,20 +139,15 @@ Estimate the amount of time your team expects to spend on each area of your app
 | Total | 50hrs |  |
 
 ## Additional Libraries
-`react-router-dom`, `axios`, `nodemon`, `morgan`, `sequelize`, `pg`
+`react-router-dom`, `axios`, `nodemon`, `morgan`, `sequelize`, `pg`, `cors`, `express`
 
 ## Expected Issues
-List any major issues you expect to face and how you plan to handle them
+We expect to run into issues with our stops table and platforms data point. At this time, we're not sure how we are going to tie our platforms with our stops, so we may create fake data on the front-end as a work around. 
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolutions
-
-#### ISSUES AND RESOLUTIONS EXAMPLE:
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+Use this section to list of all major issues encountered and their resolutions
 
 ## Code Snippet
-
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
@@ -164,5 +157,4 @@ function reverse(string) {
 ```
 
 ## Change Log
-
 Update as neccessary with any changes or directional adjustments made throughout the project week
