@@ -27,7 +27,8 @@ The Team:
 ## Post-MVP
 
 - The app will replicate the MVP functionality for the Rail and LightRail 
-- The app will have a user profile page with user authenticaiton 
+- Create a user profile page with user authentication
+- Update our class components to hooks 
 
 ## ERD Diagram
 
@@ -94,18 +95,23 @@ Sample JSON from GET `/api/tickets`
 
 ## React Component Hierarchy
 
-Render your component hierarchy here
+<a href="https://imgur.com/QS9lhhB"><img src="https://i.imgur.com/QS9lhhB.png" title="source: imgur.com" /></a>
 
 ## Components
 
-Breakdown the initial logic defined in the previous sections into stateful and stateless components
-
 | Component | Description | 
 | --- | :--- |
-| App | This component will render the Header, Footer and Main Routes. It will be a class component that uses state to store user info. |
-| Profile | This class component will serve as a route for a logged in user's profile, and will track state for user "likes."  |
-| Header | This functional component will house a nav bar.  | 
-| Footer | This functional component will render basic footer info. |
+| App | This functional component will house all of our routes. *Stateless* |
+| Header | This functional component will render basic header info. *Stateless*  | 
+| Footer | This functional component will render basic footer info. *Stateless*  |
+| Layout | This functional component will create a standardized layout for all of our components within the Routes folder. *Stateless*  |
+| Service Status | This class component will house the service status icons for all of the buses. *Stateful* |
+| Home | This functional component will render information for the homepage. *Stateless* |
+| Menu | This functional component will render information for the bus menu. *Stateless*  |
+| Plan a Trip | This class component will render information for buying a ticket. *Stateful* |
+| Ticket | This class component will render a confirmation message for a purchased ticket. *Stateful* |
+| Schedule | This class component will render a schedule for all of the bus routes. *Stateful* |
+| Service | This class component will render the service status for all of the buses. *Stateful* |
 
 ## Priority Matrix
 
