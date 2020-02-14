@@ -125,15 +125,23 @@ Estimate the amount of time your team expects to spend on each area of your app
 
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
-| Sequelize Queries | 3hrs | 3.5hrs |
-| Server | 4hrs | 2.5hrs |
-| Front-End Routing | 2.5hrs | 5hrs |
-| Total | 9.5hrs | 11hrs |
-
-_Be sure to document the actual time spent as you progress_
+| Set Up App File Structure | 1.5hrs |  |
+| Write Fake JSON Data for Testing | 3hrs |  |
+| Set Up Sequelize Models | 2hrs |  |
+| Set Up Sequelize Migrations | 2hrs |  |
+| Seed Database | 2hrs |  |
+| Create Back-End Controllers | 6hrs |  |
+| Create Back-End Express Router | 4hrs |  |
+| Test Back-End CRUD Functionality | 4hrs |  |
+| Create Front-End React Router | 2hrs |  |
+| Create Front-End Shared Components | 2hrs |  |
+| Create Front-End Routes Components | 5hrs |  |
+| Test Front-End CRUD Functionality | 4hrs |  |
+| CSS Styling | 12hrs |  |
+| Total | 50hrs |  |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project, such as `react-router-dom`, `axios`, `nodemon` and others
+`react-router-dom`, `axios`, `nodemon`, `morgan`, `sequelize`, `pg`
 
 ## Expected Issues
 List any major issues you expect to face and how you plan to handle them
