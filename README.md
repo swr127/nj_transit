@@ -39,7 +39,7 @@ The Team:
 	- Show all tickets
 - GET `/api/tickets/:id`
 	- Show a ticket requested by ID
-- POST `/api/tickets/:id`
+- POST `/api/tickets/`
 	- Create a new ticket and add to list of tickets
 - PUT `/api/tickets/:id`
 	- Update a ticket by ID 
@@ -47,21 +47,25 @@ The Team:
 	- Delete a ticket by ID
 - GET `/api/routes`
 	- Show all routes
-- POST `/api/routes/:id`
+- GET `/api/routes/:id`
+	- Show a route requested by ID
+- POST `/api/routes`
 	- Create a new route to add to list of routes
 - PUT `/api/routes/:id`
 	- Update a route by ID 
 - DELETE `/api/routes/:id`
 	- Delete a route by ID
-- GET `/api/buses
+- GET `/api/buses`
 	- Show all buses
-- POST `/api/buses/:id`
+- GET `/api/buses/:id`
+	- Show a bus requested by ID
+- POST `/api/buses`
 	- Create a new bus to add to list of buses
 - PUT `/api/buses/:id`
 	- Update a bus by ID 
 - DELETE `/api/buses/:id`
 	- Delete a bus by ID
-- GET `/api/stops
+- GET `/api/stops`
 	- Show all stops
 
 Sample JSON from GET `/api/tickets`
