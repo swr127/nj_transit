@@ -36,26 +36,13 @@ The Team:
 
 ## Endpoints
 
+# High Priority 
 - GET `/api/tickets`
 	- Show all tickets
-- GET `/api/tickets/:id`
-	- Show a ticket requested by ID
-- POST `/api/tickets/`
-	- Create a new ticket and add to list of tickets
-- PUT `/api/tickets/:id`
-	- Update a ticket by ID 
-- DELETE `/api/tickets/:id`
-	- Delete a ticket by ID
 - GET `/api/routes`
 	- Show all routes
-- GET `/api/routes/:id`
-	- Show a route requested by ID
-- POST `/api/routes`
-	- Create a new route to add to list of routes
-- PUT `/api/routes/:id`
-	- Update a route by ID 
-- DELETE `/api/routes/:id`
-	- Delete a route by ID
+- GET `/api/stops`
+	- Show all stops
 - GET `/api/buses`
 	- Show all buses
 - GET `/api/buses/:id`
@@ -66,8 +53,32 @@ The Team:
 	- Update a bus by ID 
 - DELETE `/api/buses/:id`
 	- Delete a bus by ID
+
+# Low Priority 
+- GET `/api/tickets/:id`
+	- Show a ticket requested by ID
+- POST `/api/tickets/`
+	- Create a new ticket and add to list of tickets
+- PUT `/api/tickets/:id`
+	- Update a ticket by ID 
+- DELETE `/api/tickets/:id`
+	- Delete a ticket by ID
+- GET `/api/routes/:id`
+	- Show a route requested by ID
+- POST `/api/routes`
+	- Create a new route to add to list of routes
+- PUT `/api/routes/:id`
+	- Update a route by ID 
+- DELETE `/api/routes/:id`
+	- Delete a route by ID
 - GET `/api/stops`
 	- Show all stops
+- POST `/api/stops`
+	- Create a new stop to add to list of stops
+- PUT `/api/stops/:id`
+	- Update a stop by ID 
+- DELETE `/api/stops/:id`
+	- Delete a stop by ID
 
 Sample JSON from GET `/api/tickets`
 
