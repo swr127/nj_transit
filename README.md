@@ -36,7 +36,7 @@ The Team:
 
 ## Endpoints
 
-# High Priority 
+### High Priority 
 - GET `/api/tickets`
 	- Show all tickets
 - GET `/api/routes`
@@ -54,7 +54,7 @@ The Team:
 - DELETE `/api/buses/:id`
 	- Delete a bus by ID
 
-# Low Priority 
+### Low Priority 
 - GET `/api/tickets/:id`
 	- Show a ticket requested by ID
 - POST `/api/tickets/`
