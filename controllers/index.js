@@ -141,6 +141,42 @@ const routeWithStatus = async (req, res) =>
     }
 }
 
+const getAllBusesWithRoutes = async (req, res) =>
+{
+    try
+    {
+        const buses = await Bus.findAll({
+            include: [
+                {
+                    model: Route
+                }
+            ]
+        })
+        return res.status(200).json({ buses })
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getAllRoutesWithBuses = async (req, res) =>
+{
+    try
+    {
+        const routes = await Route.findAll({
+            include: [
+                {
+                    model: Bus
+                }
+            ]
+        })
+        return res.status(200).json({ routes })
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
+
 module.exports = {
     getAllTickets,
     getAllRoutes,
@@ -150,5 +186,7 @@ module.exports = {
     createBus,
     updateBus,
     deleteBus,
-    routeWithStatus
+    routeWithStatus,
+    getAllRoutesWithBuses,
+    getAllBusesWithRoutes
 }
