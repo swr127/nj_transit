@@ -20,10 +20,10 @@ const Home = (props) =>
         <div>
             <h1>Trip Planner</h1>
             <div>
-                <Link to=''><button><img src={busIcon} />Bus<img src={arrowIcon} /></button></Link>
-                <Link to='#'><button><img src={railIcon} />Rail<img src={arrowIcon} /></button></Link>
-                <Link to='#'><button><img src={lightRailIcon} />Light Rail<img src={arrowIcon} /></button></Link>
-                <Link to='#'><button><img src={serviceIcon} />Service Status<img src={arrowIcon} /></button></Link>
+                <Link to='/menu'><button><img src={busIcon} />Bus<img src={arrowIcon} /></button></Link>
+                <Link to='/menu'><button><img src={railIcon} />Rail<img src={arrowIcon} /></button></Link>
+                <Link to='/menu'><button><img src={lightRailIcon} />Light Rail<img src={arrowIcon} /></button></Link>
+                <Link to='/service'><button><img src={serviceIcon} />Service Status<img src={arrowIcon} /></button></Link>
             </div>
             <ServiceStatus />
         </div>
