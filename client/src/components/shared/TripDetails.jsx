@@ -22,7 +22,7 @@ class TripDetails extends Component {
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/tickets`)
-            console.log(response.data)
+            console.log(response.data.tickets)
             this.setState({ 
                 // price: response.data
              })
@@ -37,31 +37,33 @@ class TripDetails extends Component {
                 <h4>Depart at:</h4>
                 <h4>Arrive by:</h4>
 
+                {/* remove linebreaks below when styling */}
+
                 <form>
                     <label>
                         <input type="radio" name="ticketType" />
                         <span>One Way: $13.50</span>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         <input type="radio" name="ticketType" />
                         <span>Round Trip: $25.50</span>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         <input type="radio" name="ticketType" />
                         <span>Weekly Pass: $70.50</span>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         <input type="radio" name="ticketType" />
                         <span>Monthly Pass: $280</span>
-                    </label>
+                    </label><br></br>
 
                     <label>
                         <span>Accessible Trip</span>
                         <input type="checkbox" name="accessible" />
-                    </label>
+                    </label><br></br>
 
                     <input type="submit"></input>
                 </form>
