@@ -15,6 +15,60 @@ const getAllTickets = async (req, res) =>
     }
 }
 
+const getTicketById = async (req, res) =>
+{
+    try
+    {
+        const { id } = req.params
+        const ticket = await Ticket.findOne({
+            where: { id: id }
+        })
+        if (ticket)
+        {
+            return res.status(200).json({ ticket })
+        }
+        return res.status(404).send('Ticket does not exist!')
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
+
+const createTicket = async (req, res) =>
+{
+    try
+    {
+        console.log(req.body)
+        const ticket = await Ticket.create(req.body)
+        return res.status(201).json({ ticket })
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
+
+const updateTicket = async (req, res) =>
+{
+    try
+    {
+        const { id } = req.params
+        const updated = await Ticket.update(req.body, {
+            where: { id: id }
+        })
+        if (updated)
+        {
+            const updatedTicket = await Ticket.findOne({
+                where: { id: id }
+            })
+            return res.status(201).json({ updatedTicket })
+        }
+        throw new Error('Ticket not found!')
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
+
 const getAllRoutes = async (req, res) =>
 {
     try
@@ -143,6 +197,9 @@ const routeWithStatus = async (req, res) =>
 
 module.exports = {
     getAllTickets,
+    getTicketById,
+    createTicket,
+    updateTicket,
     getAllRoutes,
     getAllStops,
     getAllBuses,
