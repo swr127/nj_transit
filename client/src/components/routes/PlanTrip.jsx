@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import apiUrl from '../../apiConfig'
+import axios from 'axios'
+import Layout from '../shared/Layout'
 
 class PlanTrip extends Component {
     constructor(props) {
@@ -11,7 +14,7 @@ class PlanTrip extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(``)
+            const response = await axios(`${apiUrl}/planatrip`)
             this.setState({ })
         } catch (err) {
             console.error(err)
@@ -19,7 +22,10 @@ class PlanTrip extends Component {
     }
 
     render() {
-        <h1>Hello from PlanTrip!</h1>
+        return (
+            <Layout>
+                <h1>Hello from Ticket!</h1>
+            </Layout>        )
     }
 }
 
