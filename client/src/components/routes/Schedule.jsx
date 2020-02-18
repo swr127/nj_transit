@@ -9,7 +9,7 @@ class Schedule extends Component {
         super(props)
 
         this.state = {
-           // write code for state  
+           // write code to lift state from PlanTrip component 
         }
     }
 
@@ -25,11 +25,11 @@ class Schedule extends Component {
     }
 
     render() {
-        // write in code for all components on page 
+        // write in code to render state
 
         return (
             <Layout>
-                <h1>Hello from Schedule component!</h1>
+                <h2>Hello from Schedule component!</h2>
                 <BusList />
             </Layout>
 

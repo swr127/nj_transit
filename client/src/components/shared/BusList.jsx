@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-class BusCard extends Component {
+class BusList extends Component {
     constructor(props) {
         super(props)
 
@@ -40,4 +40,4 @@ class BusCard extends Component {
 
 }
 
-export default BusCard
+export default BusList
