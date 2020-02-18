@@ -17,7 +17,6 @@ class FromTo extends Component {
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/stops`)
-            // console.log(response.data)
             this.setState({ 
                 stops: response.data.stops
              })
@@ -27,7 +26,6 @@ class FromTo extends Component {
     }
 
     render() {
-        console.log(this.state.stops)
         return (
             <div className='FromTo'>
 

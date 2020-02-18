@@ -15,9 +15,9 @@ router.delete('/api/buses/:id', controllers.deleteBus)
 
 // LOW PRIORITY CRUD
 router.get('/api/routes/status', controllers.routeWithStatus)
-// router.get('/api/tickets/:id', controllers.getTicketById)
-// router.post('/api/tickets', controllers.createTicket)
-// router.put('/api/tickets/:id', controllers.updateTicket)
+router.get('/api/tickets/:id', controllers.getTicketById)
+router.post('/api/tickets', controllers.createTicket)
+router.put('/api/tickets/:id', controllers.updateTicket)
 // router.delete('/api/tickets/:id', controllers.deleteTicket)
 // router.get('/api/routes/:id', controllers.getRouteById)
 // router.post('/api/routes', controllers.createRoute)

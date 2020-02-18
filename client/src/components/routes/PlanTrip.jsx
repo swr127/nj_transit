@@ -26,7 +26,6 @@ class PlanTrip extends Component {
     render() {
         return (
             <Layout>
-                <h1>Hello from Plan a Trip!</h1>
                 <FromTo />
                 <TripDetails />
             </Layout>
