@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Ticket = sequelize.define('Ticket', {
     type: DataTypes.STRING,
     startLocation: DataTypes.STRING,
-    destination: DataTypes.STRING,
+    endDestination: DataTypes.STRING,
     travelTime: DataTypes.DATE,
     price: DataTypes.FLOAT,
     tax: DataTypes.FLOAT,
