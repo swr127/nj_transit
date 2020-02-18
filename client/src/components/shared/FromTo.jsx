@@ -41,6 +41,10 @@ class FromTo extends Component {
                     Back
                 </Link>
 
+                <div>
+                    <p>Bus #....</p>
+                </div>
+
                 <h4>From:</h4>
                 <select id='from'>{this.state.stops.map((stop, index) => {
                     console.log(stop.name)
@@ -57,6 +61,11 @@ class FromTo extends Component {
                     )
                 })}
                 </select>
+
+                <div>
+                    <p>!!! View Alert</p>
+                </div>
+
             </div>
 
         )
