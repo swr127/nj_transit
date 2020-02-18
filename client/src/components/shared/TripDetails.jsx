@@ -8,7 +8,14 @@ class TripDetails extends Component {
         super(props)
 
         this.state = {
-            price: null
+            type: '',
+            startLocation: '',
+            endDestination: '',
+            travelTime: '',
+            price: null,
+            tax: null,
+            donation: null,
+            busId: null
         }
     }
 
@@ -17,7 +24,7 @@ class TripDetails extends Component {
             const response = await axios(`${apiUrl}/api/tickets`)
             console.log(response.data)
             this.setState({ 
-                price: response.data
+                // price: response.data
              })
         } catch (err) {
             console.error(err)
@@ -33,27 +40,27 @@ class TripDetails extends Component {
                 <form>
                     <label>
                         <input type="radio" name="ticketType" />
-                        <span>One Way: $</span>
+                        <span>One Way: $13.50</span>
                     </label>
 
                     <label>
                         <input type="radio" name="ticketType" />
-                        <span>Round Trip: $...</span>
+                        <span>Round Trip: $25.50</span>
                     </label>
 
                     <label>
                         <input type="radio" name="ticketType" />
-                        <span>Weekly Pass: $</span>
+                        <span>Weekly Pass: $70.50</span>
                     </label>
 
                     <label>
                         <input type="radio" name="ticketType" />
-                        <span>Monthly Pass: $</span>
+                        <span>Monthly Pass: $280</span>
                     </label>
 
                     <label>
                         <span>Accessible Trip</span>
-                        <input type="radio" name="accessible" />
+                        <input type="checkbox" name="accessible" />
                     </label>
 
                     <input type="submit"></input>
