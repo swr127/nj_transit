@@ -6,12 +6,13 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Route.associate = function(models) {
-    // not certain this is how multiple associations go here. also, does the onDelete need to go here?
     Route.hasMany(models.Stop, {
-      foreignKey: 'route_id'
+      foreignKey: 'routeId',
+      onDelete: 'CASCADE'
     })
     Route.hasMany(models.Bus, {
-      foreignKey: 'route_id'
+      foreignKey: 'routeId',
+      onDelete: 'CASCADE'
     })
   };
   return Route;

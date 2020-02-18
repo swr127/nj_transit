@@ -17,7 +17,7 @@ module.exports = {
       endDestination: {
         type: Sequelize.STRING
       },
-      bus_id: {
+      busId: {
         type: Sequelize.INTEGER
       },
       travelTime: {

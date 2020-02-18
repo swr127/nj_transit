@@ -8,20 +8,18 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.FLOAT,
     tax: DataTypes.FLOAT,
     donation: DataTypes.BOOLEAN,
-    bus_id: {
+    busId: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Bus',
         key: 'id',
-        as: 'bus_id'
+        as: 'busId'
       }
     }
   }, {});
   Ticket.associate = function(models) {
     Ticket.belongsTo(models.Bus, {
-      foreignKey: 'bus_id',
-      // does the onDelete go here, or in bus? our homeworks have put it both places
-      onDelete: 'CASCADE'
+      foreignKey: 'busId'
     })
   };
   return Ticket;
