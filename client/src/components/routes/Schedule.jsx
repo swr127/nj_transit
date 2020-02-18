@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Layout from '../shared/Layout'
+import BusList from '../shared/BusList'
 
+// Maybe this component isn't stateful?
 class Schedule extends Component {
     constructor(props) {
         super(props)
@@ -28,7 +30,9 @@ class Schedule extends Component {
         return (
             <Layout>
                 <h1>Hello from Schedule component!</h1>
+                <BusList />
             </Layout>
+
         )
     }
 
