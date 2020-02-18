@@ -14,7 +14,8 @@ class FromTo extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(`${apiUrl}/planatrip`)
+            const response = await axios(`${apiUrl}/api/stops`)
+            console.log(response)
             this.setState({ 
 
              })
@@ -26,6 +27,7 @@ class FromTo extends Component {
     render() {
         return (
             <div class='fromTo'>
+                <h4>From:</h4>
                 <select id='from'>
                     <option value='Stop 1'>Stop 1</option>
                     <option value='Stop 2'>Stop 2</option>
@@ -38,6 +40,7 @@ class FromTo extends Component {
                     <option value='Stop 9'>Stop 9</option>
                     <option value='Stop 10'>Stop 10</option>
                 </select>
+                <h4>To:</h4>
                 <select id='to'>
                     <option value='Stop 1'>Stop 1</option>
                     <option value='Stop 2'>Stop 2</option>
