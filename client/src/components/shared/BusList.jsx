@@ -12,9 +12,7 @@ class BusList extends Component {
 
     async componentDidMount () {
         try {
-            const response = await axios('http://localhost:3000/api/buses')
-            // import URL from appConfig
-            console.log(response)
+            const response = await axios(`${apiUrl}api/buses`)
             this.setState({ bus: response.data.buses })
         } catch (error) {
             console.error(error)

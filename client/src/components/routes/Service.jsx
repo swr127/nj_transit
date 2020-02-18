@@ -7,44 +7,38 @@ class Service extends Component {
         super(props)
 
         this.state = {
+           bus: [],
            route: [],
-           bus: []
+           service: []
         }
     }
 
     async componentDidMount () {
         try {
-            const response = await axios('http://localhost:3000/api/routes')
-            const responseTwo = await axios('http://localhost:3000/api/buses')
-            // update to import URL from appConfig
-            console.log(response)
-            console.log(responseTwo)
-            this.setState({ route: response.data.routes })
-            this.setState({ bus: responseTwo.data.buses })
+            const busResponse = await axios(`${apiUrl}api/buses`)
+            const routeResponse = await axios(`${apiUrl}api/routes`)
+            const serviceResponse = await axios(`${apiUrl}api/routes/status`)
+           
+            this.setState({ bus: busResponse.data.buses })
+            this.setState({ route: routeResponse.data.routes })
+            this.setState({ service: serviceResponse.data.routeStatus })
         } catch (error) {
             console.error(error)
         }
     }
 
     render() {
-        const route = this.state.route.map(route => (
-            <li key={route.id}>
-                {route.name}
-            </li>
-        ))
-
-        const bus = this.state.bus.map(bus => (
-            <li key={bus.id}>
-                {bus.id}
-                {bus.status}
+        const service = this.state.service.map(route => (
+            <li key={route.routeId}>
+                {route.status}
             </li>
         ))
 
         return (
             <Layout>
+                <h2>Hello from service component!</h2>
                 <ul>
-                    {route} 
-                    {bus}
+                    {service} 
                 </ul>
             </Layout>
         )
