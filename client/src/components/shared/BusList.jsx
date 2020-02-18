@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import apiUrl from '../../apiConfig'
 
 class BusList extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class BusList extends Component {
 
     async componentDidMount () {
         try {
-            const response = await axios(`${apiUrl}api/buses`)
+            const response = await axios(`${apiUrl}/api/buses`)
             this.setState({ bus: response.data.buses })
         } catch (error) {
             console.error(error)
@@ -28,11 +29,11 @@ class BusList extends Component {
                 Platform #{bus.platform} <br />
                 Status: {bus.status} <br />
             </li>
-            // write code for images (trip bar, status)
         )) 
 
         return (
             <ul>{bus}</ul>
+            // write code for images (trip bar, status)
         )
     }
 
