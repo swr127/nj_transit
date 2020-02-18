@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import axios from 'axios'
+import apiUrl from '../../apiConfig'
 
 class TripDetails extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
+            price: null
+        }
+    }
 
+    async componentDidMount() {
+        try {
+            const response = await axios(`${apiUrl}/api/tickets`)
+            console.log(response.data)
+            this.setState({ 
+                price: response.data
+             })
+        } catch (err) {
+            console.error(err)
         }
     }
 
