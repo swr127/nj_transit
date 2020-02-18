@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import Layout from '../shared/Layout'
+import TripDetails from '../shared/TripDetails'
+import FromTo from '../shared/FromTo'
 
 class PlanTrip extends Component {
     constructor(props) {
@@ -24,8 +26,11 @@ class PlanTrip extends Component {
     render() {
         return (
             <Layout>
-                <h1>Hello from Ticket!</h1>
-            </Layout>        )
+                <h1>Hello from Plan a Trip!</h1>
+                <FromTo />
+                <TripDetails />
+            </Layout>
+        )
     }
 }
 
