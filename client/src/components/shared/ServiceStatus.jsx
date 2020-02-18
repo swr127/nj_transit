@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import atlanticIcon from '../../images/atlantic-city-icon.png'
+
+import atlanticCity from '../../images/atlantic-city-icon.png'
+import mainBergen from '../../images/main-bergen-icon.png'
+import montclair from '../../images/montclair-icon.png'
+import morrisEssex from '../../images/morris-essex-icon.png'
+import northJersey from '../../images/north-jersey-icon.png'
+import northeatCorridor from '../../images/northeast-corridor-icon.png'
+import pasackValley from '../../images/pascack-valley-icon.png'
+import raritanValley from '../../images/raritan-valley-icon.png'
 
 
 class ServiceStatus extends Component
@@ -90,7 +98,7 @@ class ServiceStatus extends Component
                 const rId = this.getRouteIndexById(route.routeId)
                 return (
                     <React.Fragment key={id}>
-                        <img src={atlanticIcon} alt='' />
+                        <img src={atlanticCity} alt='' />
                         <p>{this.state.routes[rId] && this.state.routes[rId].name}</p>
                     </React.Fragment>
                 )
