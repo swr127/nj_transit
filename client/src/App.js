@@ -8,7 +8,8 @@ import Menu from './components/routes/Menu'
 import Ticket from './components/routes/Ticket'
 import './App.css'
 
-function App() {
+function App()
+{
   return (
     <div className="App">
       <React.Fragment>
