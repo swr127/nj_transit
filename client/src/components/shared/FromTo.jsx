@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import { Link, NavLink } from 'react-router-dom'
 
 class FromTo extends Component {
     constructor(props) {
@@ -8,16 +9,17 @@ class FromTo extends Component {
 
         this.state = {
             from: null,
-            to: null
+            to: null,
+            stops: []
         }
     }
 
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/stops`)
-            console.log(response)
+            // console.log(response.data)
             this.setState({ 
-
+                stops: response.data.stops
              })
         } catch (err) {
             console.error(err)
@@ -25,35 +27,38 @@ class FromTo extends Component {
     }
 
     render() {
+        console.log(this.state.stops)
         return (
-            <div class='fromTo'>
+            <div className='FromTo'>
+
+                <nav>
+                    <NavLink exact to='/planatrip'>Plan a trip</NavLink>
+                    <NavLink exact to='/schedule'>View schedules</NavLink>
+                    <NavLink exact to='/service'>!!!</NavLink>
+                </nav>
+
+                <Link exact to='/'>
+                    Back
+                </Link>
+
                 <h4>From:</h4>
-                <select id='from'>
-                    <option value='Stop 1'>Stop 1</option>
-                    <option value='Stop 2'>Stop 2</option>
-                    <option value='Stop 3'>Stop 3</option>
-                    <option value='Stop 4'>Stop 4</option>
-                    <option value='Stop 5'>Stop 5</option>
-                    <option value='Stop 6'>Stop 6</option>
-                    <option value='Stop 7'>Stop 7</option>
-                    <option value='Stop 8'>Stop 8</option>
-                    <option value='Stop 9'>Stop 9</option>
-                    <option value='Stop 10'>Stop 10</option>
+                <select id='from'>{this.state.stops.map((stop, index) => {
+                    console.log(stop.name)
+                    return (
+                        <option value={stop.name}>{stop.name}</option>
+                    )
+                })}
                 </select>
+
                 <h4>To:</h4>
-                <select id='to'>
-                    <option value='Stop 1'>Stop 1</option>
-                    <option value='Stop 2'>Stop 2</option>
-                    <option value='Stop 3'>Stop 3</option>
-                    <option value='Stop 4'>Stop 4</option>
-                    <option value='Stop 5'>Stop 5</option>
-                    <option value='Stop 6'>Stop 6</option>
-                    <option value='Stop 7'>Stop 7</option>
-                    <option value='Stop 8'>Stop 8</option>
-                    <option value='Stop 9'>Stop 9</option>
-                    <option value='Stop 10'>Stop 10</option>
+                <select id='to'>{this.state.stops.map((stop, index) => {
+                    return (
+                        <option value={stop.name}>{stop.name}</option>
+                    )
+                })}
                 </select>
             </div>
+
         )
     } 
 }
