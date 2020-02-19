@@ -10,7 +10,6 @@ class PlanTrip extends Component {
         super(props)
 
         this.state = {
-            
         }
     }
 
@@ -26,7 +25,7 @@ class PlanTrip extends Component {
     render() {
         return (
             <Layout>
-                <FromTo />
+                <FromTo handleChangeFromField={this.props.handleChangeFromField} handleChangeToField={this.props.handleChangeToField} />
                 <TripDetails />
             </Layout>
         )
