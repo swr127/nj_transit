@@ -34,8 +34,8 @@ class TripDetails extends Component {
     render() {
         return (
             <div>
-                <h4>Depart at:</h4>
-                <h4>Arrive by:</h4>
+                <h5>Travel Time:</h5>
+                <h4>7:15 AM - 8:20 AM</h4>
 
                 {/* remove linebreaks below when styling */}
 
