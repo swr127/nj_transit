@@ -45,9 +45,10 @@ class FromTo extends Component {
                     <span className='back'>Back</span>
                 </Link>
 
-                <div>
+                {/* <div>
                     <p>Bus #....</p>
-                </div>
+                </div> */}
+
                 <div className='from-to'>
                     <div className='from'>
                         <h4>From:</h4>
@@ -85,8 +86,9 @@ class FromTo extends Component {
                     </div>
                 </div>
 
-                <div>
+                <div className='view-alert'>
                     <img src={alert}></img>
+                    <span className='alert-text'>View Alert</span>
                 </div>
 
             </div>

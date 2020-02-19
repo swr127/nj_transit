@@ -55,12 +55,12 @@
 
 .from-to {
     text-align: left;
-    height: 200px;
+    height: auto;
+    padding-top: 11px;
 }
 
 .from, .to {
     padding: 8px;
-
 }
 
 .select {
@@ -69,4 +69,19 @@
     font-size: 15px;
     border-radius: 7px;
     border: solid 1px var(--dark-slate-blue);
+}
+
+.view-alert {
+    width: 59px;
+    height: 51px;
+}
+
+.alert-text {
+    width: 59px;
+    height: 14px;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--red);
 }
