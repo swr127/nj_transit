@@ -25,3 +25,19 @@
     border: none;
     box-shadow: none;
 }
+
+.back-button {
+    margin-top: 20px;
+    padding: 8px;
+    display: flex;
+    align-content: left;
+
+}
+
+.back {
+    font-family: Arial;
+    font-size: 13px;
+    padding: 5px;
+    text-align: center;
+    color: var(--dark-slate-blue);
+  }

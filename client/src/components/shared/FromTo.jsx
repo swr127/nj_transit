@@ -40,8 +40,9 @@ class FromTo extends Component {
                     <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
 
-                <Link exact to='/'>
+                <Link className='back-button' exact to='/'>
                     <img src={back}></img>
+                    <span className='back'>Back</span>
                 </Link>
 
                 <div>
