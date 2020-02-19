@@ -1,0 +1,23 @@
+:root {
+    --red: #e40000;
+    --green_medium: #32b333;
+    --dark-slate-blue: #1a2a57;
+    --tangerine: #f6881f;
+    --light-grey: rgba(216, 216, 216, 0.2);
+    --brown-grey: #7c7c7c;
+    --white: #ffffff;
+  }
+
+* {
+    z-index: 1;
+}
+
+.tabs a {
+    font-size: 20px;
+    padding: 64px 8px 8px 8px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 2px var(--dark-slate-blue);
+    background-color: var(--white);
+}
