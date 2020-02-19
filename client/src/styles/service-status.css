@@ -1,0 +1,11 @@
+.service-status{
+    width: 199px;
+    border-radius: 23px;
+    border: solid 2px var(--dark-slate-blue);
+    margin: 0 auto;
+}
+
+.service-button{
+    height: 60px;
+    width: 52px;
+}

@@ -12,6 +12,8 @@ import pasackValley from '../../images/pascack-valley-icon.png'
 import raritanValley from '../../images/raritan-valley-icon.png'
 
 
+import '../../styles/service-status.css'
+
 class ServiceStatus extends Component
 {
 
@@ -80,11 +82,17 @@ class ServiceStatus extends Component
         return (
             <React.Fragment>
                 <h3>Delays</h3>
-                {this.mapOverStatus(routesSortedByStatus.delayed)}
+                <div>
+                    {this.mapOverStatus(routesSortedByStatus.delayed)}
+                </div>
                 <h3>Cancelled</h3>
-                {this.mapOverStatus(routesSortedByStatus.cancelled)}
+                <div>
+                    {this.mapOverStatus(routesSortedByStatus.cancelled)}
+                </div>
                 <h3>Good Service</h3>
-                {this.mapOverStatus(routesSortedByStatus.onTime)}
+                <div>
+                    {this.mapOverStatus(routesSortedByStatus.onTime)}
+                </div>
             </React.Fragment>
         )
     }
@@ -97,10 +105,10 @@ class ServiceStatus extends Component
             {
                 const rId = this.getRouteIndexById(route.routeId)
                 return (
-                    <React.Fragment key={id}>
-                        <img src={atlanticCity} alt='' />
-                        <p>{this.state.routes[rId] && this.state.routes[rId].name}</p>
-                    </React.Fragment>
+                    <div className='service-button' key={id}>
+                        <img className='service-button-image' src={atlanticCity} alt='' />
+                        <p className='service-button-text'>{this.state.routes[rId] && this.state.routes[rId].name}</p>
+                    </div>
                 )
             })
         }

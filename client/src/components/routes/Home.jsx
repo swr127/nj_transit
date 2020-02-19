@@ -11,8 +11,7 @@ import lightRailIcon from '../../images/light-rail-icon.png'
 import railIcon from '../../images/rail-icon.png'
 import serviceIcon from '../../images/service-status-icon.png'
 
-
-
+import '../../styles/home.css'
 
 const Home = (props) =>
 {
@@ -20,10 +19,34 @@ const Home = (props) =>
         <div>
             <h1>Trip Planner</h1>
             <div>
-                <Link to='/menu'><button><img src={busIcon} />Bus<img src={arrowIcon} /></button></Link>
-                <Link to='/menu'><button><img src={railIcon} />Rail<img src={arrowIcon} /></button></Link>
-                <Link to='/menu'><button><img src={lightRailIcon} />Light Rail<img src={arrowIcon} /></button></Link>
-                <Link to='/service'><button><img src={serviceIcon} />Service Status<img src={arrowIcon} /></button></Link>
+                <Link to='/menu'>
+                    <button className='home-button'>
+                        <img src={busIcon} />
+                        <span className='home-button-text'>Bus</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
+                <Link to='/menu'>
+                    <button className='home-button'>
+                        <img src={railIcon} />
+                        <span className='home-button-text'>Rail</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
+                <Link to='/menu'>
+                    <button className='home-button'>
+                        <img src={lightRailIcon} />
+                        <span className='home-button-text'>Light Rail</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
+                <Link to='/service'>
+                    <button className='home-button'>
+                        <img src={serviceIcon} />
+                        <span className='home-button-text'>Service Status</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
             </div>
             <ServiceStatus />
         </div>
