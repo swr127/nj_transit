@@ -40,4 +40,30 @@
     padding: 5px;
     text-align: center;
     color: var(--dark-slate-blue);
-  }
+}
+
+.from-to h4 {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--dark-slate-blue);
+    width: 68px;
+    padding-left: 19px;
+}
+
+.from-to {
+    text-align: left;
+}
+
+.from, .to {
+    padding-bottom: 19px;
+    height: 30px;
+}
+
+.select {
+    width: 159px;
+    height: 23px;
+    border-radius: 7px;
+    border: solid 1px var(--dark-slate-blue);
+}
