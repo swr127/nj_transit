@@ -4,6 +4,14 @@ const BuyTicket = (props) => {
     console.log(props)
     return (
         <div>
+
+            <h5>Boarding on:</h5>
+            <h4>Platform 2</h4>
+
+            <h5>Travel Time:</h5>
+            <h4>7:15 AM - 8:20 AM</h4>
+
+
             <h4>Stopping at:</h4>
 
             <div className='stopping-at'>

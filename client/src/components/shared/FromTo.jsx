@@ -4,6 +4,8 @@ import apiUrl from '../../apiConfig'
 import { Link, NavLink } from 'react-router-dom'
 import back from '../../images/back.png'
 import alert from '../../images/view-alert-icon.png'
+import serviceIcon from '../../images/service-status-icon.png'
+import '../../styles/fromto.css'
 
 class FromTo extends Component {
     constructor(props) {
@@ -32,14 +34,15 @@ class FromTo extends Component {
         return (
             <div className='FromTo'>
 
-                <nav>
+                <nav className='tabs'>
                     <NavLink exact to='/planatrip'>Plan a trip</NavLink>
                     <NavLink exact to='/schedule'>View schedules</NavLink>
-                    <NavLink exact to='/service'>!!!</NavLink>
+                    <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
 
-                <Link exact to='/'>
+                <Link className='back-button' exact to='/'>
                     <img src={back}></img>
+                    <span className='back'>Back</span>
                 </Link>
 
                 <div>
