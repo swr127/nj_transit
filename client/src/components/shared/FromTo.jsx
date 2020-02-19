@@ -3,7 +3,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link, NavLink } from 'react-router-dom'
 import back from '../../images/back.png'
-// import alert from '../../images/view-alert.png'
+import alert from '../../images/view-alert-icon.png'
 
 class FromTo extends Component {
     constructor(props) {
@@ -49,7 +49,7 @@ class FromTo extends Component {
                 <h4>From:</h4>
                 <select onChange={this.props.handleChangeFromField} id='from'>{this.state.stops.map((stop, index) => {
                     return (
-                        <option value={stop.name}>{stop.name}</option>
+                        <option data-route={stop.routeId} value={stop.name}>{stop.name}</option>
                     )
                 })}
                 </select>
@@ -63,7 +63,7 @@ class FromTo extends Component {
                 </select>
 
                 <div>
-                    <p>!!! View Alert</p>
+                    <img src={alert}></img>
                 </div>
 
             </div>

@@ -19,7 +19,7 @@ router.get('/api/tickets/:id', controllers.getTicketById)
 router.post('/api/tickets', controllers.createTicket)
 router.put('/api/tickets/:id', controllers.updateTicket)
 // router.delete('/api/tickets/:id', controllers.deleteTicket)
-// router.get('/api/routes/:id', controllers.getRouteById)
+router.get('/api/routes/:id', controllers.getRouteById)
 // router.post('/api/routes', controllers.createRoute)
 // router.put('/api/routes/:id', controllers.updateRoute)
 // router.delete('/api/routes/:id', controllers.deleteRoute)
@@ -28,7 +28,7 @@ router.put('/api/tickets/:id', controllers.updateTicket)
 // router.put('/api/stops/:id', controllers.updateStop)
 // router.delete('/api/stops/:id', controllers.deleteStop)
 
-router.get('/api/routes/withBuses', controllers.getAllRoutesWithBuses)
+router.get('/api/routes/with/buses', controllers.getAllRoutesWithBuses)
 router.get('/api/buses/with/routes', controllers.getAllBusesWithRoutes)
 
 module.exports = router

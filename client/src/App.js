@@ -23,6 +23,7 @@ class App extends Component
 
   handleChangeFromField = (event) => {
     console.log(event.target.value)
+    console.log(event.target.options[ event.target.selectedIndex ].dataset.route)
     this.setState({
       from: event.target.value
     })
