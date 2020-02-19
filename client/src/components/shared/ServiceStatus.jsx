@@ -2,15 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
-import atlanticCity from '../../images/atlantic-city-icon.png'
-import mainBergen from '../../images/main-bergen-icon.png'
-import montclair from '../../images/montclair-icon.png'
-import morrisEssex from '../../images/morris-essex-icon.png'
-import northJersey from '../../images/north-jersey-icon.png'
-import northeatCorridor from '../../images/northeast-corridor-icon.png'
-import pasackValley from '../../images/pascack-valley-icon.png'
-import raritanValley from '../../images/raritan-valley-icon.png'
-
+import { routeImageByID } from '../../routeImages'
 
 import '../../styles/service-status.css'
 
@@ -81,16 +73,16 @@ class ServiceStatus extends Component
     {
         return (
             <React.Fragment>
-                <h3>Delays</h3>
-                <div>
+                <div className='service-status-group-heading delay'>Delays</div>
+                <div className='service-status-group'>
                     {this.mapOverStatus(routesSortedByStatus.delayed)}
                 </div>
-                <h3>Cancelled</h3>
-                <div>
+                <div className='service-status-group-heading cancelled'>Cancellations</div>
+                <div className='service-status-group'>
                     {this.mapOverStatus(routesSortedByStatus.cancelled)}
                 </div>
-                <h3>Good Service</h3>
-                <div>
+                <div className='service-status-group-heading'>Good Service</div>
+                <div className='service-status-group'>
                     {this.mapOverStatus(routesSortedByStatus.onTime)}
                 </div>
             </React.Fragment>
@@ -106,8 +98,8 @@ class ServiceStatus extends Component
                 const rId = this.getRouteIndexById(route.routeId)
                 return (
                     <div className='service-button' key={id}>
-                        <img className='service-button-image' src={atlanticCity} alt='' />
-                        <p className='service-button-text'>{this.state.routes[rId] && this.state.routes[rId].name}</p>
+                        <img className='service-button-image' src={routeImageByID(route.routeId)} alt='' />
+                        <div className='service-button-text'>{this.state.routes[rId] && this.state.routes[rId].name}</div>
                     </div>
                 )
             })

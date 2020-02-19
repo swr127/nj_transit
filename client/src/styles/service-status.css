@@ -3,9 +3,38 @@
     border-radius: 23px;
     border: solid 2px var(--dark-slate-blue);
     margin: 34px auto;
+    padding: 0 0 15px 0;
+}
+
+.service-status-group{
+    display: flex;
+    margin: 0 21px;
+    height: 75px;
+    padding: 5px 0 0 0;
+}
+
+.service-status-group-heading{
+    font-size: 18px;
+    color: var(--dark-slate-blue);
+    text-align: left;
+    margin: 7px 0 0 21px;
+}
+
+.service-status-group-heading.delay{
+    color: #ca0404;
+}
+
+.service-status-group-heading.cancelled{
+    color: var(--red);
 }
 
 .service-button{
     height: 60px;
     width: 52px;
+}
+
+.service-button-text{
+    font-size: 9px;
+    color: var(--dark-slate-blue);
+    margin: -5px 0 0 0;
 }
