@@ -27,14 +27,14 @@ const Menu = (props) =>
             </div>
             <div className='large-transport-option'><img src={busIconLarge} /><div className='large-transport-option-text'>BUS</div></div>
             <div>
-                <Link to='/menu'>
+                <Link to='/planatrip'>
                     <button className='menu-button'>
                         <img src={planIcon} />
                         <span className='menu-button-text'>Plan a trip</span>
                         <img src={arrowIcon} />
                     </button>
                 </Link>
-                <Link to='/menu'>
+                <Link to='/schedule'>
                     <button className='menu-button'>
                         <img src={scheduleIcon} />
                         <span className='menu-button-text'>View all schedules</span>
