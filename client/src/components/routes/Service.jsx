@@ -31,11 +31,14 @@ class Service extends Component {
 
     render() {
         const service = this.state.service.map(bus => (
-            <li key={bus.id}>
+            <div className='service' key={bus.id}>
+                {/* how to map icon images? */}
+                {/* how apply className to mapped info? */}
                 {bus.Route.name} <br />
-                {bus.id} <br />
+                Bus #{bus.id} <br />
                 {bus.status} <br />
-            </li>
+                <div className='small-line'></div>
+            </div>
         ))
 
         return (
@@ -59,11 +62,9 @@ class Service extends Component {
                     <span className='icon-text'>L.RAIL</span>
                 </div>
 
-                <div className='line-break'></div>
+                <div className='large-line'></div>
 
-                <ul className='service'>
-                    {service} <br />
-                </ul>
+                {service}
 
                 <Link className='back-button' exact to='/'>
                     <img src={back}></img>
