@@ -28,4 +28,8 @@ router.put('/api/tickets/:id', controllers.updateTicket)
 // router.put('/api/stops/:id', controllers.updateStop)
 // router.delete('/api/stops/:id', controllers.deleteStop)
 
+router.get('/api/routes/withBuses', controllers.getAllRoutesWithBuses)
+router.get('/api/buses/with/routes', controllers.getAllBusesWithRoutes)
+
 module.exports = router
+

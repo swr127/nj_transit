@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import apiUrl from '../../apiConfig'
 import Layout from '../shared/Layout'
+import FromTo from '../shared/FromTo'
+import BusList from '../shared/BusList'
 
 class Schedule extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-           // write code for state  
+           // write code to lift state from FromTo component 
         }
     }
 
@@ -16,22 +19,21 @@ class Schedule extends Component {
             const response = await axios()
             // import URL from appConfig
             console.log(response)
-            // write in code for state 
+            // write code to set state 
         } catch (error) {
             console.error(error)
         }
     }
 
     render() {
-        // write in code for all components on page 
-
+        // write code to render state
         return (
             <Layout>
-                <h1>Hello from Schedule component!</h1>
+                <FromTo />
+                <BusList />
             </Layout>
         )
     }
-
 }
 
 export default Schedule
