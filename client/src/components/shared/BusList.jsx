@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import '../../styles/buslist.css'
 
 class BusList extends Component {
     constructor(props) {
@@ -22,18 +23,20 @@ class BusList extends Component {
 
     render() {
         const bus = this.state.bus.map(bus => (
-            <li key={bus.id}>
+            <div className='bus-list' key={bus.id}>
                 Bus #{bus.id} <br />
                 Departure: {bus.departureTime} <br />
                 Arrival: {bus.arrivalTime} <br />
                 Platform #{bus.platform} <br />
                 Status: {bus.status} <br />
-            </li>
+                {/* write code for images (trip bar, status) */}
+            </div>
         )) 
 
         return (
-            <ul>{bus}</ul>
-            // write code for images (trip bar, status)
+            <div>
+                {bus}
+            </div>
         )
     }
 

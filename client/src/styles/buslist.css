@@ -26,63 +26,10 @@
     box-shadow: none;
 }
  
-.icons-imgs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.railIcon {
-    width: 43.7px;
-    height: 48.3px;
-    padding: 40px 0px 0px 0px;
-    object-fit: contain;
-}
-
-.busIcon {
-    width: 48px;
-    height: 48px;
-    padding: 40px 0px 0px 0px;
-    object-fit: contain;
-}
-
-.lightIcon {
-    width: 59px;
-    height: 59px;
-    padding: 30px 0px 0px 0px;
-    object-fit: contain;
-}
-
-.icons-text {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.icon-text{
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--dark-slate-blue);
-    padding: 0px 12px 2px 10px;
-}
-
-.large-line {
-    width: 320px;
-    height: 6px;
-    background-color: #d8d8d8;
-}
-
-.small-line {
-    width: 320px;
-    height: 4px;
-    background-color: #d8d8d8;
-}
-
-.service {
+.bus-list {
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 .back-button {
