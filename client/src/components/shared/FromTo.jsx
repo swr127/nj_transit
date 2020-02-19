@@ -21,7 +21,6 @@ class FromTo extends Component {
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/stops`)
-            // console.log(response.data)
             this.setState({ 
                 stops: response.data.stops
              })
@@ -40,14 +39,17 @@ class FromTo extends Component {
                     <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
 
-                <Link className='back-button' exact to='/'>
-                    <img src={back}></img>
-                    <span className='back'>Back</span>
-                </Link>
+                <div className='back-button-div'>
+                    <Link className='back-button' exact to='/'>
+                        <img src={back}></img>
+                        <span className='back'>Back</span>
+                    </Link>
+                </div>
 
-                {/* <div>
-                    <p>Bus #....</p>
-                </div> */}
+                <div className='bus-number-div'>
+                    <p className='bus-number'>Bus #3889</p>
+                </div>
+                
 
                 <div className='from-to'>
                     <h4 className='from-text'>From:</h4>

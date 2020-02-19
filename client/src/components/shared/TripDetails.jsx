@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import '../../styles/tripdetails.css'
+
+// does this component still need to be a class? I think we're just passing props through at this point
 
 class TripDetails extends Component {
     constructor(props) {

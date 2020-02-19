@@ -6,7 +6,7 @@
     --light-grey: rgba(216, 216, 216, 0.2);
     --brown-grey: #7c7c7c;
     --white: #ffffff;
-  }
+}
 
 .tabs a {
     color: var(--dark-slate-blue);
@@ -26,12 +26,37 @@
     box-shadow: none;
 }
 
+/* back and bus# still need some work */
+
+.back-button-div {
+    display: inline-block;
+    align-items: center;
+}
+
 .back-button {
     margin-top: 20px;
     padding: 8px;
     display: flex;
     align-content: left;
+}
 
+.bus-number-div {
+    display: inline-block;
+    align-items: center;
+
+}
+
+.bus-number {
+    height: 26px;
+    margin-top: 20px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--dark-slate-blue);
 }
 
 .back {
