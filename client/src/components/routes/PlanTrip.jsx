@@ -25,8 +25,13 @@ class PlanTrip extends Component {
     render() {
         return (
             <Layout>
-                <FromTo handleChangeFromField={this.props.handleChangeFromField} handleChangeToField={this.props.handleChangeToField} />
-                <TripDetails />
+                <FromTo 
+                    handleChangeFromField={this.props.handleChangeFromField} 
+                    handleChangeToField={this.props.handleChangeToField} 
+                />
+                <TripDetails 
+                    handleTypeChange={this.props.handleTypeChange}
+                />
             </Layout>
         )
     }

@@ -7,6 +7,7 @@ import Schedule from './components/routes/Schedule'
 import Menu from './components/routes/Menu'
 import Ticket from './components/routes/Ticket'
 import './App.css'
+import apiUrl from './apiConfig'
 
 class App extends Component 
 {
@@ -15,7 +16,8 @@ class App extends Component
 
     this.state = {
       from: '',
-      to: ''
+      to: '',
+      selectedType: null
     }
   }
 
@@ -24,12 +26,20 @@ class App extends Component
     this.setState({
       from: event.target.value
     })
+
   }
 
   handleChangeToField = (event) => {
     console.log(event.target.value)
     this.setState({
       to: event.target.value
+    })
+  }
+
+  handleTypeChange = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      selectedType: event.target.value
     })
   }
 
@@ -40,7 +50,11 @@ class App extends Component
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/planatrip'>
-              <PlanTrip handleChangeFromField={this.handleChangeFromField} handleChangeToField={this.handleChangeToField} />
+              <PlanTrip 
+                handleChangeFromField={this.handleChangeFromField} 
+                handleChangeToField={this.handleChangeToField} 
+                handleTypeChange={this.handleTypeChange} 
+              />
             </Route>
             <Route exact path='/service' component={Service} />
             <Route exact path='/schedule' component={Schedule} />

@@ -41,22 +41,22 @@ class TripDetails extends Component {
 
                 <form>
                     <label>
-                        <input type="radio" name="ticketType" />
+                        <input type="radio" name="ticketType" value="One Way: $13.50" onChange={this.props.handleTypeChange} />
                         <span>One Way: $13.50</span>
                     </label><br></br>
 
                     <label>
-                        <input type="radio" name="ticketType" />
+                        <input type="radio" name="ticketType" value="Round Trip: $25.50" onChange={this.props.handleTypeChange} />
                         <span>Round Trip: $25.50</span>
                     </label><br></br>
 
                     <label>
-                        <input type="radio" name="ticketType" />
+                        <input type="radio" name="ticketType" value="Weekly Pass: $70.50" onChange={this.props.handleTypeChange} />
                         <span>Weekly Pass: $70.50</span>
                     </label><br></br>
 
                     <label>
-                        <input type="radio" name="ticketType" />
+                        <input type="radio" name="ticketType" value="Monthly Pass: $280" onChange={this.props.handleTypeChange} />
                         <span>Monthly Pass: $280</span>
                     </label><br></br>
 

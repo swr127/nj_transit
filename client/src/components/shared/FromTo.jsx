@@ -29,7 +29,6 @@ class FromTo extends Component {
     }
 
     render() {
-        console.log(this.state.stops)
         return (
             <div className='FromTo'>
 
