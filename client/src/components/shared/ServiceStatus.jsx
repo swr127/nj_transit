@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import atlanticIcon from '../../images/atlantic-city-icon.png'
 
+import atlanticCity from '../../images/atlantic-city-icon.png'
+import mainBergen from '../../images/main-bergen-icon.png'
+import montclair from '../../images/montclair-icon.png'
+import morrisEssex from '../../images/morris-essex-icon.png'
+import northJersey from '../../images/north-jersey-icon.png'
+import northeatCorridor from '../../images/northeast-corridor-icon.png'
+import pasackValley from '../../images/pascack-valley-icon.png'
+import raritanValley from '../../images/raritan-valley-icon.png'
+
+
+import '../../styles/service-status.css'
 
 class ServiceStatus extends Component
 {
@@ -49,7 +59,7 @@ class ServiceStatus extends Component
                     case 'Cancelled':
                         cancelledArray.push(route)
                         break
-                    case 'Delayed':
+                    case 'Delay':
                         delayedArray.push(route)
                         break
                     case 'Good':
@@ -72,11 +82,17 @@ class ServiceStatus extends Component
         return (
             <React.Fragment>
                 <h3>Delays</h3>
-                {this.mapOverStatus(routesSortedByStatus.delayed)}
+                <div>
+                    {this.mapOverStatus(routesSortedByStatus.delayed)}
+                </div>
                 <h3>Cancelled</h3>
-                {this.mapOverStatus(routesSortedByStatus.cancelled)}
+                <div>
+                    {this.mapOverStatus(routesSortedByStatus.cancelled)}
+                </div>
                 <h3>Good Service</h3>
-                {this.mapOverStatus(routesSortedByStatus.onTime)}
+                <div>
+                    {this.mapOverStatus(routesSortedByStatus.onTime)}
+                </div>
             </React.Fragment>
         )
     }
@@ -89,10 +105,10 @@ class ServiceStatus extends Component
             {
                 const rId = this.getRouteIndexById(route.routeId)
                 return (
-                    <React.Fragment key={id}>
-                        <img src={atlanticIcon} alt='' />
-                        <p>{this.state.routes[rId] && this.state.routes[rId].name}</p>
-                    </React.Fragment>
+                    <div className='service-button' key={id}>
+                        <img className='service-button-image' src={atlanticCity} alt='' />
+                        <p className='service-button-text'>{this.state.routes[rId] && this.state.routes[rId].name}</p>
+                    </div>
                 )
             })
         }

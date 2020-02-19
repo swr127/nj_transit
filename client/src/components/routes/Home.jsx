@@ -2,17 +2,16 @@ import React from 'react'
 import Layout from '../shared/Layout'
 import { Link } from 'react-router-dom'
 import ServiceStatus from '../shared/ServiceStatus'
-import arrow from '../../images/arrow-icon.png'
-import atlanticCity from '../../images/atlantic-city-icon.png'
-import mainBergen from '../../images/main-bergen-icon.png'
-import montclair from '../../images/montclair-icon.png'
-import morrisEssex from '../../images/morris-essex-icon.png'
-import northJersey from '../../images/north-jersey-icon.png'
-import northeatCorridor from '../../images/northeast-corridor-icon.png'
-import pasackValley from '../../images/pascack-valley-icon.png'
+
+import arrowIcon from '../../images/arrow-icon.png'
 import planIcon from '../../images/plan-icon.png'
-import raritanValley from '../../images/raritan-valley-icon.png'
-import schedule from '../../images/schedule-icon.png'
+import scheduleIcon from '../../images/schedule-icon.png'
+import busIcon from '../../images/bus-icon.png'
+import lightRailIcon from '../../images/light-rail-icon.png'
+import railIcon from '../../images/rail-icon.png'
+import serviceIcon from '../../images/service-status-icon.png'
+
+import '../../styles/home.css'
 
 const Home = (props) =>
 {
@@ -20,10 +19,34 @@ const Home = (props) =>
         <div>
             <h1>Trip Planner</h1>
             <div>
-                <Link to='#'><button>Bus</button></Link>
-                <Link to='#'><button>Rail</button></Link>
-                <Link to='#'><button>Light Rail</button></Link>
-                <Link to='#'><button>Service Status</button></Link>
+                <Link to='/menu'>
+                    <button className='home-button'>
+                        <img src={busIcon} />
+                        <span className='home-button-text'>Bus</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
+                <Link to='/menu'>
+                    <button className='home-button'>
+                        <img src={railIcon} />
+                        <span className='home-button-text'>Rail</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
+                <Link to='/menu'>
+                    <button className='home-button'>
+                        <img src={lightRailIcon} />
+                        <span className='home-button-text'>Light Rail</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
+                <Link to='/service'>
+                    <button className='home-button'>
+                        <img src={serviceIcon} />
+                        <span className='home-button-text'>Service Status</span>
+                        <img src={arrowIcon} />
+                    </button>
+                </Link>
             </div>
             <ServiceStatus />
         </div>
