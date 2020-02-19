@@ -134,8 +134,8 @@ Sample JSON from GET `/api/tickets`
 
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
-| Set Up App File Structure | 4hrs |  |
-| Write Fake JSON Data for Testing | 6hrs |  |
+| Set Up App File Structure | 4hrs | 2hrs |
+| Write Fake JSON Data for Testing | 6hrs | 2hrs |
 | Set Up Sequelize Models | 4hrs |  |
 | Set Up Sequelize Migrations | 4hrs |  |
 | Seed Database | 5hrs |  |

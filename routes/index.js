@@ -32,3 +32,4 @@ router.get('/api/routes/withBuses', controllers.getAllRoutesWithBuses)
 router.get('/api/buses/with/routes', controllers.getAllBusesWithRoutes)
 
 module.exports = router
+
