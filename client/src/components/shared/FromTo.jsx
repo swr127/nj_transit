@@ -50,46 +50,42 @@ class FromTo extends Component {
                 </div> */}
 
                 <div className='from-to'>
-                    <div className='from'>
-                        <h4>From:</h4>
-                        <select 
-                            className='select'
-                            onChange={this.props.handleChangeFromField} 
-                            value={this.props.fromValue}
-                            id='from'>{this.state.stops.map((stop, index) => {
-                                return (
-                                    <option 
-                                        data-route={stop.routeId}   
-                                        value={stop.name}>
-                                            {stop.name}
-                                    </option>
-                                )
-                            })}
-                        </select>
-                    </div>
-
-                    <div className='to'>
-                        <h4>To:</h4>
-                        <select 
-                            className='select'
-                            onChange={this.props.handleChangeToField} 
-                            value={this.props.toValue}
-                            id='to'>{this.state.stops.map((stop, index) => {
-                                return (
-                                    <option 
-                                        value={stop.name}>
-                                            {stop.name}
-                                    </option>
-                                )
-                            })}
-                        </select>
+                    <h4 className='from-text'>From:</h4>
+                    <select 
+                        className='from-select'
+                        onChange={this.props.handleChangeFromField} 
+                        value={this.props.fromValue}
+                        id='from'>{this.state.stops.map((stop, index) => {
+                            return (
+                                <option 
+                                    data-route={stop.routeId}   
+                                    value={stop.name}>
+                                        {stop.name}
+                                </option>
+                            )
+                        })}
+                    </select>
+                    <h4 className='to-text'>To:</h4>
+                    <select 
+                        className='to-select'
+                        onChange={this.props.handleChangeToField} 
+                        value={this.props.toValue}
+                        id='to'>{this.state.stops.map((stop, index) => {
+                            return (
+                                <option 
+                                    value={stop.name}>
+                                        {stop.name}
+                                </option>
+                            )
+                        })}
+                    </select>
+                    <div className='view-alert'>
+                        <img src={alert}></img>
+                        <span className='alert-text'>View Alert</span>
                     </div>
                 </div>
 
-                <div className='view-alert'>
-                    <img src={alert}></img>
-                    <span className='alert-text'>View Alert</span>
-                </div>
+
 
             </div>
 
