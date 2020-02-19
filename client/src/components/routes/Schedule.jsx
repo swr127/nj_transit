@@ -29,7 +29,10 @@ class Schedule extends Component {
         // write code to render state
         return (
             <Layout>
-                <FromTo />
+                <FromTo 
+                    handleChangeFromField={this.props.handleChangeFromField} 
+                    handleChangeToField={this.props.handleChangeToField} 
+                />
                 <BusList />
             </Layout>
         )
