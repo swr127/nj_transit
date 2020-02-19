@@ -18,9 +18,9 @@ const Menu = (props) =>
 {
     return (<Layout>
         <div>
-            <div className='small'><img src={railIcon} /><div>Rail</div></div>
-            <div className='small'><img src={lightRailIcon} /><div>L. Rail</div></div>
-            <div><img src={busIconLarge} /><div>Bus</div></div>
+            <div className='small-transport-option'><img src={railIcon} /><div>Rail</div></div>
+            <div className='small-transport-option'><img src={lightRailIcon} /><div>L. Rail</div></div>
+            <div className='large-transport-option'><img src={busIconLarge} /><div>Bus</div></div>
             <div>
                 <Link to='/menu'>
                     <button className='home-button'>

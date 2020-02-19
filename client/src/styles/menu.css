@@ -37,6 +37,16 @@
     text-decoration: none;
 }
 
+.small-transport-option{
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+  opacity: 0.55;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 2px #979797;
+  /* background-color: var(--tangerine); */
+}
+
 a{
     text-decoration: none;
 }
