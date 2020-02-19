@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link, NavLink } from 'react-router-dom'
+import back from '../../images/back.png'
+import alert from '../../images/view-alert-icon.png'
 
 class FromTo extends Component {
     constructor(props) {
@@ -17,6 +19,7 @@ class FromTo extends Component {
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/stops`)
+            // console.log(response.data)
             this.setState({ 
                 stops: response.data.stops
              })
@@ -36,7 +39,7 @@ class FromTo extends Component {
                 </nav>
 
                 <Link exact to='/'>
-                    Back
+                    <img src={back}></img>
                 </Link>
 
                 <div>
@@ -44,24 +47,36 @@ class FromTo extends Component {
                 </div>
 
                 <h4>From:</h4>
-                <select id='from'>{this.state.stops.map((stop, index) => {
-                    console.log(stop.name)
-                    return (
-                        <option value={stop.name}>{stop.name}</option>
-                    )
-                })}
+                <select 
+                    onChange={this.props.handleChangeFromField} 
+                    value={this.props.fromValue}
+                    id='from'>{this.state.stops.map((stop, index) => {
+                        return (
+                            <option 
+                                data-route={stop.routeId}   
+                                value={stop.name}>
+                                    {stop.name}
+                            </option>
+                        )
+                    })}
                 </select>
 
                 <h4>To:</h4>
-                <select id='to'>{this.state.stops.map((stop, index) => {
-                    return (
-                        <option value={stop.name}>{stop.name}</option>
-                    )
-                })}
+                <select 
+                    onChange={this.props.handleChangeToField} 
+                    value={this.props.toValue}
+                    id='to'>{this.state.stops.map((stop, index) => {
+                        return (
+                            <option 
+                                value={stop.name}>
+                                    {stop.name}
+                            </option>
+                        )
+                    })}
                 </select>
 
                 <div>
-                    <p>!!! View Alert</p>
+                    <img src={alert}></img>
                 </div>
 
             </div>

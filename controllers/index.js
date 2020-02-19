@@ -231,6 +231,28 @@ const getAllRoutesWithBuses = async (req, res) =>
     }
 }
 
+const getRouteById = async (rec, res) => {
+    try {
+        const route = await Route.findByPk(rec.params.id)
+        return res.status(200).json({ route })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getBusesByRouteId = async (rec, res) => {
+    try {
+        const route = await Route.findByPk(rec.params.id, {
+            include: [
+                { model: Bus }
+            ]
+        })
+        return res.status(200).json({ route })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 module.exports = {
     getAllTickets,
     getTicketById,
@@ -245,5 +267,7 @@ module.exports = {
     deleteBus,
     routeWithStatus,
     getAllRoutesWithBuses,
-    getAllBusesWithRoutes
+    getAllBusesWithRoutes,
+    getRouteById,
+    getBusesByRouteId
 }

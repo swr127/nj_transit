@@ -8,16 +8,23 @@ class TripDetails extends Component {
         super(props)
 
         this.state = {
-            price: null
+            type: '',
+            startLocation: '',
+            endDestination: '',
+            travelTime: '',
+            price: null,
+            tax: null,
+            donation: null,
+            busId: null
         }
     }
 
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/tickets`)
-            console.log(response.data)
+            console.log(response.data.tickets)
             this.setState({ 
-                price: response.data
+                // price: response.data
              })
         } catch (err) {
             console.error(err)
@@ -27,37 +34,40 @@ class TripDetails extends Component {
     render() {
         return (
             <div>
-                <h4>Depart at:</h4>
-                <h4>Arrive by:</h4>
+                <h5>Travel Time:</h5>
+                <h4>7:15 AM - 8:20 AM</h4>
+
+                {/* remove linebreaks below when styling */}
 
                 <form>
                     <label>
-                        <input type="radio" name="ticketType" />
-                        <span>One Way: $</span>
-                    </label>
+                        <input type="radio" name="ticketType" value="One Way: $13.50" onChange={this.props.handleTypeChange} />
+                        <span>One Way: $13.50</span>
+                    </label><br></br>
 
                     <label>
-                        <input type="radio" name="ticketType" />
-                        <span>Round Trip: $...</span>
-                    </label>
+                        <input type="radio" name="ticketType" value="Round Trip: $25.50" onChange={this.props.handleTypeChange} />
+                        <span>Round Trip: $25.50</span>
+                    </label><br></br>
 
                     <label>
-                        <input type="radio" name="ticketType" />
-                        <span>Weekly Pass: $</span>
-                    </label>
+                        <input type="radio" name="ticketType" value="Weekly Pass: $70.50" onChange={this.props.handleTypeChange} />
+                        <span>Weekly Pass: $70.50</span>
+                    </label><br></br>
 
                     <label>
-                        <input type="radio" name="ticketType" />
-                        <span>Monthly Pass: $</span>
-                    </label>
+                        <input type="radio" name="ticketType" value="Monthly Pass: $280" onChange={this.props.handleTypeChange} />
+                        <span>Monthly Pass: $280</span>
+                    </label><br></br>
 
                     <label>
                         <span>Accessible Trip</span>
-                        <input type="radio" name="accessible" />
-                    </label>
+                        <input type="checkbox" name="accessible" />
+                    </label><br></br>
 
-                    <input type="submit"></input>
                 </form>
+
+                {/* <Link exact to='/ticket'>Submit</Link> */}
 
                 <div className='view-times'>
                     <NavLink exact to='/schedule'>View all available times</NavLink>

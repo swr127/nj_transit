@@ -16,7 +16,7 @@ class Ticket extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(`${apiUrl}/ticket`)
+            const response = await axios(`${apiUrl}/api/ticket`)
             this.setState({ })
         } catch (err) {
             console.error(err)
@@ -26,9 +26,18 @@ class Ticket extends Component {
     render() {
         return (
             <Layout>
-                <h1>Hello from Ticket!</h1>
-                <FromTo />
-                <BuyTicket />
+
+                <FromTo 
+                    routeId={this.props.routeId} 
+                    fromValue={this.props.fromValue}
+                    toValue={this.props.toValue}
+                />
+
+                <BuyTicket
+                    routeId={this.props.routeId}
+                    ticketType={this.props.ticketType}
+                />
+                
             </Layout>
         )
     }
