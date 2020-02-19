@@ -8,6 +8,7 @@ import Menu from './components/routes/Menu'
 import Ticket from './components/routes/Ticket'
 import './App.css'
 import apiUrl from './apiConfig'
+import Axios from 'axios'
 
 class App extends Component 
 {
@@ -17,17 +18,29 @@ class App extends Component
     this.state = {
       from: '',
       to: '',
-      selectedType: null
+      selectedType: null,
+      route: null
+    }
+  }
+
+  async getRoute(id) {
+    try {
+      const response = await Axios(`${apiUrl}/api/routes/${id}/buses`)
+      this.setState({
+        route: response
+      })
+    } catch (error) {
+      console.error(error)
     }
   }
 
   handleChangeFromField = (event) => {
     console.log(event.target.value)
-    console.log(event.target.options[ event.target.selectedIndex ].dataset.route)
+    let routeId = (event.target.options[ event.target.selectedIndex ].dataset.route)
     this.setState({
-      from: event.target.value
+      from: event.target.value,
     })
-
+    this.getRoute(routeId)
   }
 
   handleChangeToField = (event) => {
