@@ -49,21 +49,24 @@
     font-weight: normal;
     color: var(--dark-slate-blue);
     width: 68px;
-    padding-left: 19px;
+    padding-left: 11px;
+    margin: 0;
 }
 
 .from-to {
     text-align: left;
+    height: 200px;
 }
 
 .from, .to {
-    padding-bottom: 19px;
-    height: 30px;
+    padding: 8px;
+
 }
 
 .select {
     width: 159px;
     height: 23px;
+    font-size: 15px;
     border-radius: 7px;
     border: solid 1px var(--dark-slate-blue);
 }
