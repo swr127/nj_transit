@@ -8,16 +8,20 @@
     --white: #ffffff;
   }
 
-* {
-    z-index: 1;
-}
-
 .tabs a {
-    font-size: 20px;
-    padding: 64px 8px 8px 8px;
+    color: var(--dark-slate-blue);
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 66px 8px 8px 8px;
     margin: 0;
     border-radius: 8px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     border: solid 2px var(--dark-slate-blue);
     background-color: var(--white);
+}
+
+.tabs a.active {
+    border: none;
+    box-shadow: none;
 }
