@@ -57,6 +57,8 @@ class App extends Component
     })
   }
 
+
+
   render() {
     return (
       <div className="App">
@@ -68,12 +70,20 @@ class App extends Component
                 handleChangeFromField={this.handleChangeFromField} 
                 handleChangeToField={this.handleChangeToField} 
                 handleTypeChange={this.handleTypeChange} 
+                routeId={this.state.route}
               />
             </Route>
             <Route exact path='/service' component={Service} />
             <Route exact path='/schedule' component={Schedule} />
             <Route exact path='/menu' component={Menu} />
-            <Route exact path='/ticket' component={Ticket} />
+            <Route exact path='/ticket'>
+              <Ticket 
+                fromValue={this.state.from}
+                toValue={this.state.to}
+                routeId={this.state.route}
+                ticketType={this.state.selectedType}
+              />
+            </Route>
           </Switch>
         </React.Fragment>
       </div>

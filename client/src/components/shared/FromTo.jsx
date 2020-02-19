@@ -47,19 +47,32 @@ class FromTo extends Component {
                 </div>
 
                 <h4>From:</h4>
-                <select onChange={this.props.handleChangeFromField} id='from'>{this.state.stops.map((stop, index) => {
-                    return (
-                        <option data-route={stop.routeId} value={stop.name}>{stop.name}</option>
-                    )
-                })}
+                <select 
+                    onChange={this.props.handleChangeFromField} 
+                    value={this.props.fromValue}
+                    id='from'>{this.state.stops.map((stop, index) => {
+                        return (
+                            <option 
+                                data-route={stop.routeId}   
+                                value={stop.name}>
+                                    {stop.name}
+                            </option>
+                        )
+                    })}
                 </select>
 
                 <h4>To:</h4>
-                <select onChange={this.props.handleChangeToField} id='to'>{this.state.stops.map((stop, index) => {
-                    return (
-                        <option value={stop.name}>{stop.name}</option>
-                    )
-                })}
+                <select 
+                    onChange={this.props.handleChangeToField} 
+                    value={this.props.toValue}
+                    id='to'>{this.state.stops.map((stop, index) => {
+                        return (
+                            <option 
+                                value={stop.name}>
+                                    {stop.name}
+                            </option>
+                        )
+                    })}
                 </select>
 
                 <div>

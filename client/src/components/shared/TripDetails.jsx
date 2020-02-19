@@ -65,8 +65,9 @@ class TripDetails extends Component {
                         <input type="checkbox" name="accessible" />
                     </label><br></br>
 
-                    <input type="submit"></input>
                 </form>
+
+                {/* <Link exact to='/ticket'>Submit</Link> */}
 
                 <div className='view-times'>
                     <NavLink exact to='/schedule'>View all available times</NavLink>

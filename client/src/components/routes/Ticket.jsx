@@ -27,8 +27,15 @@ class Ticket extends Component {
         return (
             <Layout>
                 <h1>Hello from Ticket!</h1>
-                <FromTo />
-                <BuyTicket />
+                <FromTo 
+                    routeId={this.props.routeId} 
+                    fromValue={this.props.fromValue}
+                    toValue={this.props.toValue}
+                />
+                <BuyTicket
+                    routeId={this.props.routeId}
+                    ticketType={this.props.ticketType}
+                />
             </Layout>
         )
     }
