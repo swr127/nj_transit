@@ -26,33 +26,34 @@
     box-shadow: none;
 }
  
-.bus-list {
+.bus-list-list {
     display: flex;
     flex-direction: column;
     padding: 25px 0px 0px 0px;
 }
 
-.bus-box {
+.bus-list-box {
     width: 320px;
     height: 69px;
     background-color: rgba(216, 216, 216, 0.25);
     margin-top: 10px;
 }
 
-.bus-number {
+.bus-list-number {
     font-size: 14px;
     font-weight: normal;
+    text-align: left;
     padding: 0px 0px 0px 82px;
     margin: 0 auto;
 }
 
-.bus-middle {
+.bus-list-middle {
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
 }
 
-.bus-img {
+.bus-list-img {
     float: left;
     padding: 6px 0px 0px 0px;
     width: 131px;
@@ -60,19 +61,19 @@
     object-fit: contain;
 }
 
-.bus-platform {
+.bus-list-platform {
     font-size: 22px;
     font-weight: bold;
     color: var(--dark-slate-blue);
 }
 
-.bus-status {
+.bus-list-status {
     width: 25px;
     height: 25px;
     object-fit: contain;
 }
 
-.bus-times {
+.bus-list-times {
     float: left;
     font-size: 13px;
     font-weight: bold;
@@ -80,7 +81,7 @@
     color: var(--tangerine);
 }
 
-.end-time {
+.bus-end-time {
     padding: 0px 0px 0px 65px;
 }
 
@@ -91,7 +92,7 @@
     color: var(--dark-slate-blue);
 }
 
-.platform {
+.bus-headers-platform {
     padding: 0px 14px 0px 0px;
 }
 
