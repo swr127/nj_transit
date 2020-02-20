@@ -57,8 +57,6 @@ class App extends Component
     })
   }
 
-
-
   render() {
     return (
       <div className="App">
@@ -74,7 +72,14 @@ class App extends Component
               />
             </Route>
             <Route exact path='/service' component={Service} />
-            <Route exact path='/schedule' component={Schedule} />
+            <Route exact path='/schedule'> 
+              <Schedule 
+                handleChangeFromField={this.handleChangeFromField} 
+                handleChangeToField={this.handleChangeToField} 
+                handleTypeChange={this.handleTypeChange} 
+                routeId={this.state.route}
+              />
+            </Route>
             <Route exact path='/menu' component={Menu} />
             <Route exact path='/ticket'>
               <Ticket 
@@ -86,7 +91,6 @@ class App extends Component
                 toValue='Bus stop 2'
                 routeId='1'
                 ticketType='One Way: $13.50'
-
               />
             </Route>
           </Switch>
