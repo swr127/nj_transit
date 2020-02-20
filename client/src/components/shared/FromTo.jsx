@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link, NavLink } from 'react-router-dom'
-import back from '../../images/back.png'
-import alert from '../../images/view-alert-icon.png'
+import backIcon from '../../images/back.png'
+import alertIcon from '../../images/view-alert-icon.png'
 import serviceIcon from '../../images/service-status-icon.png'
 import '../../styles/fromto.css'
 
@@ -39,15 +39,13 @@ class FromTo extends Component {
                     <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
 
-                <div className='back-button-div'>
+                <div className='back-bus-div'>
                     <Link className='back-button' exact to='/'>
-                        <img src={back}></img>
-                        <span className='back'>Back</span>
+                        <img className='back-image' src={backIcon}></img>
+                        <p className='back-text'>Back</p>
                     </Link>
-                </div>
 
-                <div className='bus-number-div'>
-                    <p className='bus-number'>Bus #3889</p>
+                    <span className='bus-number'>Bus #3889</span>
                 </div>
                 
 
@@ -82,7 +80,7 @@ class FromTo extends Component {
                         })}
                     </select>
                     <div className='view-alert'>
-                        <img src={alert}></img>
+                        <img src={alertIcon}></img>
                         <span className='alert-text'>View Alert</span>
                     </div>
                 </div>
