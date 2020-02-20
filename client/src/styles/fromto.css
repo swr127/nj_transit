@@ -8,6 +8,9 @@
     --white: #ffffff;
 }
 
+
+/* ------ Tabs at the top ------ */
+
 .tabs a {
     color: var(--dark-slate-blue);
     font-family: Arial;
@@ -26,32 +29,40 @@
     box-shadow: none;
 }
 
-/* back and bus# still need some work */
 
-.back-button-div {
-    display: inline-block;
-    align-items: center;
+/* ------ Back button and bus number ------ */
+
+.back-bus-div {
+    display: inline-grid;
+    width: 100%;
+    margin-top: 28px;
+    grid-template-columns: 15px 59px 166px auto;
+    grid-template-rows: 26px;
 }
 
 .back-button {
-    margin-top: 20px;
-    padding: 8px;
-    display: flex;
-    align-content: left;
+    grid-column: 2;
 }
 
-.bus-number-div {
-    display: inline-block;
-    align-items: center;
+a.back-button {
+    margin: 0;
+    padding: 0;
+}
 
+.back-text {
+    font-family: Arial;
+    font-size: 13px;
+    text-align: center;
+    color: var(--dark-slate-blue);
+    margin: 5.5px 4px;
+}
+
+.back-image {
+    height: 26px;
 }
 
 .bus-number {
-    height: 26px;
-    margin-top: 20px;
-    padding: 8px;
-    display: flex;
-    align-items: center;
+    grid-column: 4;
     font-family: Arial;
     font-size: 13px;
     font-weight: bold;
@@ -59,13 +70,8 @@
     color: var(--dark-slate-blue);
 }
 
-.back {
-    font-family: Arial;
-    font-size: 13px;
-    padding: 5px;
-    text-align: center;
-    color: var(--dark-slate-blue);
-}
+
+/* ------ From/To fields ------ */
 
 .from-to h4 {
     font-family: Arial;
@@ -111,6 +117,9 @@
     border-radius: 7px;
     border: solid 1px var(--dark-slate-blue);
 }
+
+
+/* ------ Alert ------ */
 
 .view-alert {
     width: 59px;

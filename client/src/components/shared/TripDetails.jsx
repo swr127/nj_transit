@@ -3,6 +3,9 @@ import { Link, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import '../../styles/tripdetails.css'
+import boardingIcon from '../../images/boarding-icon.png'
+import travelTimeIcon from '../../images/travel-time-icon.png'
+import bitmapIcon from '../../images/bitmap.png'
 
 // does this component still need to be a class? I think we're just passing props through at this point
 
@@ -37,47 +40,92 @@ class TripDetails extends Component {
     render() {
         return (
             <div>
-                <h5>Travel Time:</h5>
-                <h4>7:15 AM - 8:20 AM</h4>
-
-                {/* remove linebreaks below when styling */}
-
-                <form>
-                    <label>
-                        <input type="radio" name="ticketType" value="One Way: $13.50" onChange={this.props.handleTypeChange} />
-                        <span>One Way: $13.50</span>
-                    </label><br></br>
-
-                    <label>
-                        <input type="radio" name="ticketType" value="Round Trip: $25.50" onChange={this.props.handleTypeChange} />
-                        <span>Round Trip: $25.50</span>
-                    </label><br></br>
-
-                    <label>
-                        <input type="radio" name="ticketType" value="Weekly Pass: $70.50" onChange={this.props.handleTypeChange} />
-                        <span>Weekly Pass: $70.50</span>
-                    </label><br></br>
-
-                    <label>
-                        <input type="radio" name="ticketType" value="Monthly Pass: $280" onChange={this.props.handleTypeChange} />
-                        <span>Monthly Pass: $280</span>
-                    </label><br></br>
-
-                    <label>
-                        <span>Accessible Trip</span>
-                        <input type="checkbox" name="accessible" />
-                    </label><br></br>
-
-                </form>
-
-                {/* <Link exact to='/ticket'>Submit</Link> */}
-
-                <div className='view-times'>
-                    <NavLink exact to='/schedule'>View all available times</NavLink>
+                <div className='travel-grid'>
+                    <img className='boarding-image' src={boardingIcon}></img>
+                    <h5 className='boarding-on'>Boarding on:</h5>
+                    <h4 className='platform'>Platform 2</h4>
+                
+                    <img className='travel-image' src={travelTimeIcon}></img>
+                    <h5 className='travel-time'>Travel Time:</h5>
+                    <h4 className='times'>
+                        <span className='time-span'>7:15 AM</span>
+                         — 
+                        <span className='time-span'>8:20 AM</span>
+                    </h4>
                 </div>
 
-                <div>
-                    <Link exact to='/ticket'>Review Ticket</Link>
+
+                <form className='ticket-grid'>
+                    <input 
+                        className='checkbox' 
+                        id='one-way' 
+                        type="radio" 
+                        name="ticketType" 
+                        value="One Way: $13.50" 
+                        onChange={this.props.handleTypeChange} 
+                    />
+                    <span className='text' id='one-way-text'>
+                        One Way: $13.50
+                    </span>
+
+                    <input 
+                        className='checkbox' 
+                        id='round-trip' 
+                        type="radio" 
+                        name="ticketType" 
+                        value="Round Trip: $25.50" 
+                        onChange={this.props.handleTypeChange} 
+                    />
+                    <span className='text' id='round-trip-text'>
+                        Round Trip: $25.50
+                    </span>
+
+                    <input 
+                        className='checkbox' 
+                        id='weekly' 
+                        type="radio" 
+                        name="ticketType" 
+                        value="Weekly Pass: $70.50" 
+                        onChange={this.props.handleTypeChange} 
+                    />
+                    <span className='text' id='weekly-text'>
+                        Weekly Pass: $70.50
+                    </span>
+
+                    <input 
+                        className='checkbox' 
+                        id='monthly' 
+                        type="radio" 
+                        name="ticketType" 
+                        value="Monthly Pass: $280" 
+                        onChange={this.props.handleTypeChange} 
+                    />
+                    <span className='text' id='monthly-text'>
+                        Monthly Pass: $280
+                    </span>
+                </form>
+
+                <form className='accessible-grid'>
+                    <img className='accessible-image' src={bitmapIcon}></img>
+                    <span className='accessible-text'>
+                        Accessible Trip
+                    </span>
+                    <input 
+                        className='accessible-box' 
+                        type="checkbox" 
+                        name="accessible"
+                    />
+                </form>
+
+                <div className='review-line'>
+                    <div className='view-times'>
+                        <NavLink exact to='/schedule'>View all available times</NavLink>
+                    </div>
+
+                    <div className='review-button'>
+                        
+                    </div>
+                    <Link className='button-text' exact to='/ticket'>Review Ticket</Link>
                 </div>
 
 
