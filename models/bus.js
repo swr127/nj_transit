@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     arrivalTime: DataTypes.DATE,
     platform: DataTypes.INTEGER,
     status: DataTypes.STRING,
+    busNumber: DataTypes.INTEGER,
     routeId: {
       type: DataTypes.INTEGER,
       references: {
