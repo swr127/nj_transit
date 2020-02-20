@@ -8,6 +8,7 @@ import serviceIcon from '../../images/service-status-icon.png'
 import busIcon from '../../images/bus-icon-med.png'
 import railIcon from '../../images/rail-icon-med.png'
 import lightRailIcon from '../../images/light-rail-icon-med.png'
+import atlanticCity from '../../images/atlantic-city-icon.png'
 import '../../styles/service.css'
 
 class Service extends Component {
@@ -32,11 +33,12 @@ class Service extends Component {
     render() {
         const service = this.state.service.map(bus => (
             <div className='service' key={bus.id}>
-                {/* how to map icon images? */}
-                {/* how apply className to mapped info? */}
-                {bus.Route.name} <br />
-                Bus #{bus.id} <br />
-                {bus.status} <br />
+                <div className='service-info'>
+                    <img className='service-info' src={atlanticCity} />
+                    <div className='service-route'>{bus.Route.name}</div>
+                    <div className='service-bus-status'>{bus.status}</div>
+                </div>
+                <div className='service-bus-number'>Bus #{bus.busNumber}</div>
                 <div className='small-line'></div>
             </div>
         ))
