@@ -70,7 +70,9 @@ class Service extends Component {
                 
                 <div className='icons-imgs'>
                     <img className='railIcon' src={railIcon} alt='Rail Icon' /> 
-                    <img className='busIcon' src={busIcon} alt='Bus Icon' />
+                    <div className='busSelector'>
+                        <img className='busIcon' src={busIcon} alt='Bus Icon' />
+                    </div>
                     <img className='lightIcon' src={lightRailIcon} alt='Light Rail Icon' /> 
                 
                 </div>
