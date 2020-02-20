@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import '../../styles/tripdetails.css'
+import boardingIcon from '../../images/boarding-icon.png'
+import travelTimeIcon from '../../images/travel-time-icon.png'
 
 // does this component still need to be a class? I think we're just passing props through at this point
 
@@ -37,8 +39,17 @@ class TripDetails extends Component {
     render() {
         return (
             <div>
-                <h5>Travel Time:</h5>
-                <h4>7:15 AM - 8:20 AM</h4>
+                <div className='boarding-grid'>
+                    <img className='boarding-image' src={boardingIcon}></img>
+                    <h5 className='boarding-on'>Boarding on:</h5>
+                    <h4 className='platform'>Platform 2</h4>
+                </div>
+
+                <div className='travel-grid'>
+                    <img src={travelTimeIcon}></img>
+                    <h5>Travel Time:</h5>
+                    <h4>7:15 AM - 8:20 AM</h4>
+                </div>
 
                 {/* remove linebreaks below when styling */}
 

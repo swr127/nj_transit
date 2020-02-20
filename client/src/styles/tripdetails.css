@@ -8,3 +8,36 @@
     --white: #ffffff;
 }
 
+.boarding-grid {
+    display: inline-grid;
+    margin-top: 43px;
+    grid-template-columns: 15px 25px 7px 103px 113px 59px;
+    grid-template-rows: 25px;
+}
+
+.boarding-image {
+    grid-column: 2;
+}
+
+.boarding-on {
+    grid-column: 4;
+    margin: 0;
+    width: 103px;
+    height: 20px;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--dark-slate-blue);
+}
+
+.platform {
+    grid-column: 5;
+    margin: 0;
+    width: 113px;
+    height: 22px;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--dark-slate-blue);
+}

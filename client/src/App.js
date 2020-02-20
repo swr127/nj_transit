@@ -50,6 +50,7 @@ class App extends Component
     })
   }
 
+  // select ticket type:
   handleTypeChange = (event) => {
     console.log(event.target.value)
     this.setState({
