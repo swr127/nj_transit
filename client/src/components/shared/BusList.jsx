@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import apiUrl from '../../apiConfig'
+import moment from 'moment'
+import busLine from '../../images/bus-line.png'
 import '../../styles/buslist.css'
 
 class BusList extends Component {
@@ -8,19 +8,8 @@ class BusList extends Component {
         super(props)
 
         this.state = {
-        //    route: []
         }
     }
-
-    // async componentDidMount () {
-    //     try {
-    //         const response = await axios(`${apiUrl}/api/routes/${this.props.routeId}/buses`)
-    //         console.log(response)
-    //         this.setState({ route: response.data.route })
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
 
     render() {
         let bus
@@ -29,21 +18,29 @@ class BusList extends Component {
         if (this.props.routeId) {
             bus = this.props.routeId.data.route.Buses.map((bus, id) => (
                 <div className='bus-list' key={id}>
-                    {bus.routeId}
-                    Bus #{bus.id} <br />
-                    Departure: {bus.departureTime} <br />
-                    Arrival: {bus.arrivalTime} <br />
-                    Platform #{bus.platform} <br />
-                    Status: {bus.status} <br />
-                    {/* write code for images (trip bar, status) */}
+                    <div className='bus-box'>
+                        <div className='bus-number'>Bus #{bus.id} </div>
+                        <div className='bus-middle'>
+                            <img className='bus-img' src={busLine} alt='Bus Line'/>
+                            <div className='bus-platform'>{bus.platform}</div>
+                            <div className='bus-status'>{bus.status}</div>
+                        </div>
+                        <div className='bus-times'>
+                            <span className='start-time'>{bus.departureTime, moment().format('LT')}</span>
+                            <span className='end-time'>{bus.arrivalTime, moment().format('LT')}</span>
+                        </div>
+                    </div>
+                    {/* write code for status image */}
                 </div>
             ))     
         }
         
         return (
             <div>
-                Bus List
-                {bus}
+                {/* <div className='bus-headers'>Platform Status</div> */}
+                <div> 
+                    {bus}
+                </div>
             </div>
         )
     }

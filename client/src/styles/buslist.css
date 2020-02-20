@@ -32,6 +32,63 @@
     padding: 10px;
 }
 
+.bus-box {
+    width: 320px;
+    height: 69px;
+    background-color: rgba(216, 216, 216, 0.25);
+    margin-top: 10px;
+}
+
+.bus-number {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0px 0px 0px 80px;
+    margin: 0 auto;
+}
+
+.bus-middle {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bus-img {
+    float: left;
+    padding: 0px 0px 0px 10px;
+    width: 131px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.bus-platform {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-slate-blue);
+}
+
+.bus-status {
+
+}
+
+.bus-times {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0px 0px 0px 20px;
+    color: var(--tangerine);
+}
+
+.end-time {
+    padding: 0px 0px 0px 55px;
+}
+
+
+.bus-headers {
+    float: right;
+    font-size: 15px;
+    padding: 10px 8px 0px 0px;
+    color: var(--dark-slate-blue);
+}
+
 .back-button {
     margin-top: 20px;
     padding: 8px;
