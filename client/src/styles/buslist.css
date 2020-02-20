@@ -42,43 +42,46 @@
 .bus-number {
     font-size: 14px;
     font-weight: normal;
-    padding: 0px 0px 0px 80px;
+    padding: 0px 0px 0px 82px;
     margin: 0 auto;
 }
 
 .bus-middle {
     display: flex;
     justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 .bus-img {
     float: left;
-    padding: 0px 0px 0px 10px;
+    padding: 6px 0px 0px 0px;
     width: 131px;
     height: 14px;
     object-fit: contain;
 }
 
 .bus-platform {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: var(--dark-slate-blue);
 }
 
 .bus-status {
-
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
 }
 
 .bus-times {
     float: left;
     font-size: 13px;
     font-weight: bold;
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 25px;
     color: var(--tangerine);
 }
 
 .end-time {
-    padding: 0px 0px 0px 55px;
+    padding: 0px 0px 0px 65px;
 }
 
 

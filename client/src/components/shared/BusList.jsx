@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import busLine from '../../images/bus-line.png'
+import goodService from '../../images/good-service.png'
 import '../../styles/buslist.css'
 
 class BusList extends Component {
@@ -23,7 +24,7 @@ class BusList extends Component {
                         <div className='bus-middle'>
                             <img className='bus-img' src={busLine} alt='Bus Line'/>
                             <div className='bus-platform'>{bus.platform}</div>
-                            <div className='bus-status'>{bus.status}</div>
+                            <img className='bus-status' src={goodService} alt='Service Status'/>
                         </div>
                         <div className='bus-times'>
                             <span className='start-time'>{bus.departureTime, moment().format('LT')}</span>
