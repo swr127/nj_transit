@@ -69,6 +69,25 @@ const updateTicket = async (req, res) =>
     }
 }
 
+const deleteTicket = async (req, res) =>
+{
+    try
+    {
+        const { id } = req.params
+        const deleted = await Ticket.destroy({
+            where: { id: id }
+        })
+        if (deleted)
+        {
+            return res.status(204).send('Ticket successfully deleted!')
+        }
+        throw new Error('Ticket not found!')
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
+
 const getAllRoutes = async (req, res) =>
 {
     try
@@ -204,6 +223,10 @@ const getAllBusesWithRoutes = async (req, res) =>
                 {
                     model: Route
                 }
+            ],
+            order: [
+                ['departureTime', 'ASC'],
+                ['routeId', 'ASC']
             ]
         })
         return res.status(200).json({ buses })
@@ -231,24 +254,30 @@ const getAllRoutesWithBuses = async (req, res) =>
     }
 }
 
-const getRouteById = async (rec, res) => {
-    try {
+const getRouteById = async (rec, res) =>
+{
+    try
+    {
         const route = await Route.findByPk(rec.params.id)
         return res.status(200).json({ route })
-    } catch (error) {
+    } catch (error)
+    {
         return res.status(500).send(error.message)
     }
 }
 
-const getBusesByRouteId = async (rec, res) => {
-    try {
+const getBusesByRouteId = async (rec, res) =>
+{
+    try
+    {
         const route = await Route.findByPk(rec.params.id, {
             include: [
                 { model: Bus }
             ]
         })
         return res.status(200).json({ route })
-    } catch (error) {
+    } catch (error)
+    {
         return res.status(500).send(error.message)
     }
 }
@@ -269,5 +298,6 @@ module.exports = {
     getAllRoutesWithBuses,
     getAllBusesWithRoutes,
     getRouteById,
-    getBusesByRouteId
+    getBusesByRouteId,
+    deleteTicket
 }

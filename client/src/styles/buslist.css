@@ -26,10 +26,74 @@
     box-shadow: none;
 }
  
-.bus-list {
+.bus-list-list {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 25px 0px 0px 0px;
+}
+
+.bus-list-box {
+    width: 320px;
+    height: 69px;
+    background-color: rgba(216, 216, 216, 0.25);
+    margin-top: 10px;
+}
+
+.bus-list-number {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    padding: 0px 0px 0px 72px;
+    margin: 0 auto;
+}
+
+.bus-list-middle {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.bus-list-img {
+    float: left;
+    padding: 6px 0px 0px 0px;
+    width: 131px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.bus-list-platform {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--dark-slate-blue);
+}
+
+.bus-list-status {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.bus-list-times {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0px 0px 0px 25px;
+    color: var(--tangerine);
+}
+
+.bus-end-time {
+    padding: 0px 0px 0px 65px;
+}
+
+.bus-headers {
+    float: right;
+    font-size: 15px;
+    padding: 10px 22px 0px 0px;
+    color: var(--dark-slate-blue);
+}
+
+.bus-headers-platform {
+    padding: 0px 14px 0px 0px;
 }
 
 .back-button {

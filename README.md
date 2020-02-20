@@ -136,18 +136,18 @@ Sample JSON from GET `/api/tickets`
 | --- | :---: | :---: |
 | Set Up App File Structure | 4hrs | 2hrs |
 | Write Fake JSON Data for Testing | 6hrs | 2hrs |
-| Set Up Sequelize Models | 4hrs |  |
-| Set Up Sequelize Migrations | 4hrs |  |
-| Seed Database | 5hrs |  |
-| Create Back-End Controllers | 14hrs |  |
-| Create Back-End Express Router | 8hrs |  |
-| Test Back-End CRUD Functionality | 8hrs |  |
-| Create Front-End React Router | 4hrs |  |
-| Create Front-End Shared Components | 4hrs |  |
-| Create Front-End Routes Components | 8hrs |  |
-| Test Front-End CRUD Functionality | 8hrs |  |
-| CSS Styling | 25hrs |  |
-| Total | 102hrs |  |
+| Set Up Sequelize Models | 4hrs | 2hrs |
+| Set Up Sequelize Migrations | 4hrs | 2hrs |
+| Seed Database | 5hrs | 6hrs |
+| Create Back-End Controllers | 14hrs | 2hrs |
+| Create Back-End Express Router | 8hrs | 2hrs |
+| Test Back-End CRUD Functionality | 8hrs | 2hrs |
+| Create Front-End React Router | 4hrs | 8hrs |
+| Create Front-End Shared Components | 4hrs | 14hrs |
+| Create Front-End Routes Components | 8hrs | 14hrs |
+| Test Front-End CRUD Functionality | 8hrs | 8hrs |
+| CSS Styling | 25hrs | 26hrs |
+| Total | 102hrs | 90hrs |
 
 ## Additional Libraries
 `react-router-dom`, `axios`, `nodemon`, `morgan`, `sequelize`, `pg`, `cors`, `express`
@@ -156,13 +156,13 @@ Sample JSON from GET `/api/tickets`
 We expect to run into issues with our stops table and platforms data point. At this time, we're not sure how we are going to tie our platforms with our stops, so we may create fake data on the front-end as a work around. 
 
 ## Issues and Resolutions
-Use this section to list of all major issues encountered and their resolutions
+No major issues at this time. 
 
 ## Code Snippet
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
-#### Tara's Snippet:
+### Tara's Snippet:
 I was able to use grid to style this block to look just like the prototype. I am especially proud of the column in the middle with the circles and the connecting line. 
+
 ```
 <div className='stops'>
 	<div className='blue-line'></div>
@@ -273,5 +273,53 @@ I was able to use grid to style this block to look just like the prototype. I am
 }
 ```
 
+### Samantha's Snippet:
+I was able to convert back end data into images on the front-end using conditional rendering. 
+
+```
+getStatusImg(status) {
+        if (status == 'Cancelled' || status == 'Delay') {
+            return (
+                <img className='bus-list-status' src={badService} alt='Service Status'/>
+            )
+        } else {
+            return (
+                <img className='bus-list-status' src={goodService} alt='Service Status'/>
+            )
+        }
+    }
+
+render() {
+        let bus
+        console.log(this.props)
+
+        if (this.props.routeId) {
+            bus = this.props.routeId.data.route.Buses.map((bus, id) => (
+                <div className='bus-list-list' key={id}>
+                    <div className='bus-list-box'>
+                        <div className='bus-list-number'>Bus #{bus.busNumber} </div>
+                        <div className='bus-list-middle'>
+                            <img className='bus-list-img' src={busLine} alt='Bus Line'/>
+                            <div className='bus-list-platform'>{bus.platform}</div>
+                            { this.getStatusImg(bus.status) }
+                        </div>
+                        <div className='bus-list-times'>
+                            <span className='bust-start-time'>{moment(bus.departureTime).format('h:mm a')}</span>
+                            <span className='bus-end-time'>{moment(bus.arrivalTime).format('h:mm a')}</span>
+                        </div>
+                    </div>
+                </div>
+            ))     
+        }
+```
+
+### Trevor's Snippet:
+
+```
+
+```
+
 ## Change Log
-Update as neccessary with any changes or directional adjustments made throughout the project week
+- Added additional shared components for styling 
+- Converted App.js from a functional to class component to hold state
+- Created an admin route to hold front-end CRUD functionality 
