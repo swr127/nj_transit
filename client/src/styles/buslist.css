@@ -29,7 +29,7 @@
 .bus-list {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 25px 0px 0px 0px;
 }
 
 .bus-box {
@@ -84,12 +84,15 @@
     padding: 0px 0px 0px 65px;
 }
 
-
 .bus-headers {
     float: right;
     font-size: 15px;
-    padding: 10px 8px 0px 0px;
+    padding: 10px 22px 0px 0px;
     color: var(--dark-slate-blue);
+}
+
+.platform {
+    padding: 0px 14px 0px 0px;
 }
 
 .back-button {

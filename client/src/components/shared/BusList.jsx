@@ -38,14 +38,14 @@ class BusList extends Component {
         
         return (
             <div>
-                {/* <div className='bus-headers'>Platform Status</div> */}
-                <div> 
-                    {bus}
+                <div className='bus-headers'> 
+                    <span className='platform'>Platform</span>
+                    <span className='status'>Status</span>
                 </div>
+                <div>{bus}</div>
             </div>
         )
     }
-
 }
 
 export default BusList
