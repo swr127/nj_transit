@@ -59,11 +59,12 @@ const BuyTicket = (props) => {
                 </p>
             </div>
 
-            <div className='price'>
-                <h5>{props.ticketType}</h5>
-                <h5>Tax: $2.55</h5>
-                <h5>Donation: $0.95</h5>
-                <h4>$17.00</h4>
+            <div className='final-price'>
+                <h5 className='final-ticket-type'>{props.ticketType}</h5>
+                <h5 className='final-tax'>Tax: $2.55</h5>
+                <h5 className='donation-amount'>Donation: $0.95</h5>
+                <div className='total-line'></div>
+                <h4 className='final-total'>$17.00</h4>
             </div>
 
             {/* onClick with this button pulls up the have a great trip alert */}

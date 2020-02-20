@@ -134,7 +134,8 @@
 
 .donation {
   display: inline-grid;
-  grid-template-columns: 111px 16px 8px 173px;
+  width: auto;
+  grid-template-columns: 111px 16px 8px 170px auto;
   grid-template-rows: 54px;
   margin-top: 21px;
 }
@@ -150,8 +151,6 @@
   grid-column: 4;
   margin: 0;
   text-align: left;
-  width: 173px;
-  height: 54px;
   font-family: Arial;
   font-size: 14px;
   font-weight: normal;
@@ -159,5 +158,51 @@
 }
 
 .bold-span {
+  font-weight: bold;
+}
+
+
+/* ------ Price and Total ------ */
+
+.final-price {
+  display: grid;
+  margin-top: 16px;
+  width: 100%;
+  grid-template-columns: 175px 117px auto;
+  grid-template-rows: 16px 16px 16px 2.5px 1px 7.5px 20px;
+}
+
+.final-ticket-type, .final-tax, .donation-amount, .total-line, .final-total {
+  grid-column: 2;
+  margin: 0;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: right;
+  color: var(--dark-slate-blue);
+}
+
+.final-ticket-type {
+  grid-row: 1;
+}
+
+.final-tax {
+  grid-row: 2;
+}
+
+.donation-amount {
+  grid-row: 3;
+}
+
+.total-line {
+  grid-row: 5;
+  height: 1px;
+  width: 117px;
+  background-color: var(--dark-slate-blue);
+}
+
+.final-total {
+  grid-row: 7;
+  font-size: 18px;
   font-weight: bold;
 }
