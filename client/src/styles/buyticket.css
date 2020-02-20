@@ -6,5 +6,231 @@
     --light-grey: rgba(216, 216, 216, 0.2);
     --brown-grey: #7c7c7c;
     --white: #ffffff;
-  }
+}
 
+
+/* ------ Stopping At line ------ */
+
+.stopping-at {
+  display: inline-grid;
+  width: 100%;
+  margin-top: 21px;
+  grid-template-columns: 13px 34px 115px auto;
+  grid-template-rows: 34px;
+}
+
+.stopping-image {
+  grid-column: 2;
+  height: 34px;
+  padding: 0 7.625px;
+  align-self: center;
+}
+
+.stopping-text {
+  grid-column: 3;
+  margin: 0;
+  padding-top: 11px;
+  width: 113px;
+  height: 23px;
+  font-family: Arial;
+  font-size: 21px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--dark-slate-blue);
+}
+
+
+/* ------ Stops List ------ */
+
+.stops {
+  display: inline-grid;
+  width: 100%;
+  margin-top: 16px;
+  grid-template-columns: 25px 60px 10px 10px 4px 10px 8px auto;
+  grid-template-rows: 49px 49px 49px 49px;
+}
+
+.blue-line {
+  grid-column: 5;
+  grid-row: 1 / 5;
+  width: 4px;
+  height: 160px;
+  margin-top: 15px;
+  background-color: var(--dark-slate-blue);
+  z-index: 1;
+}
+
+.c1 {
+  grid-column: 2;
+}
+
+.time {
+  width: 60px;
+  height: 17px;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--dark-slate-blue);
+  margin: 0;
+  padding: 16px 0;
+}
+
+.c2 {
+  grid-column: 4 / 7;
+  height: 16px;
+  width: 16px;
+  border: 4px solid var(--dark-slate-blue);
+  border-radius: 100%;
+  background-color: var(--white);
+  z-index: 2;
+  margin: 12.5px 0;
+}
+
+.c3 {
+  grid-column: 8;
+}
+
+.stop-name {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  text-align: left;
+  color: var(--dark-slate-blue);
+  margin: 0;
+  padding: 16px 0;
+}
+
+.click {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+  color: var(--brown-grey);
+  margin: 0;
+  padding: 16px 0;
+}
+
+.r1 {
+  grid-row: 1;
+}
+
+.r2 {
+  grid-row: 2;
+}
+
+.r3 {
+  grid-row: 3;
+}
+
+.r4 {
+  grid-row: 4;
+}
+
+
+/* ------ Donation Box ------ */
+
+.donation {
+  display: inline-grid;
+  width: auto;
+  grid-template-columns: 111px 16px 8px 170px auto;
+  grid-template-rows: 54px;
+  margin-top: 21px;
+}
+
+.donation-checkbox {
+  grid-column: 2;
+  height: 16px;
+  width: 16px;
+  margin: 0;
+}
+
+.donation-text {
+  grid-column: 4;
+  margin: 0;
+  text-align: left;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--dark-slate-blue);
+}
+
+.bold-span {
+  font-weight: bold;
+}
+
+
+/* ------ Price and Total ------ */
+
+.final-price {
+  display: grid;
+  margin-top: 16px;
+  width: 100%;
+  grid-template-columns: 175px 117px auto;
+  grid-template-rows: 16px 16px 16px 2.5px 1px 7.5px 20px;
+}
+
+.final-ticket-type, .final-tax, .donation-amount, .total-line, .final-total {
+  grid-column: 2;
+  margin: 0;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: right;
+  color: var(--dark-slate-blue);
+}
+
+.final-ticket-type {
+  grid-row: 1;
+}
+
+.final-tax {
+  grid-row: 2;
+}
+
+.donation-amount {
+  grid-row: 3;
+}
+
+.total-line {
+  grid-row: 5;
+  height: 1px;
+  width: 117px;
+  background-color: var(--dark-slate-blue);
+}
+
+.final-total {
+  grid-row: 7;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* ------ Buy Ticket Button ------ */
+
+.button-grid {
+  display: grid;
+  margin-top: 16px;
+  grid-template-columns: 156px 146px;
+}
+
+.buy-ticket-button {
+  grid-column: 2;
+  width: 146px;
+  height: 54px;
+  border-radius: 27px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px var(--tangerine);
+  background-color: var(--tangerine);
+}
+
+.buy-ticket-button-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--white);
+}

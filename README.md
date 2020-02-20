@@ -161,9 +161,115 @@ Use this section to list of all major issues encountered and their resolutions
 ## Code Snippet
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
+#### Tara's Snippet:
+I was able to use grid to style this block to look just like the prototype. I am especially proud of the column in the middle with the circles and the connecting line. 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+<div className='stops'>
+	<div className='blue-line'></div>
+
+	<div className='c1 r1'><h5 className='time'>7:15 AM</h5></div>
+	<div className='c2 r1'></div>
+	<div className='c3 r1'><h4 className='stop-name'>Bus Stop 1</h4></div>
+
+	<div className='c1 r2'><h5 className='time'></h5></div>
+	<div className='c2 r2'></div>
+	<div className='c3 r2'><p className='click'>(Click to see more)</p></div>
+
+	<div className='c1 r3'><h5 className='time'>8:05 AM</h5></div>
+	<div className='c2 r3'></div>
+	<div className='c3 r3'><h4 className='stop-name'>Bus Stop 3</h4></div>
+
+	<div className='c1 r4'><h5 className='time'>8:20 AM</h5></div>
+	<div className='c2 r4'></div>
+	<div className='c3 r4'><h4 className='stop-name'>Bus Stop 4</h4></div>
+</div>
+```
+```
+.stops {
+  display: inline-grid;
+  width: 100%;
+  margin-top: 16px;
+  grid-template-columns: 25px 60px 10px 10px 4px 10px 8px auto;
+  grid-template-rows: 49px 49px 49px 49px;
+}
+
+.blue-line {
+  grid-column: 5;
+  grid-row: 1 / 5;
+  width: 4px;
+  height: 160px;
+  margin-top: 15px;
+  background-color: var(--dark-slate-blue);
+  z-index: 1;
+}
+
+.c1 {
+  grid-column: 2;
+}
+
+.time {
+  width: 60px;
+  height: 17px;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--dark-slate-blue);
+  margin: 0;
+  padding: 16px 0;
+}
+
+.c2 {
+  grid-column: 4 / 7;
+  height: 16px;
+  width: 16px;
+  border: 4px solid var(--dark-slate-blue);
+  border-radius: 100%;
+  background-color: var(--white);
+  z-index: 2;
+  margin: 12.5px 0;
+}
+
+.c3 {
+  grid-column: 8;
+}
+
+.stop-name {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  text-align: left;
+  color: var(--dark-slate-blue);
+  margin: 0;
+  padding: 16px 0;
+}
+
+.click {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+  color: var(--brown-grey);
+  margin: 0;
+  padding: 16px 0;
+}
+
+.r1 {
+  grid-row: 1;
+}
+
+.r2 {
+  grid-row: 2;
+}
+
+.r3 {
+  grid-row: 3;
+}
+
+.r4 {
+  grid-row: 4;
 }
 ```
 
