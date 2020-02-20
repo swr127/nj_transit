@@ -3,27 +3,26 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Layout from '../shared/Layout'
 import { Link, NavLink } from 'react-router-dom'
+import back from '../../images/back.png'
+import serviceIcon from '../../images/service-status-icon.png'
+import busIcon from '../../images/bus-icon-med.png'
+import railIcon from '../../images/rail-icon-med.png'
+import lightRailIcon from '../../images/light-rail-icon-med.png'
+import '../../styles/service.css'
 
 class Service extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-           bus: [],
-           route: [],
            service: []
         }
     }
 
     async componentDidMount () {
         try {
-            const busResponse = await axios(`${apiUrl}/api/buses`)
-            const routeResponse = await axios(`${apiUrl}/api/routes`)
-            const serviceResponse = await axios(`${apiUrl}/api/routes/status`)
-           
-            this.setState({ bus: busResponse.data.buses })
-            this.setState({ route: routeResponse.data.routes })
-            this.setState({ service: serviceResponse.data.routeStatus })
+            const response = await axios(`${apiUrl}/api/buses/with/routes`)
+            this.setState({ service: response.data.buses })
             
         } catch (error) {
             console.error(error)
@@ -31,41 +30,45 @@ class Service extends Component {
     }
 
     render() {
-        const bus = this.state.bus.map(bus => (
-            <li key={bus.id}>
-                Bus #{bus.id}
-            </li>
-        ))
-
-        const route = this.state.route.map(route => (
-            <li key={route.id}>
-                {route.name}
-            </li>
-        ))
-
-        const service = this.state.service.map(route => (
-            <li key={route.routeId}>
-                Status: {route.status}
-            </li>
+        const service = this.state.service.map(bus => (
+            <div className='service' key={bus.id}>
+                {/* how to map icon images? */}
+                {/* how apply className to mapped info? */}
+                {bus.Route.name} <br />
+                Bus #{bus.id} <br />
+                {bus.status} <br />
+                <div className='small-line'></div>
+            </div>
         ))
 
         return (
             <Layout>
-                <nav>
+                <nav className='tabs'>
                     <NavLink exact to='/planatrip'>Plan a trip</NavLink>
                     <NavLink exact to='/schedule'>View schedules</NavLink>
-                    <NavLink exact to='/service'>!!!</NavLink>
+                    <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
                 
-                <p>Insert Bus, Rail, and Light Rail Images</p>
-                <ul>
-                    {bus} <br />
-                    {route} <br />
-                    {service} <br />
-                </ul>
+                <div className='icons-imgs'>
+                    <img className='railIcon' src={railIcon} alt='Rail Icon' /> 
+                    <img className='busIcon' src={busIcon} alt='Bus Icon' />
+                    <img className='lightIcon' src={lightRailIcon} alt='Light Rail Icon' /> 
+                
+                </div>
 
-                <Link exact to='/'>
-                    Back
+                <div className='icons-text'>
+                    <span className='icon-text'>RAIL</span>
+                    <span className='icon-text'>BUS</span>
+                    <span className='icon-text'>L.RAIL</span>
+                </div>
+
+                <div className='large-line'></div>
+
+                {service}
+
+                <Link className='back-button' exact to='/'>
+                    <img src={back}></img>
+                    <span className='back'>Back</span>
                 </Link>
 
             </Layout>
