@@ -8,33 +8,41 @@ class BusList extends Component {
         super(props)
 
         this.state = {
-           bus: []
+        //    route: []
         }
     }
 
-    async componentDidMount () {
-        try {
-            const response = await axios(`${apiUrl}/api/buses`)
-            this.setState({ bus: response.data.buses })
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    // async componentDidMount () {
+    //     try {
+    //         const response = await axios(`${apiUrl}/api/routes/${this.props.routeId}/buses`)
+    //         console.log(response)
+    //         this.setState({ route: response.data.route })
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
 
     render() {
-        const bus = this.state.bus.map(bus => (
-            <div className='bus-list' key={bus.id}>
-                Bus #{bus.id} <br />
-                Departure: {bus.departureTime} <br />
-                Arrival: {bus.arrivalTime} <br />
-                Platform #{bus.platform} <br />
-                Status: {bus.status} <br />
-                {/* write code for images (trip bar, status) */}
-            </div>
-        )) 
+        let bus
+        console.log(this.props)
 
+        if (this.props.routeId) {
+            bus = this.props.routeId.data.route.Buses.map((bus, id) => (
+                <div className='bus-list' key={id}>
+                    {bus.routeId}
+                    Bus #{bus.id} <br />
+                    Departure: {bus.departureTime} <br />
+                    Arrival: {bus.arrivalTime} <br />
+                    Platform #{bus.platform} <br />
+                    Status: {bus.status} <br />
+                    {/* write code for images (trip bar, status) */}
+                </div>
+            ))     
+        }
+        
         return (
             <div>
+                Bus List
                 {bus}
             </div>
         )
