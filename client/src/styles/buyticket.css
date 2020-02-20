@@ -6,5 +6,32 @@
     --light-grey: rgba(216, 216, 216, 0.2);
     --brown-grey: #7c7c7c;
     --white: #ffffff;
-  }
+}
 
+.stopping-at {
+  display: inline-grid;
+  width: 100%;
+  margin-top: 21px;
+  grid-template-columns: 13px 34px 115px auto;
+  grid-template-rows: 34px;
+}
+
+.stopping-image {
+  grid-column: 2;
+  height: 34px;
+  padding: 0 7.625px;
+  align-self: center;
+}
+
+.stopping-text {
+  grid-column: 3;
+  margin: 0;
+  padding-top: 11px;
+  width: 113px;
+  height: 23px;
+  font-family: Arial;
+  font-size: 21px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--dark-slate-blue);
+}
