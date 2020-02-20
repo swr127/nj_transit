@@ -39,11 +39,11 @@ const BuyTicket = (props) => {
         if (checkbox) {
             let price = getPrice()
             let tax = getTax()
-            let subTotal = (price + tax).toFixed(2)
+            let subTotal = parseFloat((price + tax).toFixed(2))
             console.log(subTotal)
-            let total = Math.ceil(subTotal).toFixed(2)
+            let total = parseFloat(Math.ceil(subTotal).toFixed(2))
             console.log(total)
-            let donation = (total - subTotal).toFixed(2)
+            let donation = parseFloat((total - subTotal).toFixed(2))
             return donation
         } else {
             return 0.00
@@ -56,8 +56,7 @@ const BuyTicket = (props) => {
         let price = getPrice()
         let tax = getTax()
         let donation = getDonation()
-        let subTotal = price + tax
-        let total = subTotal + donation
+        let total = price + tax + donation
         return total
     }
 
