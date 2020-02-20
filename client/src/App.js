@@ -78,43 +78,35 @@ class App extends Component
             <Route exact path='/' component={Home} />
             <Route exact path='/planatrip'>
               <PlanTrip
-                {...this.props}
                 handleChangeFromField={this.handleChangeFromField}
                 handleChangeToField={this.handleChangeToField}
                 handleTypeChange={this.handleTypeChange}
                 routeId={this.state.route}
               />
             </Route>
-            {/* <Route exact path='/planatrip' component={ */}
-            <PlanTrip
-              {...this.props}
-              handleChangeFromField={this.handleChangeFromField}
-              handleChangeToField={this.handleChangeToField}
-              handleTypeChange={this.handleTypeChange}
-              routeId={this.state.route}
+            <Route exact path='/service' component={Service} />
+            <Route exact path='/schedule' component={(p) => (
+              <Schedule
+                {...p}
+                handleChangeFromField={this.handleChangeFromField}
+                handleChangeToField={this.handleChangeToField}
+                handleTypeChange={this.handleTypeChange}
+                routeId={this.state.route}
+              />)}
             />
+
+            <Route exact path='/menu' component={Menu} />
+            <Route exact path='/ticket'>
+              <Ticket
+                fromValue={this.state.from}
+                toValue={this.state.to}
+                routeId={this.state.route}
+                ticketType={this.state.selectedType}
+              />
             </Route>
-          <Route exact path='/service' component={Service} />
-          <Route exact path='/schedule'>
-            <Schedule
-              handleChangeFromField={this.handleChangeFromField}
-              handleChangeToField={this.handleChangeToField}
-              handleTypeChange={this.handleTypeChange}
-              routeId={this.state.route}
-            />
-          </Route>
-          <Route exact path='/menu' component={Menu} />
-          <Route exact path='/ticket'>
-            <Ticket
-              fromValue={this.state.from}
-              toValue={this.state.to}
-              routeId={this.state.route}
-              ticketType={this.state.selectedType}
-            />
-          </Route>
-          <Route exact path='/admin/tickets' component={AdminTickets} />
-          <Route exact path='/admin/tickets/:id' component={AdminTicketDetail} />
-          <Route exact path='/admin/tickets/:id/edit' component={AdminTicketEdit} />
+            <Route exact path='/admin/tickets' component={AdminTickets} />
+            <Route exact path='/admin/tickets/:id' component={AdminTicketDetail} />
+            <Route exact path='/admin/tickets/:id/edit' component={AdminTicketEdit} />
           </Switch>
         </React.Fragment>
       </div >

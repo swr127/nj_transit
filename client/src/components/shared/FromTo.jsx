@@ -36,8 +36,20 @@ class FromTo extends Component
 
     renderBusNumber = () =>
     {
-        console.log(this.props.location)
-        return <span className='bus-number'>Bus #3889</span>
+        if (this.props.routeId)
+        {
+            if (this.props.location.pathname === '/schedule')
+            {
+                return
+            }
+            else
+            {
+                if (this.props.routeId)
+                {
+                    return <span className='bus-number'>Bus #3889</span>
+                }
+            }
+        }
     }
 
 

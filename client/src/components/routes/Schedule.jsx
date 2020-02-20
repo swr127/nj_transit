@@ -3,14 +3,16 @@ import Layout from '../shared/Layout'
 import FromTo from '../shared/FromTo'
 import BusList from '../shared/BusList'
 
-const Schedule = (props) => {
+const Schedule = (props) =>
+{
     return (
         <Layout>
-            <FromTo 
-                handleChangeFromField={props.handleChangeFromField} 
-                handleChangeToField={props.handleChangeToField} 
+            <FromTo
+                {...props}
+                handleChangeFromField={props.handleChangeFromField}
+                handleChangeToField={props.handleChangeToField}
             />
-            <BusList 
+            <BusList
                 routeId={props.routeId}
             />
         </Layout>
