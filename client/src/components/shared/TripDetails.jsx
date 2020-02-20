@@ -39,11 +39,7 @@ class TripDetails extends Component {
     render() {
         return (
             <div>
-                <div className='travel-grid'>
-                    <img className='boarding-image' src={boardingIcon}></img>
-                    <h5 className='boarding-on'>Boarding on:</h5>
-                    <h4 className='platform'>Platform 2</h4>
-                
+                <div className='travel-grid'>                
                     <img className='travel-image' src={travelTimeIcon}></img>
                     <h5 className='travel-time'>Travel Time:</h5>
                     <h4 className='times'>
@@ -62,6 +58,7 @@ class TripDetails extends Component {
                         name="ticketType" 
                         value="One Way: $13.50" 
                         onChange={this.props.handleTypeChange} 
+                        checked
                     />
                     <span className='text' id='one-way-text'>
                         One Way: $13.50
