@@ -8,7 +8,7 @@
     --white: #ffffff;
   }
 
-.tabs a {
+.service-tabs a {
     color: var(--dark-slate-blue);
     font-family: Arial;
     font-size: 18px;
@@ -21,7 +21,7 @@
     background-color: var(--white);
 }
 
-.tabs a.active {
+.service-tabs a.active {
     border: none;
     box-shadow: none;
 }
@@ -31,26 +31,27 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background: white;
 }
 
 .railIcon {
     width: 43.7px;
     height: 48.3px;
-    padding: 40px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     object-fit: contain;
 }
 
 .busIcon {
     width: 48px;
     height: 48px;
-    padding: 40px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     object-fit: contain;
 }
 
 .lightIcon {
     width: 59px;
     height: 59px;
-    padding: 30px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
     object-fit: contain;
 }
 

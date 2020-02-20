@@ -36,7 +36,7 @@ class Service extends Component {
             return (
                 <div className='service-bus-status-red'>Cancelled</div>
             )
-        } else if (status == 'Delay') { 
+        } else if (status == 'Delayed') { 
             return (
                 <div className='service-bus-status-red'>Delayed</div>
             )
@@ -58,21 +58,19 @@ class Service extends Component {
                 <div className='service-bus-number'>Bus #{bus.busNumber}</div>
                 <div className='small-line'></div>
             </div>
-        ))
+    ))
 
         return (
             <Layout>
-                <nav className='tabs'>
+                <nav className='service-tabs'>
                     <NavLink exact to='/planatrip'>Plan a trip</NavLink>
                     <NavLink exact to='/schedule'>View schedules</NavLink>
                     <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
                 
                 <div className='icons-imgs'>
-                    <img className='railIcon' src={railIcon} alt='Rail Icon' /> 
-                    <div className='busSelector'>
-                        <img className='busIcon' src={busIcon} alt='Bus Icon' />
-                    </div>
+                    <img className='railIcon' src={railIcon} alt='Rail Icon' />
+                    <img className='busIcon' src={busIcon} alt='Bus Icon' />
                     <img className='lightIcon' src={lightRailIcon} alt='Light Rail Icon' /> 
                 
                 </div>
