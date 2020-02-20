@@ -8,7 +8,7 @@
     --white: #ffffff;
   }
 
-.tabs a {
+.service-tabs a {
     color: var(--dark-slate-blue);
     font-family: Arial;
     font-size: 18px;
@@ -21,7 +21,7 @@
     background-color: var(--white);
 }
 
-.tabs a.active {
+.service-tabs a.active {
     border: none;
     box-shadow: none;
 }
@@ -31,26 +31,27 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background: white;
 }
 
 .railIcon {
     width: 43.7px;
     height: 48.3px;
-    padding: 40px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     object-fit: contain;
 }
 
 .busIcon {
     width: 48px;
     height: 48px;
-    padding: 40px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     object-fit: contain;
 }
 
 .lightIcon {
     width: 59px;
     height: 59px;
-    padding: 30px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
     object-fit: contain;
 }
 
@@ -72,17 +73,55 @@
     width: 320px;
     height: 6px;
     background-color: #d8d8d8;
+    margin-bottom: 5px;
 }
 
 .small-line {
     width: 320px;
     height: 4px;
     background-color: #d8d8d8;
+    margin-bottom: 5px;
 }
 
 .service {
     display: flex;
     flex-direction: column;
+}
+
+.service-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+.service-route {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 0px 0px 0px;
+    color: var(--dark-slate-blue);
+}
+
+.service-bus-status-red {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 0px 0px 0px;
+    color: var(--red);
+}
+
+.service-bus-status-green {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 0px 0px 0px;
+    color: var(--green_medium);
+}
+
+.service-bus-number {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    color: var(--dark-slate-blue);
+    margin: 0 auto;
 }
 
 .back-button {
