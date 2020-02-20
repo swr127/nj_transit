@@ -206,3 +206,31 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+
+/* ------ Buy Ticket Button ------ */
+
+.button-grid {
+  display: grid;
+  margin-top: 16px;
+  grid-template-columns: 156px 146px;
+}
+
+.buy-ticket-button {
+  grid-column: 2;
+  width: 146px;
+  height: 54px;
+  border-radius: 27px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px var(--tangerine);
+  background-color: var(--tangerine);
+}
+
+.buy-ticket-button-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--white);
+}

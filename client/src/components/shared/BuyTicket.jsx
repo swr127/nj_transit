@@ -67,8 +67,15 @@ const BuyTicket = (props) => {
                 <h4 className='final-total'>$17.00</h4>
             </div>
 
-            {/* onClick with this button pulls up the have a great trip alert */}
-            <button type='button'>Buy Ticket</button>
+            <div className='button-grid'>
+                <button 
+                    className='buy-ticket-button' 
+                    type='button'>
+                    <span className='buy-ticket-button-text'>
+                        Buy Ticket
+                    </span>
+                </button>
+            </div>
 
         </div>
     )
