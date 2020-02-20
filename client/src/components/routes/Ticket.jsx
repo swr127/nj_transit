@@ -36,6 +36,8 @@ class Ticket extends Component {
                 <BuyTicket
                     routeId={this.props.routeId}
                     ticketType={this.props.ticketType}
+                    fromValue={this.props.fromValue}
+                    toValue={this.props.toValue}
                 />
                 
             </Layout>

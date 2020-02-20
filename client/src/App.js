@@ -20,8 +20,8 @@ class App extends Component
     super(props)
 
     this.state = {
-      from: 'Bus Stop 1',
-      to: 'Bus Stop 1',
+      from: 'Andover',
+      to: 'Andover',
       selectedType: null,
       route: null
     }
@@ -94,15 +94,11 @@ class App extends Component
             </Route>
             <Route exact path='/menu' component={Menu} />
             <Route exact path='/ticket'>
-              <Ticket
-                // fromValue={this.state.from}
-                // toValue={this.state.to}
-                // routeId={this.state.route}
-                // ticketType={this.state.selectedType}
-                fromValue='Bus stop 1'
-                toValue='Bus stop 2'
-                routeId='1'
-                ticketType='One Way: $13.50'
+              <Ticket 
+                fromValue={this.state.from}
+                toValue={this.state.to}
+                routeId={this.state.route}
+                ticketType={this.state.selectedType}
               />
             </Route>
             <Route exact path='/admin/tickets' component={AdminTickets} />
