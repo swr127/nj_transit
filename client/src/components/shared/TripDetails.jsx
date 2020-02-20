@@ -28,7 +28,6 @@ class TripDetails extends Component {
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/tickets`)
-            console.log(response.data.tickets)
             this.setState({ 
                 // price: response.data
              })
