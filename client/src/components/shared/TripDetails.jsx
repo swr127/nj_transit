@@ -122,9 +122,10 @@ class TripDetails extends Component {
                         <NavLink exact to='/schedule'>View all available times</NavLink>
                     </div>
 
-                    <div>
-                        <Link className='review-button' exact to='/ticket'>Review Ticket</Link>
+                    <div className='review-button'>
+                        
                     </div>
+                    <Link className='button-text' exact to='/ticket'>Review Ticket</Link>
                 </div>
 
 

@@ -128,8 +128,42 @@
 
 .review-line {
     display: inline-grid;
-    margin-top: 54px;
+    margin: 54px 0;
     width: 100%;
-    grid-template-columns: 127px 172px auto;
-    grid-template-rows: 54px;
+    grid-template-columns: 29px 86px 12px 172px auto;
+    grid-template-rows: 12px 30px 12px;
+}
+
+.view-times {
+    grid-column: 2;
+    grid-row: 2;
+    font-family: Arial;
+    font-size: 13px;
+    text-align: center;
+}
+
+.view-times a {
+    color: var(--brown-grey);
+}
+
+.review-button {
+    grid-column: 4;
+    grid-row: 1 / 4;
+    width: 172px;
+    height: 54px;
+    border-radius: 27px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px var(--tangerine);
+    background-color: var(--tangerine);
+}
+
+.button-text {
+    grid-column: 4;
+    grid-row: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--white);
 }
