@@ -1,7 +1,9 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+'use strict'
+module.exports = (sequelize, DataTypes) =>
+{
   const Stop = sequelize.define('Stop', {
     name: DataTypes.STRING,
+    order: DataTypes.INTEGER,
     routeId: {
       type: DataTypes.INTEGER,
       references: {
@@ -10,11 +12,12 @@ module.exports = (sequelize, DataTypes) => {
         as: 'routeId'
       }
     }
-  }, {});
-  Stop.associate = function(models) {
+  }, {})
+  Stop.associate = function (models)
+  {
     Stop.belongsTo(models.Route, {
       foreignKey: 'routeId'
     })
-  };
-  return Stop;
-};
+  }
+  return Stop
+}

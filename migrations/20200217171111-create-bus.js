@@ -20,6 +20,9 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
+      busNumber: {
+        type: Sequelize.INTEGER,
+      },   
       routeId: {
         type: Sequelize.INTEGER,
       },
