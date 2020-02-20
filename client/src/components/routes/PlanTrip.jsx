@@ -32,6 +32,7 @@ class PlanTrip extends Component
         return (
             <Layout>
                 <FromTo
+                    {...this.props}
                     handleChangeFromField={this.props.handleChangeFromField}
                     handleChangeToField={this.props.handleChangeToField}
                 />

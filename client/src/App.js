@@ -75,8 +75,18 @@ class App extends Component
         <React.Fragment>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/planatrip'>
+            {/* <Route exact path='/planatrip'>
               <PlanTrip
+                {...this.props}
+                handleChangeFromField={this.handleChangeFromField}
+                handleChangeToField={this.handleChangeToField}
+                handleTypeChange={this.handleTypeChange}
+                routeId={this.state.route}
+              />
+            </Route> */}
+            <Route exact path='/planatrip' component={
+              <PlanTrip
+                {...this.props}
                 handleChangeFromField={this.handleChangeFromField}
                 handleChangeToField={this.handleChangeToField}
                 handleTypeChange={this.handleTypeChange}
