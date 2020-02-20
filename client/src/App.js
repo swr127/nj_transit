@@ -9,10 +9,14 @@ import Ticket from './components/routes/Ticket'
 import './App.css'
 import apiUrl from './apiConfig'
 import Axios from 'axios'
+import AdminTickets from './components/routes/AdminTickets'
+import AdminTicketDetail from './components/routes/AdminTicketDetail'
+import AdminTicketEdit from './components/routes/AdminTicketEdit'
 
 class App extends Component 
 {
-  constructor(props) {
+  constructor(props)
+  {
     super(props)
 
     this.state = {
@@ -23,32 +27,38 @@ class App extends Component
     }
   }
 
-  async getRoute(id) {
-    try {
+  async getRoute(id)
+  {
+    try
+    {
       const response = await Axios(`${apiUrl}/api/routes/${id}/buses`)
       this.setState({
         route: response
       })
-    } catch (error) {
+    } catch (error)
+    {
       console.error(error)
     }
   }
 
-  handleChangeFromField = (event) => {
+  handleChangeFromField = (event) =>
+  {
     console.log(event.target.value)
-    let routeId = (event.target.options[ event.target.selectedIndex ].dataset.route)
+    let routeId = (event.target.options[event.target.selectedIndex].dataset.route)
     this.setState({
       from: event.target.value,
     })
     this.getRoute(routeId)
   }
 
-  handleChangeToField = (event) => {
+  handleChangeToField = (event) =>
+  {
     console.log(event.target.value)
     this.setState({
       to: event.target.value
     })
   }
+
 
   // select ticket type:
   handleTypeChange = (event) => {
@@ -58,32 +68,33 @@ class App extends Component
     })
   }
 
-  render() {
+  render()
+  {
     return (
       <div className="App">
         <React.Fragment>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/planatrip'>
-              <PlanTrip 
-                handleChangeFromField={this.handleChangeFromField} 
-                handleChangeToField={this.handleChangeToField} 
-                handleTypeChange={this.handleTypeChange} 
+              <PlanTrip
+                handleChangeFromField={this.handleChangeFromField}
+                handleChangeToField={this.handleChangeToField}
+                handleTypeChange={this.handleTypeChange}
                 routeId={this.state.route}
               />
             </Route>
             <Route exact path='/service' component={Service} />
-            <Route exact path='/schedule'> 
-              <Schedule 
-                handleChangeFromField={this.handleChangeFromField} 
-                handleChangeToField={this.handleChangeToField} 
-                handleTypeChange={this.handleTypeChange} 
+            <Route exact path='/schedule'>
+              <Schedule
+                handleChangeFromField={this.handleChangeFromField}
+                handleChangeToField={this.handleChangeToField}
+                handleTypeChange={this.handleTypeChange}
                 routeId={this.state.route}
               />
             </Route>
             <Route exact path='/menu' component={Menu} />
             <Route exact path='/ticket'>
-              <Ticket 
+              <Ticket
                 // fromValue={this.state.from}
                 // toValue={this.state.to}
                 // routeId={this.state.route}
@@ -94,6 +105,9 @@ class App extends Component
                 ticketType='One Way: $13.50'
               />
             </Route>
+            <Route exact path='/admin/tickets' component={AdminTickets} />
+            <Route exact path='/admin/tickets/:id' component={AdminTicketDetail} />
+            <Route exact path='/admin/tickets/:id/edit' component={AdminTicketEdit} />
           </Switch>
         </React.Fragment>
       </div>
