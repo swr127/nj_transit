@@ -74,3 +74,31 @@
     text-align: center;
     color: var(--dark-slate-blue);
 }
+
+.ticket-grid {
+    display: inline-grid;
+    margin-top:19.1px;
+    width: 100%;
+    grid-gap: 5px;
+    grid-template-rows: 15.1px 15.1px 15.1px 15.1px 11px;
+    grid-template-columns: 69px 20px 160px auto;
+}
+
+.text {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--dark-slate-blue);
+}
+
+.checkbox {
+    width: 15.1px;
+    height: 15.1px;
+    margin: 0;
+}
+
+#one-way, #round-trip, #weekly, #monthly {
+    grid-column: 2;
+}
+

@@ -49,34 +49,35 @@ class TripDetails extends Component {
                     <h4 className='times'>7:15 AM - 8:20 AM</h4>
                 </div>
 
-                {/* remove linebreaks below when styling */}
+
+                <form className='ticket-grid'>
+                    {/* <label> */}
+                        <input className='checkbox' id='one-way' type="radio" name="ticketType" value="One Way: $13.50" onChange={this.props.handleTypeChange} />
+                        <span className='text' id='one-way-text'>One Way: $13.50</span>
+                    {/* </label> */}
+
+                    {/* <label> */}
+                        <input className='checkbox' id='round-trip' type="radio" name="ticketType" value="Round Trip: $25.50" onChange={this.props.handleTypeChange} />
+                        <span className='text' id='round-trip-text'>Round Trip: $25.50</span>
+                    {/* </label> */}
+
+                    {/* <label> */}
+                        <input className='checkbox' id='weekly' type="radio" name="ticketType" value="Weekly Pass: $70.50" onChange={this.props.handleTypeChange} />
+                        <span className='text' id='weekly-text'>Weekly Pass: $70.50</span>
+                    {/* </label> */}
+
+                    {/* <label> */}
+                        <input className='checkbox' id='monthly' type="radio" name="ticketType" value="Monthly Pass: $280" onChange={this.props.handleTypeChange} />
+                        <span className='text' id='monthly-text'>Monthly Pass: $280</span>
+                    {/* </label> */}
+
+                </form>
 
                 <form>
-                    <label>
-                        <input type="radio" name="ticketType" value="One Way: $13.50" onChange={this.props.handleTypeChange} />
-                        <span>One Way: $13.50</span>
-                    </label><br></br>
-
-                    <label>
-                        <input type="radio" name="ticketType" value="Round Trip: $25.50" onChange={this.props.handleTypeChange} />
-                        <span>Round Trip: $25.50</span>
-                    </label><br></br>
-
-                    <label>
-                        <input type="radio" name="ticketType" value="Weekly Pass: $70.50" onChange={this.props.handleTypeChange} />
-                        <span>Weekly Pass: $70.50</span>
-                    </label><br></br>
-
-                    <label>
-                        <input type="radio" name="ticketType" value="Monthly Pass: $280" onChange={this.props.handleTypeChange} />
-                        <span>Monthly Pass: $280</span>
-                    </label><br></br>
-
-                    <label>
+                    {/* <label> */}
                         <span>Accessible Trip</span>
                         <input type="checkbox" name="accessible" />
-                    </label><br></br>
-
+                    {/* </label> */}
                 </form>
 
                 {/* <Link exact to='/ticket'>Submit</Link> */}
