@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../styles/tripdetails.css'
 import '../../styles/buyticket.css'
 import boardingIcon from '../../images/boarding-icon.png'
@@ -6,7 +6,62 @@ import travelTimeIcon from '../../images/travel-time-icon.png'
 import stoppingAtIcon from '../../images/stopping-at-icon@2x.png'
 
 const BuyTicket = (props) => {
-    console.log(props)
+
+    let ticketType = props.ticketType
+
+    const getPrice = () => {
+        if (!ticketType) {
+            return 0.00
+        } else {
+            let number = ticketType.replace( /[^\d.]/g, '' )
+            let price = parseFloat(number)
+            return price
+        }
+    }
+
+    console.log(getPrice())
+
+    const getTax = () => {
+        let price = getPrice()
+        let tax = price * 0.08
+        return tax
+    }
+
+    console.log(getTax())
+
+    const [checkbox, setCheckbox] = useState(false)
+
+    const donationCheck = (event) => {
+        setCheckbox(event.target.checked)
+    }
+
+    const getDonation = () => {
+        if (checkbox) {
+            let price = getPrice()
+            let tax = getTax()
+            let subTotal = parseFloat((price + tax).toFixed(2))
+            console.log(subTotal)
+            let total = parseFloat(Math.ceil(subTotal).toFixed(2))
+            console.log(total)
+            let donation = parseFloat((total - subTotal).toFixed(2))
+            return donation
+        } else {
+            return 0.00
+        }
+    }
+
+    console.log(getDonation())
+
+    const getTotal = () => {
+        let price = getPrice()
+        let tax = getTax()
+        let donation = getDonation()
+        let total = price + tax + donation
+        return total
+    }
+
+
+
     return (
         <div>
             <div className='travel-grid'>
@@ -33,7 +88,7 @@ const BuyTicket = (props) => {
 
                 <div className='c1 r1'><h5 className='time'>7:15 AM</h5></div>
                 <div className='c2 r1'></div>
-                <div className='c3 r1'><h4 className='stop-name'>Bus Stop 1</h4></div>
+                <div className='c3 r1'><h4 className='stop-name'>{props.fromValue}</h4></div>
 
                 <div className='c1 r2'><h5 className='time'></h5></div>
                 <div className='c2 r2'></div>
@@ -41,15 +96,16 @@ const BuyTicket = (props) => {
 
                 <div className='c1 r3'><h5 className='time'>8:05 AM</h5></div>
                 <div className='c2 r3'></div>
-                <div className='c3 r3'><h4 className='stop-name'>Bus Stop 3</h4></div>
+                <div className='c3 r3'><h4 className='stop-name'>Asbury Park</h4></div>
 
                 <div className='c1 r4'><h5 className='time'>8:20 AM</h5></div>
                 <div className='c2 r4'></div>
-                <div className='c3 r4'><h4 className='stop-name'>Bus Stop 4</h4></div>
+                <div className='c3 r4'><h4 className='stop-name'>{props.toValue}</h4></div>
             </div>
 
             <div className='donation'>
                 <input 
+                    onChange={donationCheck}
                     className='donation-checkbox' 
                     type='checkbox' 
                     name='donation' 
@@ -61,10 +117,10 @@ const BuyTicket = (props) => {
 
             <div className='final-price'>
                 <h5 className='final-ticket-type'>{props.ticketType}</h5>
-                <h5 className='final-tax'>Tax: $2.55</h5>
-                <h5 className='donation-amount'>Donation: $0.95</h5>
+                <h5 className='final-tax'>Tax: ${getTax()}</h5>
+                <h5 className='donation-amount'>Donation: ${getDonation()}</h5>
                 <div className='total-line'></div>
-                <h4 className='final-total'>$17.00</h4>
+                <h4 className='final-total'>${getTotal()}</h4>
             </div>
 
             <div className='button-grid'>
