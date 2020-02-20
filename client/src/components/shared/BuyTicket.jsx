@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../../styles/tripdetails.css'
 import '../../styles/buyticket.css'
 import boardingIcon from '../../images/boarding-icon.png'
 import travelTimeIcon from '../../images/travel-time-icon.png'

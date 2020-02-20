@@ -22,7 +22,7 @@ class App extends Component
     this.state = {
       from: 'Andover',
       to: 'Andover',
-      selectedType: null,
+      selectedType: 'One Way: $13.50',
       route: null
     }
   }
