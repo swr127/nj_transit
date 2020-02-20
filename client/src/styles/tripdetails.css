@@ -102,3 +102,22 @@
     grid-column: 2;
 }
 
+.accessible-grid {
+    display: inline-grid;
+    width: 100%;
+    grid-template-columns: 104px 19px 89px auto;
+    grid-template-rows: 19px;
+}
+
+.accessible-image {
+    grid-column: 2;
+}
+
+.accessible-text {
+    grid-column: 3;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 3px;
+    text-align: center;
+    color: var(--dark-slate-blue);
+}
