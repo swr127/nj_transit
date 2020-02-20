@@ -48,10 +48,16 @@ const BuyTicket = (props) => {
                 <div className='c3 r4'><h4 className='stop-name'>Bus Stop 4</h4></div>
             </div>
 
-            <label>
-                <input type='checkbox' name='donation' />
-                <span>Would you like to round up your total to donate to homelessness in NYC?</span>
-            </label>
+            <div className='donation'>
+                <input 
+                    className='donation-checkbox' 
+                    type='checkbox' 
+                    name='donation' 
+                />
+                <p className='donation-text'>
+                    Would you like to <span className='bold-span'>round up your total </span>to donate to homelessness in NYC?
+                </p>
+            </div>
 
             <div className='price'>
                 <h5>{props.ticketType}</h5>
