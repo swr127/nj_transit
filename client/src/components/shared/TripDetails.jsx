@@ -47,7 +47,11 @@ class TripDetails extends Component {
                 
                     <img className='travel-image' src={travelTimeIcon}></img>
                     <h5 className='travel-time'>Travel Time:</h5>
-                    <h4 className='times'>7:15 AM - 8:20 AM</h4>
+                    <h4 className='times'>
+                        <span className='time-span'>7:15 AM</span>
+                         — 
+                        <span className='time-span'>8:20 AM</span>
+                    </h4>
                 </div>
 
 
@@ -102,23 +106,25 @@ class TripDetails extends Component {
                 </form>
 
                 <form className='accessible-grid'>
-                        <img className='accessible-image' src={bitmapIcon}></img>
-                        <span className='accessible-text'>
-                            Accessible Trip
-                        </span>
-                        <input 
-                            className='accessible-box' 
-                            type="checkbox" 
-                            name="accessible"
-                        />
+                    <img className='accessible-image' src={bitmapIcon}></img>
+                    <span className='accessible-text'>
+                        Accessible Trip
+                    </span>
+                    <input 
+                        className='accessible-box' 
+                        type="checkbox" 
+                        name="accessible"
+                    />
                 </form>
 
-                <div className='view-times'>
-                    <NavLink exact to='/schedule'>View all available times</NavLink>
-                </div>
+                <div className='review-line'>
+                    <div className='view-times'>
+                        <NavLink exact to='/schedule'>View all available times</NavLink>
+                    </div>
 
-                <div>
-                    <Link exact to='/ticket'>Review Ticket</Link>
+                    <div>
+                        <Link className='review-button' exact to='/ticket'>Review Ticket</Link>
+                    </div>
                 </div>
 
 

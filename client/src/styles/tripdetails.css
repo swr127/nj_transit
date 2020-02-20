@@ -75,6 +75,10 @@
     color: var(--dark-slate-blue);
 }
 
+.time-span {
+    padding: 0 41px;
+}
+
 .ticket-grid {
     display: inline-grid;
     margin-top:19.1px;
@@ -120,4 +124,12 @@
     padding: 3px;
     text-align: center;
     color: var(--dark-slate-blue);
+}
+
+.review-line {
+    display: inline-grid;
+    margin-top: 54px;
+    width: 100%;
+    grid-template-columns: 127px 172px auto;
+    grid-template-rows: 54px;
 }
