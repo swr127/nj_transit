@@ -27,6 +27,10 @@ class App extends Component
     }
   }
 
+  async componentDidMount() {
+    this.getRoute(1)
+  }
+
   async getRoute(id)
   {
     try
