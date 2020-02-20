@@ -8,6 +8,9 @@
     --white: #ffffff;
 }
 
+
+/* ------ Tabs at the top ------ */
+
 .tabs a {
     color: var(--dark-slate-blue);
     font-family: Arial;
@@ -26,7 +29,8 @@
     box-shadow: none;
 }
 
-/* back and bus# still need some work */
+
+/* ------ Back button and bus number ------ */
 
 .back-bus-div {
     display: inline-grid;
@@ -65,6 +69,9 @@ a.back-button {
     text-align: center;
     color: var(--dark-slate-blue);
 }
+
+
+/* ------ From/To fields ------ */
 
 .from-to h4 {
     font-family: Arial;
@@ -110,6 +117,9 @@ a.back-button {
     border-radius: 7px;
     border: solid 1px var(--dark-slate-blue);
 }
+
+
+/* ------ Alert ------ */
 
 .view-alert {
     width: 59px;

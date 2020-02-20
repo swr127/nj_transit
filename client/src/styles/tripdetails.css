@@ -8,6 +8,9 @@
     --white: #ffffff;
 }
 
+
+/* ------ Boarding on and Travel Time ------ */
+
 .travel-grid {
     display: inline-grid;
     margin-top: 43px;
@@ -79,6 +82,9 @@
     padding: 0 41px;
 }
 
+
+/* ------ Ticket Types ------ */
+
 .ticket-grid {
     display: inline-grid;
     margin-top:19.1px;
@@ -125,6 +131,9 @@
     text-align: center;
     color: var(--dark-slate-blue);
 }
+
+
+/* ------ View Times link and Review Ticket button line ------ */
 
 .review-line {
     display: inline-grid;
