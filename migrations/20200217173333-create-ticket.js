@@ -1,6 +1,7 @@
-'use strict';
+'use strict'
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: (queryInterface, Sequelize) =>
+  {
     return queryInterface.createTable('Tickets', {
       id: {
         allowNull: false,
@@ -21,7 +22,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       travelTime: {
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER
       },
       price: {
         type: Sequelize.FLOAT
@@ -40,9 +41,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Tickets');
+  down: (queryInterface, Sequelize) =>
+  {
+    return queryInterface.dropTable('Tickets')
   }
-};
+}
