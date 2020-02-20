@@ -29,21 +29,23 @@ const BuyTicket = (props) => {
             </div>
 
             <div className='stops'>
-                <div className='column-1'><h5>7:15 AM</h5></div>
+                <div className='blue-line'></div>
+                
+                <div className='column-1'><h5 className='time'>7:15 AM</h5></div>
                 <div className='column-2'></div>
-                <div className='column-3'><h4>Bus Stop 1</h4></div>
+                <div className='column-3'><h4 className='stop-name'>Bus Stop 1</h4></div>
 
-                <div className='column-1'></div>
+                <div className='column-1'><h5 className='time'></h5></div>
                 <div className='column-2'></div>
-                <div className='column-3'><p>(Click to see more)</p></div>
+                <div className='column-3'><p className='click'>(Click to see more)</p></div>
 
-                <div className='column-1'><h5>8:05 AM</h5></div>
+                <div className='column-1'><h5 className='time'>8:05 AM</h5></div>
                 <div className='column-2'></div>
-                <div className='column-3'><h4>Bus Stop 3</h4></div>
+                <div className='column-3'><h4 className='stop-name'>Bus Stop 3</h4></div>
 
-                <div className='column-1'><h5>8:20 AM</h5></div>
+                <div className='column-1'><h5 className='time'>8:20 AM</h5></div>
                 <div className='column-2'></div>
-                <div className='column-3'><h4>Bus Stop 4</h4></div>
+                <div className='column-3'><h4 className='stop-name'>Bus Stop 4</h4></div>
             </div>
 
             <label>
