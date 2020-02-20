@@ -21,7 +21,6 @@ class FromTo extends Component {
     async componentDidMount() {
         try {
             const response = await axios(`${apiUrl}/api/stops`)
-            // console.log(response.data)
             this.setState({ 
                 stops: response.data.stops
              })
@@ -40,47 +39,55 @@ class FromTo extends Component {
                     <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
                 </nav>
 
-                <Link className='back-button' exact to='/'>
-                    <img src={back}></img>
-                    <span className='back'>Back</span>
-                </Link>
-
-                <div>
-                    <p>Bus #....</p>
+                <div className='back-button-div'>
+                    <Link className='back-button' exact to='/'>
+                        <img src={back}></img>
+                        <span className='back'>Back</span>
+                    </Link>
                 </div>
 
-                <h4>From:</h4>
-                <select 
-                    onChange={this.props.handleChangeFromField} 
-                    value={this.props.fromValue}
-                    id='from'>{this.state.stops.map((stop, index) => {
-                        return (
-                            <option 
-                                data-route={stop.routeId}   
-                                value={stop.name}>
-                                    {stop.name}
-                            </option>
-                        )
-                    })}
-                </select>
-
-                <h4>To:</h4>
-                <select 
-                    onChange={this.props.handleChangeToField} 
-                    value={this.props.toValue}
-                    id='to'>{this.state.stops.map((stop, index) => {
-                        return (
-                            <option 
-                                value={stop.name}>
-                                    {stop.name}
-                            </option>
-                        )
-                    })}
-                </select>
-
-                <div>
-                    <img src={alert}></img>
+                <div className='bus-number-div'>
+                    <p className='bus-number'>Bus #3889</p>
                 </div>
+                
+
+                <div className='from-to'>
+                    <h4 className='from-text'>From:</h4>
+                    <select 
+                        className='from-select'
+                        onChange={this.props.handleChangeFromField} 
+                        value={this.props.fromValue}
+                        id='from'>{this.state.stops.map((stop, index) => {
+                            return (
+                                <option 
+                                    data-route={stop.routeId}   
+                                    value={stop.name}>
+                                        {stop.name}
+                                </option>
+                            )
+                        })}
+                    </select>
+                    <h4 className='to-text'>To:</h4>
+                    <select 
+                        className='to-select'
+                        onChange={this.props.handleChangeToField} 
+                        value={this.props.toValue}
+                        id='to'>{this.state.stops.map((stop, index) => {
+                            return (
+                                <option 
+                                    value={stop.name}>
+                                        {stop.name}
+                                </option>
+                            )
+                        })}
+                    </select>
+                    <div className='view-alert'>
+                        <img src={alert}></img>
+                        <span className='alert-text'>View Alert</span>
+                    </div>
+                </div>
+
+
 
             </div>
 
