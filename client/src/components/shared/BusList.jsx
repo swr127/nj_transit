@@ -40,8 +40,8 @@ class BusList extends Component {
                             { this.getStatusImg(bus.status) }
                         </div>
                         <div className='bus-list-times'>
-                            <span className='bust-start-time'>{bus.departureTime, moment().format('LT')}</span>
-                            <span className='bus-end-time'>{bus.arrivalTime, moment().format('LT')}</span>
+                            <span className='bust-start-time'>{moment(bus.departureTime).format('h:mm a')}</span>
+                            <span className='bus-end-time'>{moment(bus.arrivalTime).format('h:mm a')}</span>
                         </div>
                     </div>
                 </div>
