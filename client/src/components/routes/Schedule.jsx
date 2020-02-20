@@ -7,10 +7,11 @@ const Schedule = (props) =>
 {
     return (
         <Layout>
-            <FromTo
-                {...props}
-                handleChangeFromField={props.handleChangeFromField}
-                handleChangeToField={props.handleChangeToField}
+            <FromTo 
+                handleChangeFromField={props.handleChangeFromField} 
+                handleChangeToField={props.handleChangeToField} 
+                fromValue={props.fromValue}
+                toValue={props.toValue}
             />
             <BusList
                 routeId={props.routeId}

@@ -22,9 +22,13 @@ class App extends Component
     this.state = {
       from: 'Andover',
       to: 'Andover',
-      selectedType: null,
+      selectedType: 'One Way: $13.50',
       route: null
     }
+  }
+
+  async componentDidMount() {
+    this.getRoute(1)
   }
 
   async getRoute(id)
@@ -92,9 +96,10 @@ class App extends Component
                 handleChangeToField={this.handleChangeToField}
                 handleTypeChange={this.handleTypeChange}
                 routeId={this.state.route}
-              />)}
-            />
-
+                fromValue={this.state.from}
+                toValue={this.state.to}
+              />
+            </Route>
             <Route exact path='/menu' component={Menu} />
             <Route exact path='/ticket'>
               <Ticket
