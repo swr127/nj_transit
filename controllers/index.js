@@ -223,6 +223,10 @@ const getAllBusesWithRoutes = async (req, res) =>
                 {
                     model: Route
                 }
+            ],
+            order: [
+                ['departureTime', 'ASC'],
+                ['routeId', 'ASC']
             ]
         })
         return res.status(200).json({ buses })

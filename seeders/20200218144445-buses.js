@@ -135,7 +135,7 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                departureTime: '2020-02-21 12:09:00-05',
+                departureTime: '2020-02-21 12:13:00-05',
                 arrivalTime: '2020-02-21 13:43:00-05',
                 platform: 3,
                 status: 'On Time', // equals On Time, Delayed or Cancelled
@@ -145,7 +145,7 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                departureTime: '2020-02-21 13:09:00-05',
+                departureTime: '2020-02-21 13:13:00-05',
                 arrivalTime: '2020-02-21 14:43:00-05',
                 platform: 3,
                 status: 'On Time', // equals On Time, Delayed or Cancelled
@@ -155,7 +155,7 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                departureTime: '2020-02-21 14:09:00-05',
+                departureTime: '2020-02-21 14:13:00-05',
                 arrivalTime: '2020-02-21 15:43:00-05',
                 platform: 3,
                 status: 'On Time', // equals On Time, Delayed or Cancelled
@@ -165,7 +165,7 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                departureTime: '2020-02-21 15:09:00-05',
+                departureTime: '2020-02-21 15:13:00-05',
                 arrivalTime: '2020-02-21 16:43:00-05',
                 platform: 3,
                 status: 'On Time', // equals On Time, Delayed or Cancelled
