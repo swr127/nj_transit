@@ -7,9 +7,11 @@ import alertIcon from '../../images/view-alert-icon.png'
 import serviceIcon from '../../images/service-status-icon.png'
 import '../../styles/fromto.css'
 
-class FromTo extends Component {
-    constructor(props) {
-        super(props) 
+class FromTo extends Component
+{
+    constructor(props)
+    {
+        super(props)
 
         this.state = {
             from: null,
@@ -18,18 +20,41 @@ class FromTo extends Component {
         }
     }
 
-    async componentDidMount() {
-        try {
+    async componentDidMount()
+    {
+        try
+        {
             const response = await axios(`${apiUrl}/api/stops`)
-            this.setState({ 
+            this.setState({
                 stops: response.data.stops
-             })
-        } catch (err) {
+            })
+        } catch (err)
+        {
             console.error(err)
         }
     }
 
-    render() {
+    renderBusNumber = () =>
+    {
+        if (this.props.routeId)
+        {
+            if (this.props.location.pathname === '/schedule')
+            {
+                return
+            }
+            else
+            {
+                if (this.props.routeId)
+                {
+                    return <span className='bus-number'>Bus #3889</span>
+                }
+            }
+        }
+    }
+
+
+    render()
+    {
         return (
             <div className='FromTo'>
 
@@ -45,36 +70,40 @@ class FromTo extends Component {
                         <p className='back-text'>Back</p>
                     </Link>
 
-                    <span className='bus-number'>Bus #3889</span>
+                    {this.renderBusNumber()}
                 </div>
-                
+
 
                 <div className='from-to'>
                     <h4 className='from-text'>From:</h4>
-                    <select 
+                    <select
                         className='from-select'
-                        onChange={this.props.handleChangeFromField} 
+                        onChange={this.props.handleChangeFromField}
                         value={this.props.fromValue}
-                        id='from'>{this.state.stops.map((stop, index) => {
+                        id='from'>{this.state.stops.map((stop, index) =>
+                        {
                             return (
-                                <option 
-                                    data-route={stop.routeId}   
+                                <option
+                                    key={index}
+                                    data-route={stop.routeId}
                                     value={stop.name}>
-                                        {stop.name}
+                                    {stop.name}
                                 </option>
                             )
                         })}
                     </select>
                     <h4 className='to-text'>To:</h4>
-                    <select 
+                    <select
                         className='to-select'
-                        onChange={this.props.handleChangeToField} 
+                        onChange={this.props.handleChangeToField}
                         value={this.props.toValue}
-                        id='to'>{this.state.stops.map((stop, index) => {
+                        id='to'>{this.state.stops.map((stop, index) =>
+                        {
                             return (
-                                <option 
+                                <option
+                                    key={index}
                                     value={stop.name}>
-                                        {stop.name}
+                                    {stop.name}
                                 </option>
                             )
                         })}
@@ -90,7 +119,7 @@ class FromTo extends Component {
             </div>
 
         )
-    } 
+    }
 }
 
 export default FromTo

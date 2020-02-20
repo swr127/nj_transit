@@ -3,7 +3,8 @@ import Layout from '../shared/Layout'
 import FromTo from '../shared/FromTo'
 import BusList from '../shared/BusList'
 
-const Schedule = (props) => {
+const Schedule = (props) =>
+{
     return (
         <Layout>
             <FromTo 
@@ -12,7 +13,7 @@ const Schedule = (props) => {
                 fromValue={props.fromValue}
                 toValue={props.toValue}
             />
-            <BusList 
+            <BusList
                 routeId={props.routeId}
             />
         </Layout>

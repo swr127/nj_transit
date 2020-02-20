@@ -65,7 +65,8 @@ class App extends Component
 
 
   // select ticket type:
-  handleTypeChange = (event) => {
+  handleTypeChange = (event) =>
+  {
     console.log(event.target.value)
     this.setState({
       selectedType: event.target.value
@@ -88,8 +89,9 @@ class App extends Component
               />
             </Route>
             <Route exact path='/service' component={Service} />
-            <Route exact path='/schedule'>
+            <Route exact path='/schedule' component={(p) => (
               <Schedule
+                {...p}
                 handleChangeFromField={this.handleChangeFromField}
                 handleChangeToField={this.handleChangeToField}
                 handleTypeChange={this.handleTypeChange}
@@ -100,7 +102,7 @@ class App extends Component
             </Route>
             <Route exact path='/menu' component={Menu} />
             <Route exact path='/ticket'>
-              <Ticket 
+              <Ticket
                 fromValue={this.state.from}
                 toValue={this.state.to}
                 routeId={this.state.route}
@@ -112,7 +114,7 @@ class App extends Component
             <Route exact path='/admin/tickets/:id/edit' component={AdminTicketEdit} />
           </Switch>
         </React.Fragment>
-      </div>
+      </div >
     )
   }
 }

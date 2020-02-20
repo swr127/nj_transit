@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import ServiceStatus from '../shared/ServiceStatus'
 
 import arrowIcon from '../../images/arrow-icon.png'
-// import planIcon from '../../images/plan-icon.png'
-// import scheduleIcon from '../../images/schedule-icon.png'
 import busIcon from '../../images/bus-icon.png'
 import lightRailIcon from '../../images/light-rail-icon.png'
 import railIcon from '../../images/rail-icon.png'
@@ -23,28 +21,24 @@ const Home = (props) =>
                     <button className='home-button'>
                         <img src={busIcon} alt='Bus Icon' />
                         <span className='home-button-text'>Bus</span>
-                        <img src={arrowIcon} alt='Next Arrow Icon'/>
+                        <img src={arrowIcon} alt='Next Arrow Icon' />
                     </button>
                 </Link>
-                <Link to='/menu'>
-                    <button className='home-button'>
-                        <img src={railIcon} alt='Rail Icon' />
-                        <span className='home-button-text'>Rail</span>
-                        <img src={arrowIcon} alt='Next Arrow Icon'/>
-                    </button>
-                </Link>
-                <Link to='/menu'>
-                    <button className='home-button'>
-                        <img src={lightRailIcon} alt='Light Rail Icon' />
-                        <span className='home-button-text'>Light Rail</span>
-                        <img src={arrowIcon} alt='Next Arrow Icon'/>
-                    </button>
-                </Link>
+                <button className='home-button'>
+                    <img src={railIcon} alt='Rail Icon' />
+                    <span className='home-button-text'>Rail</span>
+                    <img src={arrowIcon} alt='Next Arrow Icon' />
+                </button>
+                <button className='home-button'>
+                    <img src={lightRailIcon} alt='Light Rail Icon' />
+                    <span className='home-button-text'>Light Rail</span>
+                    <img src={arrowIcon} alt='Next Arrow Icon' />
+                </button>
                 <Link to='/service'>
                     <button className='home-button'>
-                        <img src={serviceIcon} alt='Next Arrow Icon'/>
+                        <img src={serviceIcon} alt='Next Arrow Icon' />
                         <span className='home-button-text'>Service Status</span>
-                        <img src={arrowIcon} alt='Next Arrow Icon'/>
+                        <img src={arrowIcon} alt='Next Arrow Icon' />
                     </button>
                 </Link>
             </div>
