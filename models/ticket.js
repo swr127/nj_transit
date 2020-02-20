@@ -1,10 +1,11 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+'use strict'
+module.exports = (sequelize, DataTypes) =>
+{
   const Ticket = sequelize.define('Ticket', {
     type: DataTypes.STRING,
     startLocation: DataTypes.STRING,
     endDestination: DataTypes.STRING,
-    travelTime: DataTypes.DATE,
+    travelTime: DataTypes.INTEGER,
     price: DataTypes.FLOAT,
     tax: DataTypes.FLOAT,
     donation: DataTypes.BOOLEAN,
@@ -16,11 +17,12 @@ module.exports = (sequelize, DataTypes) => {
         as: 'busId'
       }
     }
-  }, {});
-  Ticket.associate = function(models) {
+  }, {})
+  Ticket.associate = function (models)
+  {
     Ticket.belongsTo(models.Bus, {
       foreignKey: 'busId'
     })
-  };
-  return Ticket;
-};
+  }
+  return Ticket
+}
