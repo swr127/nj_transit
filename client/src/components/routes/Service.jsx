@@ -9,6 +9,7 @@ import busIcon from '../../images/bus-icon-med.png'
 import railIcon from '../../images/rail-icon-med.png'
 import lightRailIcon from '../../images/light-rail-icon-med.png'
 import atlanticCity from '../../images/atlantic-city-icon.png'
+import { routeImageByID } from '../../routeImages'
 import '../../styles/service.css'
 
 class Service extends Component {
@@ -30,13 +31,29 @@ class Service extends Component {
         }
     }
 
+    getStatusColor(status) {
+        if (status == 'Cancelled') {
+            return (
+                <div className='service-bus-status-red'>Cancelled</div>
+            )
+        } else if (status == 'Delay') { 
+            return (
+                <div className='service-bus-status-red'>Delayed</div>
+            )
+        } else {
+            return (
+                <div className='service-bus-status-green'>On Time</div>
+            ) 
+        }
+    }
+
     render() {
         const service = this.state.service.map(bus => (
             <div className='service' key={bus.id}>
                 <div className='service-info'>
-                    <img className='service-info' src={atlanticCity} />
+                    <img className='service-button-image' src={routeImageByID(bus.routeId)} alt='' />
                     <div className='service-route'>{bus.Route.name}</div>
-                    <div className='service-bus-status'>{bus.status}</div>
+                    { this.getStatusColor(bus.status) }
                 </div>
                 <div className='service-bus-number'>Bus #{bus.busNumber}</div>
                 <div className='small-line'></div>

@@ -23,7 +23,6 @@ class BusList extends Component {
                 <img className='bus-list-status' src={goodService} alt='Service Status'/>
             )
         }
-
     }
 
     render() {
