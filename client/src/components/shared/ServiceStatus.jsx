@@ -51,10 +51,10 @@ class ServiceStatus extends Component
                     case 'Cancelled':
                         cancelledArray.push(route)
                         break
-                    case 'Delay':
+                    case 'Delayed':
                         delayedArray.push(route)
                         break
-                    case 'Good':
+                    case 'On Time':
                         onTimeArray.push(route)
                         break
                     default:
