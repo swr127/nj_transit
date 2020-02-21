@@ -36,50 +36,42 @@ class FromTo extends Component
 
     renderBusNumber = () =>
     {
-        // console.log(this.props)
-        // if (this.props.routeId)
-        // {
-        //     if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
-        //     {
-        //         return
-        //     }
-        //     else
-        //     {
-        //         if (this.props.routeId && this.props.routeId.Buses)
-        //         {
-        //             return <span className='bus-number'>Bus #{this.props.routeId.Buses[0].busNumber}</span>
-        //         }
-        //     }
-        // }
-        // return <span className='bus-number'>Bus #3088</span>
-        return
+        if (this.props.routeId)
+        {
+
+            if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
+            {
+                return
+            }
+            else
+            {
+                if (this.props.routeId && this.props.routeId.data.route.Buses)
+                {
+                    return <span className='bus-number'>Bus #{this.props.routeId.data.route.Buses[0].busNumber}</span>
+                }
+            }
+        }
     }
 
     renderBusAlert = () =>
     {
-        // if (this.props.routeId)
-        // {
-        //     if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
-        //     {
-        //         return
-        //     }
-        //     else
-        //     {
-        //         if (this.props.routeId)
-        //         {
-        //             return (<div className='view-alert'>
-        //                 <img src={alertIcon} alt='Alert'></img>
-        //                 <span className='alert-text'>View Alert</span>
-        //             </div>)
-        //         }
-        //     }
-        // }
-
-        // return (<div className='view-alert'>
-        //     <img src={alertIcon} alt='Alert'></img>
-        //     <span className='alert-text'>View Alert</span>
-        // </div>)
-        return
+        if (this.props.routeId)
+        {
+            if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
+            {
+                return
+            }
+            else
+            {
+                if (this.props.routeId.data.route.Buses[0].status !== 'On Time')
+                {
+                    return (<div className='view-alert'>
+                        <img src={alertIcon} alt='Alert'></img>
+                        <span className='alert-text'>View Alert</span>
+                    </div>)
+                }
+            }
+        }
     }
 
 
@@ -100,7 +92,6 @@ class FromTo extends Component
                         <img className='back-image' src={backIcon} alt='Back'></img>
                         <p className='back-text'>Back</p>
                     </Link>
-
                     {this.renderBusNumber()}
                 </div>
 

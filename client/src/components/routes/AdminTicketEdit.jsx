@@ -56,7 +56,6 @@ class AdminTicketEdit extends Component
 
     ticketDetailEdit = () =>
     {
-        console.log(this.state)
         if (this.state.ticket && !this.state.updated)
         {
             return (
