@@ -314,9 +314,25 @@ render() {
 ```
 
 ### Trevor's Snippet:
-
+I wanted to show each route status as indicated by the worst case for each route so that a route showing good status means all buses have 'on time' status. If there is at least one delayed bus the whole route is summerized as delayed and if at least one cancelled bus the whole route is summerized as cancelled.
 ```
+const routeWithStatus = async (req, res) =>
+{
+    try
+    {
+        const routeStatus = await Bus.findAll({
+            attributes: ['routeId', [sequelize.fn('min', sequelize.col('status')), 'status']],
+            group: ['routeId'],
+            order: ['routeId']
+        })
 
+        return res.status(200).json({ routeStatus })
+        return res.status(404).send('Error')
+    } catch (error)
+    {
+        return res.status(500).send(error.message)
+    }
+}
 ```
 
 ## Change Log
