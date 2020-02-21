@@ -3,8 +3,6 @@ import '../../styles/boughtticket.css'
 import xIcon from '../../images/bitmap@2x.png'
 
 const BoughtTicket = (props) => {
-    console.log(props)
-
     const handleClick = () => {
         props.toggle()
     }
@@ -24,6 +22,7 @@ const BoughtTicket = (props) => {
                             type="radio" 
                             name="get-ticket" 
                             value="download" 
+                            readOnly
                             checked
                         />
                         <h4 className='get-ticket-text'>Download ticket to my phone.</h4>
@@ -35,6 +34,7 @@ const BoughtTicket = (props) => {
                             type="radio" 
                             name="get-ticket" 
                             value="email"
+                            readOnly
                         />
                         <h4 className='get-ticket-text'>Email my ticket to me.</h4>
                     </div>
