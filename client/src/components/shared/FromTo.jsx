@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import backIcon from '../../images/back.png'
 import alertIcon from '../../images/view-alert-icon.png'
 import serviceIcon from '../../images/service-status-icon.png'
@@ -90,6 +90,11 @@ class FromTo extends Component
     }
 
 
+    goBack = () =>
+    {
+        this.props.history && this.props.history.goBack()
+    }
+
     render()
     {
         return (
@@ -102,10 +107,10 @@ class FromTo extends Component
                 </nav>
 
                 <div className='back-bus-div'>
-                    <Link className='back-button' to='/'>
+                    <div className='back-button' onClick={this.goBack}>
                         <img className='back-image' src={backIcon} alt='Back'></img>
                         <p className='back-text'>Back</p>
-                    </Link>
+                    </div>
                     {this.renderBusNumber()}
                 </div>
 
