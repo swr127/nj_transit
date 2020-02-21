@@ -74,6 +74,20 @@ class FromTo extends Component
         }
     }
 
+    readOnlyOnBuyTicketPage = () =>
+    {
+        if (this.props.routeId)
+        {
+            if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
+            {
+                return false
+            }
+            else
+            {
+                return true
+            }
+        }
+    }
 
 
     render()
@@ -102,6 +116,7 @@ class FromTo extends Component
                         className='from-select'
                         onChange={this.props.handleChangeFromField}
                         value={this.props.fromValue}
+                        disabled={this.readOnlyOnBuyTicketPage()}
                         id='from'>{this.state.stops.map((stop, index) =>
                         {
                             return (
@@ -119,6 +134,7 @@ class FromTo extends Component
                         className='to-select'
                         onChange={this.props.handleChangeToField}
                         value={this.props.toValue}
+                        disabled={this.readOnlyOnBuyTicketPage()}
                         id='to'>{this.state.stops.map((stop, index) =>
                         {
                             return (
