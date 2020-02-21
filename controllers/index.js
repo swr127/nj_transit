@@ -38,7 +38,6 @@ const createTicket = async (req, res) =>
 {
     try
     {
-        console.log(req.body)
         const ticket = await Ticket.create(req.body)
         return res.status(201).json({ ticket })
     } catch (error)
