@@ -14,7 +14,7 @@ class BusList extends Component {
     }
 
     getStatusImg(status) {
-        if (status == 'Cancelled' || status == 'Delay') {
+        if (status === 'Cancelled' || status === 'Delay') {
             return (
                 <img className='bus-list-status' src={badService} alt='Service Status'/>
             )

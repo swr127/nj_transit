@@ -5,7 +5,7 @@ import '../../styles/header.css'
 
 const Header = (props) =>
 {
-    return (<Link to='/'><img className='header-image' src={headerImage} alt='NJ Transit Header Image' width='320' /></Link>)
+    return (<Link to='/'><img className='header-image' src={headerImage} alt='NJ Transit' width='320' /></Link>)
 }
 
 export default Header
