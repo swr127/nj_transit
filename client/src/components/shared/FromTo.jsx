@@ -72,7 +72,6 @@ class FromTo extends Component
                 }
             }
         }
-        return
     }
 
 
