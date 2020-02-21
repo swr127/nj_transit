@@ -88,7 +88,7 @@ class FromTo extends Component
                 </nav>
 
                 <div className='back-bus-div'>
-                    <Link className='back-button' exact to='/'>
+                    <Link className='back-button' to='/'>
                         <img className='back-image' src={backIcon} alt='Back'></img>
                         <p className='back-text'>Back</p>
                     </Link>
