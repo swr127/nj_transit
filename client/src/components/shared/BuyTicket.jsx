@@ -5,6 +5,7 @@ import travelTimeIcon from '../../images/travel-time-icon.png'
 import stoppingAtIcon from '../../images/stopping-at-icon@2x.png'
 import Axios from 'axios'
 import apiUrl from '../../apiConfig'
+import BoughtTicket from '../popups/BoughtTicket'
 
 const BuyTicket = (props) =>
 {
@@ -63,9 +64,11 @@ const BuyTicket = (props) =>
         return total
     }
 
-    const handleClick = async (event) =>
-    {
-        event.preventDefault()
+    const [seen, setSeen] = useState(false)
+
+    const handleClick = async (event) => {
+
+        setSeen(!seen)
 
         Axios({
             url: `${apiUrl}/api/tickets`,
@@ -154,6 +157,7 @@ const BuyTicket = (props) =>
                         Buy Ticket
                     </span>
                 </button>
+                {seen ? <BoughtTicket toggle={handleClick} /> : null}
             </div>
 
         </div>

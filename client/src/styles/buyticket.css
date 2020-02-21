@@ -306,3 +306,87 @@
   text-align: center;
   color: var(--white);
 }
+
+
+/* ------ Buy Ticket Popup ------ */
+
+.ticket-modal {
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  width: 320px;
+  height: 178.5%;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.ticket-modal-content {
+  background-color: var(--white);
+  margin: 700px auto 0 auto;
+  width: 280px;
+  height: 230px;
+  border-radius: 10px;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+}
+
+.close-popup {
+  float: right;
+  margin: 16px;
+  margin-bottom: 0;
+}
+
+.close-popup img {
+  width: 23px;
+  height: 23px;
+}
+
+.great-trip-text {
+  display: inline-block;
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--dark-slate-blue);
+  margin-bottom: 0;
+}
+
+.question-text {
+  font-family: Arial;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  color: var(--dark-slate-blue);
+  margin-top: 0;
+}
+
+.get-ticket-buttons {
+  display: inline-grid;
+  grid-template-columns: 16px 26px 11px auto;
+  grid-template-rows: 5px 26px 6px;
+  width: 243px;
+  height: 35px;
+  margin: 11px auto 0 auto;
+  border-radius: 17.5px;
+  background-color: var(--light-grey);
+}
+
+.ticket-checkbox{
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  border: solid 1px #979797;
+}
+
+.get-ticket-text {
+  grid-column: 4;
+  grid-row: 2;
+  margin: auto 0;
+  display: inline;
+  text-align: left;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--tangerine);
+}
