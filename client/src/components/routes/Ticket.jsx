@@ -1,34 +1,41 @@
 import React, { Component } from 'react'
-import apiUrl from '../../apiConfig'
-import axios from 'axios'
+// import apiUrl from '../../apiConfig'
+// import axios from 'axios'
 import Layout from '../shared/Layout'
 import FromTo from '../shared/FromTo'
 import BuyTicket from '../shared/BuyTicket'
 
-class Ticket extends Component {
-    constructor(props) {
+class Ticket extends Component
+{
+    constructor(props)
+    {
         super(props)
 
         this.state = {
-            
+
         }
     }
 
-    async componentDidMount() {
-        try {
-            const response = await axios(`${apiUrl}/api/ticket`)
-            this.setState({ })
-        } catch (err) {
+    async componentDidMount()
+    {
+        try
+        {
+            // const response = await axios(`${apiUrl}/api/ticket`)
+            // this.setState({})
+        } catch (err)
+        {
             console.error(err)
         }
     }
 
-    render() {
+    render()
+    {
         return (
             <Layout>
 
-                <FromTo 
-                    routeId={this.props.routeId} 
+                <FromTo
+                    {...this.props}
+                    routeId={this.props.routeId}
                     fromValue={this.props.fromValue}
                     toValue={this.props.toValue}
                 />
@@ -39,7 +46,7 @@ class Ticket extends Component {
                     fromValue={this.props.fromValue}
                     toValue={this.props.toValue}
                 />
-                
+
             </Layout>
         )
     }

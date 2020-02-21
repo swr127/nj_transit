@@ -36,21 +36,52 @@ class FromTo extends Component
 
     renderBusNumber = () =>
     {
-        if (this.props.routeId)
-        {
-            if (this.props.location.pathname === '/schedule')
-            {
-                return
-            }
-            else
-            {
-                if (this.props.routeId)
-                {
-                    return <span className='bus-number'>Bus #3889</span>
-                }
-            }
-        }
+        // console.log(this.props)
+        // if (this.props.routeId)
+        // {
+        //     if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
+        //     {
+        //         return
+        //     }
+        //     else
+        //     {
+        //         if (this.props.routeId && this.props.routeId.Buses)
+        //         {
+        //             return <span className='bus-number'>Bus #{this.props.routeId.Buses[0].busNumber}</span>
+        //         }
+        //     }
+        // }
+        // return <span className='bus-number'>Bus #3088</span>
+        return
     }
+
+    renderBusAlert = () =>
+    {
+        // if (this.props.routeId)
+        // {
+        //     if (this.props.location.pathname === '/schedule' || this.props.location.pathname === '/planatrip')
+        //     {
+        //         return
+        //     }
+        //     else
+        //     {
+        //         if (this.props.routeId)
+        //         {
+        //             return (<div className='view-alert'>
+        //                 <img src={alertIcon} alt='Alert'></img>
+        //                 <span className='alert-text'>View Alert</span>
+        //             </div>)
+        //         }
+        //     }
+        // }
+
+        // return (<div className='view-alert'>
+        //     <img src={alertIcon} alt='Alert'></img>
+        //     <span className='alert-text'>View Alert</span>
+        // </div>)
+        return
+    }
+
 
 
     render()
@@ -61,12 +92,12 @@ class FromTo extends Component
                 <nav className='tabs'>
                     <NavLink exact to='/planatrip'>Plan a trip</NavLink>
                     <NavLink exact to='/schedule'>View schedules</NavLink>
-                    <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
+                    <NavLink exact to='/service'><img src={serviceIcon} alt='Service'></img></NavLink>
                 </nav>
 
                 <div className='back-bus-div'>
                     <Link className='back-button' exact to='/'>
-                        <img className='back-image' src={backIcon}></img>
+                        <img className='back-image' src={backIcon} alt='Back'></img>
                         <p className='back-text'>Back</p>
                     </Link>
 
@@ -108,10 +139,7 @@ class FromTo extends Component
                             )
                         })}
                     </select>
-                    <div className='view-alert'>
-                        <img src={alertIcon}></img>
-                        <span className='alert-text'>View Alert</span>
-                    </div>
+                    {this.renderBusAlert()}
                 </div>
 
 

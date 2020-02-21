@@ -27,7 +27,8 @@ class App extends Component
     }
   }
 
-  async componentDidMount() {
+  async componentDidMount()
+  {
     this.getRoute(1)
   }
 
@@ -89,9 +90,8 @@ class App extends Component
               />
             </Route>
             <Route exact path='/service' component={Service} />
-            <Route exact path='/schedule' component={(p) => (
+            <Route exact path='/schedule' >
               <Schedule
-                {...p}
                 handleChangeFromField={this.handleChangeFromField}
                 handleChangeToField={this.handleChangeToField}
                 handleTypeChange={this.handleTypeChange}
@@ -101,7 +101,7 @@ class App extends Component
               />
             </Route>
             <Route exact path='/menu' component={Menu} />
-            <Route exact path='/ticket'>
+            <Route exact path='/ticket' >
               <Ticket
                 fromValue={this.state.from}
                 toValue={this.state.to}
