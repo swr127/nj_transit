@@ -1,30 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import axios from 'axios'
-import apiUrl from '../../apiConfig'
 import '../../styles/tripdetails.css'
 import travelTimeIcon from '../../images/travel-time-icon.png'
 import bitmapIcon from '../../images/bitmap.png'
 
-class TripDetails extends Component {
-    constructor(props) {
-        super(props)
-
-    }
-
-    async componentDidMount() {
-        try {
-            const response = await axios(`${apiUrl}/api/tickets`)
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
-    render() {
+const TripDetails = (props) => {
         return (
             <div>
                 <div className='trip-grid'>                
-                    <img className='trip-image' src={travelTimeIcon}></img>
+                    <img className='trip-image' src={travelTimeIcon} alt='Travel Time'></img>
                     <h5 className='trip-time'>Travel Time:</h5>
                     <h4 className='trip-times'>
                         <span className='time-span'>7:15 AM</span>
@@ -41,7 +25,7 @@ class TripDetails extends Component {
                         type="radio" 
                         name="ticketType" 
                         value="One Way: $13.50" 
-                        onChange={this.props.handleTypeChange} 
+                        onChange={props.handleTypeChange} 
                         checked
                     />
                     <span className='text' id='one-way-text'>
@@ -54,7 +38,7 @@ class TripDetails extends Component {
                         type="radio" 
                         name="ticketType" 
                         value="Round Trip: $25.50" 
-                        onChange={this.props.handleTypeChange} 
+                        onChange={props.handleTypeChange} 
                     />
                     <span className='text' id='round-trip-text'>
                         Round Trip: $25.50
@@ -66,7 +50,7 @@ class TripDetails extends Component {
                         type="radio" 
                         name="ticketType" 
                         value="Weekly Pass: $70.50" 
-                        onChange={this.props.handleTypeChange} 
+                        onChange={props.handleTypeChange} 
                     />
                     <span className='text' id='weekly-text'>
                         Weekly Pass: $70.50
@@ -78,7 +62,7 @@ class TripDetails extends Component {
                         type="radio" 
                         name="ticketType" 
                         value="Monthly Pass: $280" 
-                        onChange={this.props.handleTypeChange} 
+                        onChange={props.handleTypeChange} 
                     />
                     <span className='text' id='monthly-text'>
                         Monthly Pass: $280
@@ -86,7 +70,7 @@ class TripDetails extends Component {
                 </form>
 
                 <form className='accessible-grid'>
-                    <img className='accessible-image' src={bitmapIcon}></img>
+                    <img className='accessible-image' src={bitmapIcon} alt='Wheelchair Accessible'></img>
                     <span className='accessible-text'>
                         Accessible Trip
                     </span>
@@ -111,7 +95,6 @@ class TripDetails extends Component {
 
             </div>
         )
-    }
 }
 
 export default TripDetails

@@ -8,7 +8,6 @@ import serviceIcon from '../../images/service-status-icon.png'
 import busIcon from '../../images/bus-icon-med.png'
 import railIcon from '../../images/rail-icon-med.png'
 import lightRailIcon from '../../images/light-rail-icon-med.png'
-import atlanticCity from '../../images/atlantic-city-icon.png'
 import { routeImageByID } from '../../routeImages'
 import '../../styles/service.css'
 
@@ -32,11 +31,11 @@ class Service extends Component {
     }
 
     getStatusColor(status) {
-        if (status == 'Cancelled') {
+        if (status === 'Cancelled') {
             return (
                 <div className='service-bus-status-red'>Cancelled</div>
             )
-        } else if (status == 'Delayed') { 
+        } else if (status === 'Delayed') { 
             return (
                 <div className='service-bus-status-red'>Delayed</div>
             )
@@ -51,7 +50,7 @@ class Service extends Component {
         const service = this.state.service.map(bus => (
             <div className='service' key={bus.id}>
                 <div className='service-info'>
-                    <img className='service-button-image' src={routeImageByID(bus.routeId)} alt='' />
+                    <img className='service-button-image' src={routeImageByID(bus.routeId)} alt='View Bus Service' />
                     <div className='service-route'>{bus.Route.name}</div>
                     { this.getStatusColor(bus.status) }
                 </div>
@@ -65,7 +64,7 @@ class Service extends Component {
                 <nav className='service-tabs'>
                     <NavLink exact to='/planatrip'>Plan a trip</NavLink>
                     <NavLink exact to='/schedule'>View schedules</NavLink>
-                    <NavLink exact to='/service'><img src={serviceIcon}></img></NavLink>
+                    <NavLink exact to='/service'><img src={serviceIcon} alt='View Service'></img></NavLink>
                 </nav>
                 
                 <div className='icons-imgs'>
@@ -86,7 +85,7 @@ class Service extends Component {
                 {service}
 
                 <Link className='back-button' exact to='/'>
-                    <img src={back}></img>
+                    <img src={back} alt='Back'></img>
                     <span className='back'>Back</span>
                 </Link>
 
