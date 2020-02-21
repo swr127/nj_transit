@@ -3,6 +3,8 @@ import '../../styles/buyticket.css'
 import boardingIcon from '../../images/boarding-icon.png'
 import travelTimeIcon from '../../images/travel-time-icon.png'
 import stoppingAtIcon from '../../images/stopping-at-icon@2x.png'
+import Axios from 'axios'
+import apiUrl from '../../apiConfig'
 
 const BuyTicket = (props) => {
 
@@ -18,15 +20,11 @@ const BuyTicket = (props) => {
         }
     }
 
-    console.log(getPrice())
-
     const getTax = () => {
         let price = getPrice()
-        let tax = price * 0.08
+        let tax = parseFloat((price * 0.08).toFixed(2))
         return tax
     }
-
-    console.log(getTax())
 
     const [checkbox, setCheckbox] = useState(false)
 
@@ -39,17 +37,13 @@ const BuyTicket = (props) => {
             let price = getPrice()
             let tax = getTax()
             let subTotal = parseFloat((price + tax).toFixed(2))
-            console.log(subTotal)
             let total = parseFloat(Math.ceil(subTotal).toFixed(2))
-            console.log(total)
             let donation = parseFloat((total - subTotal).toFixed(2))
             return donation
         } else {
             return 0.00
         }
     }
-
-    console.log(getDonation())
 
     const getTotal = () => {
         let price = getPrice()
@@ -59,16 +53,34 @@ const BuyTicket = (props) => {
         return total
     }
 
+    const handleClick = async (event) => {
+        event.preventDefault()
 
+        Axios({
+            url: `${apiUrl}/api/tickets`,
+            method: 'POST',
+            data: {
+                type: props.ticketType,
+                startLocation: props.fromValue,
+                endDestination: props.toValue,
+                travelTime: Math.ceil(Math.random(50)),
+                price: getPrice(),
+                tax: getTax(),
+                donation: checkbox,
+                busId: Math.ceil(Math.random(35))
+            }
+        })
+        .catch(console.error)
+    }
 
     return (
         <div>
             <div className='travel-grid'>
-                <img className='boarding-image' src={boardingIcon}></img>
+                <img className='boarding-image' src={boardingIcon} alt='boarding-icon'></img>
                 <h5 className='boarding-on'>Boarding on:</h5>
                 <h4 className='platform'>Platform 2</h4>
 
-                <img className='travel-image' src={travelTimeIcon}></img>
+                <img className='travel-image' src={travelTimeIcon} alt='travel-time-icon'></img>
                 <h5 className='travel-time'>Travel Time:</h5>
                 <h4 className='times'>
                     <span className='time-span'>7:15 AM</span>
@@ -125,7 +137,8 @@ const BuyTicket = (props) => {
             <div className='button-grid'>
                 <button 
                     className='buy-ticket-button' 
-                    type='button'>
+                    type='button'
+                    onClick={handleClick}>
                     <span className='buy-ticket-button-text'>
                         Buy Ticket
                     </span>

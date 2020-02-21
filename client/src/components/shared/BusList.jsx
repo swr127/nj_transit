@@ -27,7 +27,6 @@ class BusList extends Component {
 
     render() {
         let bus
-        console.log(this.props)
 
         if (this.props.routeId) {
             bus = this.props.routeId.data.route.Buses.map((bus, id) => (
