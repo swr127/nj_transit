@@ -3,7 +3,7 @@ const router = Router()
 const controllers = require('../controllers')
 
 // HIGH PRIORITY CRUD 
-router.get('/', (req, res) => res.send('Welcome to NJ Transit!'))
+// router.get('/', (req, res) => res.send('Welcome to NJ Transit!'))
 router.get('/api/tickets', controllers.getAllTickets)
 router.get('/api/routes', controllers.getAllRoutes)
 router.get('/api/stops', controllers.getAllStops)
