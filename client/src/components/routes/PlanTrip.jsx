@@ -3,14 +3,16 @@ import Layout from '../shared/Layout'
 import TripDetails from '../shared/TripDetails'
 import FromTo from '../shared/FromTo'
 
-class PlanTrip extends Component {
-    constructor(props) {
+class PlanTrip extends Component
+{
+    constructor(props)
+    {
         super(props)
 
         this.state = {
         }
     }
-
+  
     async componentDidMount() {
         try {
             this.setState({ })
@@ -19,14 +21,16 @@ class PlanTrip extends Component {
         }
     }
 
-    render() {
+    render()
+    {
         return (
             <Layout>
-                <FromTo 
-                    handleChangeFromField={this.props.handleChangeFromField} 
-                    handleChangeToField={this.props.handleChangeToField} 
+                <FromTo
+                    {...this.props}
+                    handleChangeFromField={this.props.handleChangeFromField}
+                    handleChangeToField={this.props.handleChangeToField}
                 />
-                <TripDetails 
+                <TripDetails
                     handleTypeChange={this.props.handleTypeChange}
                 />
             </Layout>
