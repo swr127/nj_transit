@@ -7,21 +7,26 @@ import Axios from 'axios'
 import apiUrl from '../../apiConfig'
 import BoughtTicket from '../popups/BoughtTicket'
 
-const BuyTicket = (props) => {
+const BuyTicket = (props) =>
+{
 
     let ticketType = props.ticketType
 
-    const getPrice = () => {
-        if (!ticketType) {
+    const getPrice = () =>
+    {
+        if (!ticketType)
+        {
             return 0.00
-        } else {
-            let number = ticketType.replace( /[^\d.]/g, '' )
+        } else
+        {
+            let number = ticketType.replace(/[^\d.]/g, '')
             let price = parseFloat(number)
             return price
         }
     }
 
-    const getTax = () => {
+    const getTax = () =>
+    {
         let price = getPrice()
         let tax = parseFloat((price * 0.08).toFixed(2))
         return tax
@@ -29,24 +34,29 @@ const BuyTicket = (props) => {
 
     const [checkbox, setCheckbox] = useState(false)
 
-    const donationCheck = (event) => {
+    const donationCheck = (event) =>
+    {
         setCheckbox(event.target.checked)
     }
 
-    const getDonation = () => {
-        if (checkbox) {
+    const getDonation = () =>
+    {
+        if (checkbox)
+        {
             let price = getPrice()
             let tax = getTax()
             let subTotal = parseFloat((price + tax).toFixed(2))
             let total = parseFloat(Math.ceil(subTotal).toFixed(2))
             let donation = parseFloat((total - subTotal).toFixed(2))
             return donation
-        } else {
+        } else
+        {
             return 0.00
         }
     }
 
-    const getTotal = () => {
+    const getTotal = () =>
+    {
         let price = getPrice()
         let tax = getTax()
         let donation = getDonation()
@@ -74,7 +84,7 @@ const BuyTicket = (props) => {
                 busId: Math.ceil(Math.random(35))
             }
         })
-        .catch(console.error)
+            .catch(console.error)
     }
 
     return (
@@ -94,7 +104,7 @@ const BuyTicket = (props) => {
             </div>
 
             <div className='stopping-at'>
-                <img className='stopping-image' src={stoppingAtIcon}></img>
+                <img className='stopping-image' alt='Stopping At' src={stoppingAtIcon}></img>
                 <h4 className='stopping-text'>Stopping at:</h4>
             </div>
 
@@ -105,7 +115,7 @@ const BuyTicket = (props) => {
                 <div className='c2 r1'></div>
                 <div className='c3 r1'><h4 className='stop-name'>{props.fromValue}</h4></div>
 
-                <div className='c1 r2'><h5 className='time'></h5></div>
+                <div className='c1 r2'><h5 className='time'> </h5></div>
                 <div className='c2 r2'></div>
                 <div className='c3 r2'><p className='click'>(Click to see more)</p></div>
 
@@ -119,11 +129,11 @@ const BuyTicket = (props) => {
             </div>
 
             <div className='donation'>
-                <input 
+                <input
                     onChange={donationCheck}
-                    className='donation-checkbox' 
-                    type='checkbox' 
-                    name='donation' 
+                    className='donation-checkbox'
+                    type='checkbox'
+                    name='donation'
                 />
                 <p className='donation-text'>
                     Would you like to <span className='bold-span'>round up your total </span>to donate to homelessness in NYC?
@@ -139,8 +149,8 @@ const BuyTicket = (props) => {
             </div>
 
             <div className='button-grid'>
-                <button 
-                    className='buy-ticket-button' 
+                <button
+                    className='buy-ticket-button'
                     type='button'
                     onClick={handleClick}>
                     <span className='buy-ticket-button-text'>

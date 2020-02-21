@@ -89,7 +89,7 @@ const TripDetails = (props) => {
                     <div className='review-button'>
                         
                     </div>
-                    <Link className='button-text' exact to='/ticket'>Review Ticket</Link>
+                    <Link className='button-text' to='/ticket'>Review Ticket</Link>
                 </div>
 
 
