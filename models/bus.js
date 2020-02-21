@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
   Bus.associate = function(models) {
     Bus.belongsTo(models.Route,{
       foreignKey: 'routeId',
-      // does the onDelete go here, or in bus? our homeworks have put it both places
     }),
 
     Bus.hasMany(models.Ticket, {

@@ -33,7 +33,6 @@ class AdminTicketDetail extends Component
 
     ticketDetail = () =>
     {
-        console.log(this.state)
         if (this.state.ticket && !this.state.deleted)
         {
             return (<React.Fragment>

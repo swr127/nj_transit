@@ -32,7 +32,6 @@ class AdminTickets extends Component
 
     mapThroughTickets()
     {
-        console.log(this.state.tickets)
         return this.state.tickets.map((ticket, id) => (
             <Link to={`/admin/tickets/${ticket.id}`} key={id}>
                 <div className='admin-ticket-button'>

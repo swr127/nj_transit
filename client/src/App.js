@@ -48,7 +48,6 @@ class App extends Component
 
   handleChangeFromField = (event) =>
   {
-    console.log(event.target.value)
     let routeId = (event.target.options[event.target.selectedIndex].dataset.route)
     this.setState({
       from: event.target.value,
@@ -58,7 +57,6 @@ class App extends Component
 
   handleChangeToField = (event) =>
   {
-    console.log(event.target.value)
     this.setState({
       to: event.target.value
     })
@@ -68,7 +66,6 @@ class App extends Component
   // select ticket type:
   handleTypeChange = (event) =>
   {
-    console.log(event.target.value)
     this.setState({
       selectedType: event.target.value
     })
