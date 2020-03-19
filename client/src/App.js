@@ -12,6 +12,7 @@ import Axios from 'axios'
 import AdminTickets from './components/routes/AdminTickets'
 import AdminTicketDetail from './components/routes/AdminTicketDetail'
 import AdminTicketEdit from './components/routes/AdminTicketEdit'
+import banner from './images/njtransit_banner18.jpg'
 
 class App extends Component 
 {
@@ -75,7 +76,9 @@ class App extends Component
   {
     return (
       <div className="App">
-        <React.Fragment>
+        <div className="iphone-size">
+          <React.Fragment>
+      
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/planatrip' render={(defaultProps) => (
@@ -89,37 +92,38 @@ class App extends Component
                 toValue={this.state.to}
               />)}
             />
+              <Route exact path='/service' component={Service} />
+              <Route exact path='/schedule' render={(defaultProps) => (
+                <Schedule
+                  {...defaultProps}
+                  handleChangeFromField={this.handleChangeFromField}
+                  handleChangeToField={this.handleChangeToField}
+                  handleTypeChange={this.handleTypeChange}
+                  routeId={this.state.route}
+                  fromValue={this.state.from}
+                  toValue={this.state.to}
+                />)}
+              />
 
-            <Route exact path='/service' component={Service} />
-            <Route exact path='/schedule' render={(defaultProps) => (
-              <Schedule
-                {...defaultProps}
-                handleChangeFromField={this.handleChangeFromField}
-                handleChangeToField={this.handleChangeToField}
-                handleTypeChange={this.handleTypeChange}
-                routeId={this.state.route}
-                fromValue={this.state.from}
-                toValue={this.state.to}
-              />)}
-            />
+              <Route exact path='/menu' component={Menu} />
+              <Route exact path='/ticket' render={(defaultProps) => (
+                <Ticket
+                  {...defaultProps}
+                  fromValue={this.state.from}
+                  toValue={this.state.to}
+                  routeId={this.state.route}
+                  ticketType={this.state.selectedType}
+                />)}
+              />
 
-            <Route exact path='/menu' component={Menu} />
-            <Route exact path='/ticket' render={(defaultProps) => (
-              <Ticket
-                {...defaultProps}
-                fromValue={this.state.from}
-                toValue={this.state.to}
-                routeId={this.state.route}
-                ticketType={this.state.selectedType}
-              />)}
-            />
+              <Route exact path='/admin/tickets' component={AdminTickets} />
+              <Route exact path='/admin/tickets/:id' component={AdminTicketDetail} />
+              <Route exact path='/admin/tickets/:id/edit' component={AdminTicketEdit} />
+            </Switch>
 
-            <Route exact path='/admin/tickets' component={AdminTickets} />
-            <Route exact path='/admin/tickets/:id' component={AdminTicketDetail} />
-            <Route exact path='/admin/tickets/:id/edit' component={AdminTicketEdit} />
-          </Switch>
-        </React.Fragment>
-      </div >
+          </React.Fragment>
+        </div>
+      </div>
     )
   }
 }
