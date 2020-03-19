@@ -12,11 +12,14 @@ class PlanTrip extends Component
         this.state = {
         }
     }
-  
-    async componentDidMount() {
-        try {
-            this.setState({ })
-        } catch (err) {
+
+    async componentDidMount()
+    {
+        try
+        {
+            this.setState({})
+        } catch (err)
+        {
             console.error(err)
         }
     }
@@ -29,6 +32,9 @@ class PlanTrip extends Component
                     {...this.props}
                     handleChangeFromField={this.props.handleChangeFromField}
                     handleChangeToField={this.props.handleChangeToField}
+                    routeId={this.props.routeId}
+                    fromValue={this.props.fromValue}
+                    toValue={this.props.toValue}
                 />
                 <TripDetails
                     handleTypeChange={this.props.handleTypeChange}

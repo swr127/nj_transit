@@ -78,19 +78,20 @@ class App extends Component
       <div className="App">
         <div className="iphone-size">
           <React.Fragment>
-
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/planatrip' render={(defaultProps) => (
-                <PlanTrip
-                  {...defaultProps}
-                  handleChangeFromField={this.handleChangeFromField}
-                  handleChangeToField={this.handleChangeToField}
-                  handleTypeChange={this.handleTypeChange}
-                  routeId={this.state.route}
-                />)}
-              />
-
+      
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/planatrip' render={(defaultProps) => (
+              <PlanTrip
+                {...defaultProps}
+                handleChangeFromField={this.handleChangeFromField}
+                handleChangeToField={this.handleChangeToField}
+                handleTypeChange={this.handleTypeChange}
+                routeId={this.state.route}
+                fromValue={this.state.from}
+                toValue={this.state.to}
+              />)}
+            />
               <Route exact path='/service' component={Service} />
               <Route exact path='/schedule' render={(defaultProps) => (
                 <Schedule
